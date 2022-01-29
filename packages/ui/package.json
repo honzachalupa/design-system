@@ -1,5 +1,7 @@
 {
     "name": "@honzachalupa/ui",
     "version": "0.1.0",
-    "repository": "https://github.com/honzachalupa/common.git"
+    "publishConfig": {
+        "honzachalupa:registry": "https://npm.pkg.github.com"
+    }
 }
