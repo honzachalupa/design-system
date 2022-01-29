@@ -5,30 +5,39 @@ on:
         types: [created]
 
 jobs:
-    build:
+    publish:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v2
+            - name: Checkout
+              uses: actions/checkout@v2
               with:
-                  node-version: 12
-            - run: yarn code:check
-            - run: yarn build
+                  fetch-depth: 0
 
-    publish-gpr:
-        needs: build
-        runs-on: ubuntu-latest
-        permissions:
-            packages: write
-            contents: read
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v2
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
               with:
-                  node-version: 12
-                  registry-url: https://npm.pkg.github.com/
-            - run: npm ci
-            - run: |
+                  cache: "yarn"
+                  node-version-file: ".nvmrc"
+
+            - name: Setup Nx
+              uses: nrwl/nx-set-shas@v2
+              with:
+                  main-branch-name: ${{ github.base_ref}}
+
+            - name: Install NPM dependencies
+              run: yarn install
+
+            - name: Lint
+              run: yarn lint
+
+            - name: Test
+              run: yarn test
+
+            - name: Build
+              run: yarn build
+
+            - name: Publish to NPM
+              run: |
                   for LIBRARY in $(yarn nx affected:libs --base=$last_version --head=$current_version --plain | awk 'NR > 2 && $1 != "Done" { print $1 }')
                   do
                     cd ./build/$LIBRARY
