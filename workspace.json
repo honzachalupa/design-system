@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "ui": "packages/ui",
+    "utils": "packages/utils"
+  }
+}
