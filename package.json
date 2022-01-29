@@ -7,9 +7,11 @@
         "build": "nx affected:build",
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
-        "code:check": "yarn lint && yarn test && yarn build"
+        "code:check": "yarn lint && yarn test && yarn build",
+        "publish": "cd build/ui && npm publish --registry https://npm.pkg.github.com && cd ../../ && cd build/utils && npm publish --registry https://npm.pkg.github.com && cd ../../"
     },
     "private": true,
+    "repository": "https://github.com/honzachalupa/common.git",
     "dependencies": {
         "@firebase/firestore": "^3.4.4",
         "@react-pdf/renderer": "^2.1.1",
