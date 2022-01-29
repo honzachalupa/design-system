@@ -1,8 +1,8 @@
 name: Publish packages
 
 on:
-    release:
-        types: [published, created, prereleased, released]
+    push:
+        branches: [develop, master]
 
 jobs:
     publish:
