@@ -16,8 +16,8 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "paths": {
-            "@gift/ui": ["packages/ui/src/index.ts"],
-            "@gift/utils": ["packages/utils/src/index.ts"]
+            "@honzachalupa/ui": ["packages/ui/src/index.ts"],
+            "@honzachalupa/utils": ["packages/utils/src/index.ts"]
         }
     },
     "exclude": ["node_modules"]

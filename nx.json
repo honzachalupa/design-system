@@ -1,6 +1,5 @@
 {
     "npmScope": "gift",
-    "defaultProject": "public",
     "affected": {
         "defaultBase": "master"
     },
