@@ -5,7 +5,7 @@
     "scripts": {
         "start": "nx serve",
         "build": "nx affected:build",
-        "test": "nx affected:test"
+        "test": "nx run-many --target=test --all"
     },
     "private": true,
     "dependencies": {
@@ -21,17 +21,19 @@
         "tslib": "^2.3.1"
     },
     "devDependencies": {
-        "@nrwl/cli": "13.7.1",
-        "@nrwl/cypress": "13.7.1",
-        "@nrwl/eslint-plugin-nx": "13.7.1",
-        "@nrwl/jest": "13.7.1",
-        "@nrwl/linter": "13.7.1",
-        "@nrwl/node": "^13.7.1",
+        "@babel/preset-typescript": "7.16.7",
+        "@nrwl/cli": "13.6.1",
+        "@nrwl/cypress": "13.6.1",
+        "@nrwl/eslint-plugin-nx": "13.6.1",
+        "@nrwl/jest": "13.6.1",
+        "@nrwl/linter": "13.6.1",
+        "@nrwl/node": "^13.6.1",
         "@nrwl/nx-cloud": "latest",
-        "@nrwl/react": "13.7.1",
-        "@nrwl/tao": "13.7.1",
-        "@nrwl/web": "13.7.1",
-        "@nrwl/workspace": "13.7.1",
+        "@nrwl/react": "13.6.1",
+        "@nrwl/storybook": "13.6.1",
+        "@nrwl/tao": "13.6.1",
+        "@nrwl/web": "13.6.1",
+        "@nrwl/workspace": "13.6.1",
         "@testing-library/react": "12.1.2",
         "@testing-library/react-hooks": "7.0.2",
         "@types/jest": "27.4.0",
@@ -53,6 +55,7 @@
         "eslint-plugin-react": "7.28.0",
         "eslint-plugin-react-hooks": "4.3.0",
         "jest": "27.4.7",
+        "jest-styled-components": "^7.0.8",
         "prettier": "^2.5.1",
         "react-test-renderer": "17.0.2",
         "ts-jest": "27.1.3",
