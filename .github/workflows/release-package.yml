@@ -17,7 +17,6 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   cache: "yarn"
-                  node-version-file: ".nvmrc"
 
             - name: Setup Nx
               uses: nrwl/nx-set-shas@v2
