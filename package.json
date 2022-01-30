@@ -9,7 +9,7 @@
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx run-many --target=storybook --all",
-        "storybook:build": "nx affected:build-storybook"
+        "storybook:build": "nx run-many --target=build-storybook --all"
     },
     "dependencies": {
         "@firebase/firestore": "^3.4.4",

@@ -18,7 +18,6 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   cache: "yarn"
-                  registry-url: "https://npm.pkg.github.com"
 
             - name: Setup Nx
               uses: nrwl/nx-set-shas@v2
@@ -54,10 +53,7 @@ jobs:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
             - name: Publish Utilities library
-              run: |
-                  cd build/utils
-                  npm publish
-                  cd ../../
+              run: npm publish build/utils
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
