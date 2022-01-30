@@ -43,19 +43,15 @@ jobs:
                   path: build
 
             - name: Publish UI library
-              run: |
-                  pwd
-                  ls -la
-                  cd build/ui
-                  npm publish
-                  cd ../../
-              env:
-                  NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  package: build/ui/package.json
+                  token: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish Utilities library
               run: npm publish build/utils
               env:
-                  NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Notify
               uses: rtCamp/action-slack-notify@v2.2.0
