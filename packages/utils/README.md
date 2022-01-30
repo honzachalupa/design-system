@@ -1,7 +1,23 @@
-# utils
+# TypeScript Utilities library
 
-This library was generated with [Nx](https://nx.dev).
+This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa/common) monorepo.
 
-## Running unit tests
+### App
 
-Run `nx test utils` to execute the unit tests via [Jest](https://jestjs.io).
+`cleanObject(object: object)`\
+`scrollToTop()`\
+`scrollToRef(ref: RefObject<HTMLElement>)`
+
+### Data
+
+`groupObjectsBy(array: any[], key: string)`\
+`fillStringVariables(string: string | number, variables: { [key: string]: string | number })`
+
+### Formatting
+
+`formatCurrency(value: number, currencyCode: TCurrencyCodes)`\
+`formatPhoneNumber(phoneNumber: string)`
+
+### Browser
+
+`getBrowserLanguage(fallbackLanguage?: string)`

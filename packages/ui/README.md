@@ -1,7 +1,3 @@
-# ui
+# React UI library
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test ui` to execute the unit tests via [Jest](https://jestjs.io).
+This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa/common) monorepo.
