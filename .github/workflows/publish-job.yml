@@ -46,15 +46,16 @@ jobs:
             - name: Publish UI library
               run: |
                   pwd
-                  cd ./build/ui
+                  ls -la
+                  cd build/ui
                   npm publish
-                  cd ../../
+                  cd ../
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
             - name: Publish Utilities library
               run: |
-                  cd ./build/utils
+                  cd build/utils
                   npm publish
                   cd ../../
               env:
