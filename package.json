@@ -8,9 +8,9 @@
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
-        "publish:ui": "cd build/ui && npm publish --access public && cd ../../",
-        "publish:utils": "cd build/utils && npm publish --access public && cd ../../",
-        "publish": "node tools/readme-composer.js && yarn code:check && yarn publish:ui && publish:utils",
+        "publish:ui": "cd ./build/ui && npm publish && cd ../../",
+        "publish:utils": "cd ./build/utils && npm publish && cd ../../",
+        "publish:all": "node tools/readme-composer.js && yarn code:check && yarn publish:ui && yarn publish:utils",
         "storybook:watch": "nx run-many --target=storybook --all",
         "storybook:build": "nx affected:build-storybook --all"
     },

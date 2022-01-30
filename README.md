@@ -33,14 +33,14 @@ Thank you.
 
 # React UI library
 
-This library is part of `@honzachalupa/common` package ([GitHub repository](https://github.com/honzachalupa/common))
+This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa/common) monorepo.
 
 
 ---
 
 # TypeScript Utilities library
 
-This library is part of `@honzachalupa/common` package ([GitHub repository](https://github.com/honzachalupa/common))
+This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa/common) monorepo.
 
 ### App
 

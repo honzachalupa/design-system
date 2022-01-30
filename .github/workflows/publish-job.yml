@@ -18,6 +18,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   cache: "yarn"
+                  registry-url: "https://npm.pkg.github.com"
 
             - name: Setup Nx
               uses: nrwl/nx-set-shas@v2
@@ -38,6 +39,10 @@ jobs:
 
             - name: Publish UI library
               run: cd build/ui && npm publish && cd ../../
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Publish Utilities library
               run: cd build/utils && npm publish && cd ../../
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
