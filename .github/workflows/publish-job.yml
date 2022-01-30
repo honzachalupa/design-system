@@ -46,12 +46,12 @@ jobs:
             - name: Publish UI library
               run: npm publish build/ui
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
             - name: Publish Utilities library
               run: npm publish build/utils
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
             - name: Notify
               uses: rtCamp/action-slack-notify@v2.2.0
