@@ -44,12 +44,18 @@ jobs:
                   path: build
 
             - name: Publish UI library
-              run: npm publish build/ui
+              run: |
+                  cd build/ui
+                  npm publish
+                  cd ../../
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
             - name: Publish Utilities library
-              run: npm publish build/utils
+              run: |
+                  cd build/utils
+                  npm publish
+                  cd ../../
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
