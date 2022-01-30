@@ -7,7 +7,8 @@ Thank you.
 
 #### Installation
 
-`yarn install`
+`yarn install`\
+`yarn husky install`
 
 #### Lint
 
