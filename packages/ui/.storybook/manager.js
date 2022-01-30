@@ -4,8 +4,7 @@ import { create } from "@storybook/theming";
 addons.setConfig({
     theme: create({
         base: "light",
-        brandTitle: "My custom storybook",
-        brandUrl: "https://example.com",
-        brandImage: "https://place-hold.it/350x150",
+        brandTitle: "React UI library",
+        brandUrl: "https://github.com/honzachalupa/common",
     }),
 });

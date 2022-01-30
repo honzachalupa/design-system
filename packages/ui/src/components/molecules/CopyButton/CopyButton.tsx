@@ -4,9 +4,16 @@ import { StyledButton } from "./CopyButton.styled";
 export interface IProps {
     value: string | number;
     className?: string;
+    copyText: string;
+    copiedText: string;
 }
 
-export const CopyButton: React.FC<IProps> = ({ value, className }) => {
+export const CopyButton: React.FC<IProps> = ({
+    value,
+    className,
+    copyText,
+    copiedText,
+}) => {
     const [isSuccess, setIsSuccess] = useState<boolean>();
 
     const handleCopy = () => {
@@ -25,7 +32,7 @@ export const CopyButton: React.FC<IProps> = ({ value, className }) => {
 
     return isSuccess ? (
         <StyledButton
-            label="Zkopírováno"
+            label={copiedText}
             icon={{
                 name: "check",
                 color: "white",
@@ -35,7 +42,7 @@ export const CopyButton: React.FC<IProps> = ({ value, className }) => {
         />
     ) : (
         <StyledButton
-            label="Kopírovat"
+            label={copyText}
             icon={{
                 name: "copy",
                 color: "grayDark",

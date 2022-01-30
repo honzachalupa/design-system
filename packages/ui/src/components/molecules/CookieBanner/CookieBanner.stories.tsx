@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Fragment } from "react";
+import { Button } from "../../atoms/Button";
 import { CookieBanner as Component } from "./CookieBanner";
 
 export default {
@@ -7,7 +9,17 @@ export default {
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args) => (
-    <Component {...args} />
+    <Fragment>
+        <Component {...args} />
+
+        <Button
+            label="Reset local storage value"
+            onClick={() => {
+                localStorage.removeItem("isCookiesAllowed");
+                window.location.reload();
+            }}
+        />
+    </Fragment>
 );
 
 export const Default = Template.bind({});

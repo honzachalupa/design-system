@@ -11,7 +11,15 @@ const Template: ComponentStory<typeof Component> = (args) => (
 );
 
 export const Checked = Template.bind({});
-Checked.args = { label: "Checked", isChecked: true };
+Checked.args = {
+    checkedText: "Checked",
+    uncheckedText: "Unchecked",
+    isChecked: true,
+};
 
 export const Unchecked = Template.bind({});
-Unchecked.args = { label: "Unchecked", isChecked: false };
+Unchecked.args = {
+    checkedText: "Checked",
+    uncheckedText: "Unchecked",
+    isChecked: false,
+};

@@ -2,14 +2,23 @@ import ReactSwitch from "react-switch";
 import { StyledContainer, StyledLabel } from "./Switch.styled";
 
 export interface IProps {
-    label?: string;
+    checkedText?: string;
+    uncheckedText?: string;
     isChecked: boolean;
     onChange: (isChecked: boolean) => void;
 }
 
-export const Switch: React.FC<IProps> = ({ label, isChecked, onChange }) => (
+export const Switch: React.FC<IProps> = ({
+    checkedText,
+    uncheckedText,
+    isChecked,
+    onChange,
+}) => (
     <StyledContainer>
-        {label && <StyledLabel>{label}</StyledLabel>}
+        {isChecked && checkedText && <StyledLabel>{checkedText}</StyledLabel>}
+        {!isChecked && uncheckedText && (
+            <StyledLabel>{uncheckedText}</StyledLabel>
+        )}
 
         <ReactSwitch
             width={45}

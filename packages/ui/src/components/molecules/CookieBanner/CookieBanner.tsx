@@ -13,7 +13,7 @@ interface IProps {
     content: string;
     agreeButtonText: string;
     disagreeButtonText: string;
-    setIsCookiesAllowed: (value: boolean) => void;
+    onSubmit: (value: boolean) => void;
 }
 
 export const CookieBanner: React.FC<IProps> = ({
@@ -21,7 +21,7 @@ export const CookieBanner: React.FC<IProps> = ({
     content,
     agreeButtonText,
     disagreeButtonText,
-    setIsCookiesAllowed,
+    onSubmit,
 }) => {
     const [isCookiesAllowed, setCookiesAllowed] = useLocalStorage(
         "isCookiesAllowed",
@@ -29,7 +29,7 @@ export const CookieBanner: React.FC<IProps> = ({
     );
 
     useEffect(() => {
-        setIsCookiesAllowed(isCookiesAllowed);
+        onSubmit(isCookiesAllowed);
     }, [isCookiesAllowed]);
 
     return isCookiesAllowed === null ? (

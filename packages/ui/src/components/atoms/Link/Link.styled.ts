@@ -16,12 +16,14 @@ const getColors = (color: string) => `
 export const StyledLink = styled(Button)<{
     color: TButtonColors;
 }>`
+    min-width: 0;
     max-width: 100%;
     background-color: transparent;
     color: ${({ color }) => color};
     text-decoration: underline;
     box-shadow: none;
     margin: 0;
+    padding: 5px;
     user-select: text;
     white-space: normal;
     word-wrap: break-word;

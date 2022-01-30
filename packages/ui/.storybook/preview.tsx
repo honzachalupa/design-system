@@ -4,12 +4,8 @@ import { GlobalStyle } from "../src";
 import { DefaultTheme } from "../src/DefaultTheme";
 
 const ProvidersWrapper: React.FC<{
-    locale: string;
-    theme: any; // TThemes
     children: any;
-}> = ({ locale, theme: themeProp, children }) => {
-    console.log({ locale, themeProp });
-
+}> = ({ children }) => {
     const theme = DefaultTheme;
 
     return (
@@ -22,10 +18,7 @@ const ProvidersWrapper: React.FC<{
 };
 
 const withProviders = (Story: React.FC, context: any) => (
-    <ProvidersWrapper
-        theme={context.globals.theme}
-        locale={context.globals.locale}
-    >
+    <ProvidersWrapper>
         <Story {...context} />
     </ProvidersWrapper>
 );
@@ -37,41 +30,6 @@ export const parameters = {
     options: {
         storySort: {
             order: ["Atoms", "Molecules", "Organisms"],
-        },
-    },
-};
-
-export const globalTypes = {
-    theme: {
-        name: "Themes",
-        defaultValue: "wedding",
-        toolbar: {
-            showName: true,
-            items: [
-                {
-                    value: "general",
-                    title: "General",
-                },
-                {
-                    value: "wedding",
-                    title: "Wedding",
-                },
-            ],
-        },
-    },
-    locale: {
-        name: "Locales",
-        defaultValue: "cs",
-        toolbar: {
-            showName: true,
-            items: [
-                { value: "cs", right: "🇨🇿", title: "Česky" },
-                { value: "sk", right: "🇸🇰", title: "Slovensky" },
-                {
-                    value: "test",
-                    title: "No language (show translations keys)",
-                },
-            ],
         },
     },
 };

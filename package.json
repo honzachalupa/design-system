@@ -8,8 +8,8 @@
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
-        "storybook:watch": "nx run-many --target=storybook --all",
-        "storybook:build": "nx run-many --target=build-storybook --all"
+        "storybook:watch": "nx storybook ui",
+        "storybook:build": "nx build-storybook ui"
     },
     "dependencies": {
         "@firebase/firestore": "^3.4.4",

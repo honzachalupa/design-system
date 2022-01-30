@@ -5,7 +5,6 @@ export {
     TButtonColors,
 } from "./components/atoms/Button";
 export { Carousel } from "./components/atoms/Carousel";
-export { ContentBlockHeader } from "./components/atoms/ContentBlockHeader";
 export { Icon } from "./components/atoms/Icon";
 export { Image } from "./components/atoms/Image";
 export { Link } from "./components/atoms/Link";
