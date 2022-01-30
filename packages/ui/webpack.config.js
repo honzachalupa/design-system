@@ -21,7 +21,10 @@ module.exports = (webpackConfig) => {
                     test: /\.(ts|tsx)$/,
                     loader: require.resolve("babel-loader"),
                     options: {
-                        presets: ["@babel/preset-typescript"],
+                        presets: [
+                            "@babel/preset-typescript",
+                            ["@babel/preset-react", { runtime: "automatic" }],
+                        ],
                     },
                 },
             ],
