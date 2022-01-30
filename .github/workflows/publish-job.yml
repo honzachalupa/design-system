@@ -49,7 +49,7 @@ jobs:
                   ls -la
                   cd build/ui
                   npm publish
-                  cd ../
+                  cd ../../
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
