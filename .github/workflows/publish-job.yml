@@ -45,7 +45,8 @@ jobs:
 
             - name: Publish UI library
               run: |
-                  cd build/ui
+                  pwd
+                  cd ./build/ui
                   npm publish
                   cd ../../
               env:
@@ -53,7 +54,7 @@ jobs:
 
             - name: Publish Utilities library
               run: |
-                  cd build/utils
+                  cd ./build/utils
                   npm publish
                   cd ../../
               env:
