@@ -1,4 +1,9 @@
-export const groupObjectsBy = (array: any[], key: string) => {
+import { IAbstractObject } from "../types";
+
+export const groupObjectsBy = (
+    array: any[],
+    key: string,
+): { [key: string]: IAbstractObject } => {
     const initialValue = {};
 
     return array.reduce((prevValue, value) => {
@@ -11,11 +16,13 @@ export const groupObjectsBy = (array: any[], key: string) => {
 };
 
 export const fillStringVariables = (
-    string: string | number,
+    value: string | number,
     variables: { [key: string]: string | number },
-) => {
+): string => {
+    let string = value.toString();
+
     Object.entries(variables).forEach(([key, value]) => {
-        string = string.toString().replaceAll(`{${key}}`, value.toString());
+        string = string.replaceAll(`{${key}}`, value.toString());
     });
 
     return string;

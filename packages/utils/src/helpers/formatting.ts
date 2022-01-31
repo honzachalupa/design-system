@@ -1,10 +1,13 @@
-import { ECurrencies, ICurrency, TCurrencyCodes } from "./formatting.types";
+import { ECurrencies, ICurrency, TCurrencyCodes } from "../types";
 
 export const DATE_FORMAT = "D.M.YYYY";
 export const TIME_FORMAT = "H:mm";
 export const DATE_TIME_FORMAT = `${DATE_FORMAT} ${TIME_FORMAT}`;
 
-export const formatCurrency = (value: number, currencyCode: TCurrencyCodes) => {
+export const formatCurrency = (
+    value: number,
+    currencyCode: TCurrencyCodes,
+): string => {
     let valueFormatted = value.toString();
     let prefix = "";
     let postfix = "";
@@ -25,5 +28,5 @@ export const formatCurrency = (value: number, currencyCode: TCurrencyCodes) => {
     return `${prefix}${valueFormatted} ${postfix}`.trim();
 };
 
-export const formatPhoneNumber = (phoneNumber: string) =>
+export const formatPhoneNumber = (phoneNumber: string): string =>
     phoneNumber.replace(/([+\d]{4})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
