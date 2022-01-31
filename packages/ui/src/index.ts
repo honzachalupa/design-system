@@ -30,4 +30,5 @@ export {
 export { List } from "./components/molecules/List";
 export { PdfDocumentPreview } from "./components/molecules/PdfDocumentPreview";
 export { GlobalStyle } from "./Global.styled";
+export { ITheme } from "./interfaces/theme";
 export { Layout, LayoutMargin } from "./layouts/Main";

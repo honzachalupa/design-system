@@ -4,7 +4,7 @@ import { create } from "@storybook/theming";
 addons.setConfig({
     theme: create({
         base: "light",
-        brandTitle: "React UI library",
+        brandTitle: "@honzachalupa/ui",
         brandUrl: "https://github.com/honzachalupa/common",
     }),
 });
