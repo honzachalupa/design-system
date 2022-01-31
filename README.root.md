@@ -32,8 +32,12 @@ Thank you.
 
 ---
 
-{readmeUI}
+{packagePlaceholder_ui}
 
 ---
 
-{readmeUtils}
+{packagePlaceholder_utils}
+
+---
+
+{packagePlaceholder_firebase-connector}

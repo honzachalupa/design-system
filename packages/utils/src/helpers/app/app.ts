@@ -1,5 +1,5 @@
 import { RefObject } from "react";
-import { IAbstractObject } from "../types";
+import { IAbstractObject } from "../../types";
 
 export const cleanObject = (object: IAbstractObject): IAbstractObject =>
     Object.fromEntries(

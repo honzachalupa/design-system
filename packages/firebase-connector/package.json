@@ -1,0 +1,12 @@
+{
+    "name": "@honzachalupa/firebase-connector",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/honzachalupa/common.git"
+    },
+    "peerDependencies": {
+        "react": "17.0.2",
+        "styled-components": "5.3.3"
+    }
+}

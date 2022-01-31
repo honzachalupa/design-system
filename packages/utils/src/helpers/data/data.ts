@@ -1,4 +1,4 @@
-import { IAbstractObject } from "../types";
+import { IAbstractObject } from "../../types";
 
 export const groupObjectsBy = (
     array: any[],

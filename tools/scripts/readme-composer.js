@@ -3,15 +3,17 @@ const fs = require("fs");
 const dataRoot = fs.readFileSync("./README.root.md");
 const readmeRoot = dataRoot.toString();
 
-const dataUI = fs.readFileSync("./packages/ui/README.md");
-const readmeUI = dataUI.toString();
+let readmeComposed = readmeRoot;
 
-const dataUtils = fs.readFileSync("./packages/utils/README.md");
-const readmeUtils = dataUtils.toString();
+["ui", "utils", "firebase-connector"].forEach((projectKey) => {
+    const data = fs.readFileSync(`./packages/${projectKey}/README.md`);
+    const readme = data.toString();
 
-const readmeComposed = readmeRoot
-    .replace("{readmeUI}", readmeUI)
-    .replace("{readmeUtils}", readmeUtils);
+    readmeComposed = readmeComposed.replace(
+        `{packagePlaceholder_${projectKey}}`,
+        readme,
+    );
+});
 
 fs.writeFileSync("./README.md", readmeComposed);
 

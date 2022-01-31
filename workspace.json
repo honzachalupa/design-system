@@ -1,7 +1,8 @@
 {
-  "version": 2,
-  "projects": {
-    "ui": "packages/ui",
-    "utils": "packages/utils"
-  }
+    "version": 2,
+    "projects": {
+        "ui": "packages/ui",
+        "utils": "packages/utils",
+        "firebase-connector": "packages/firebase-connector"
+    }
 }

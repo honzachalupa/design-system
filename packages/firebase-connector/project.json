@@ -1,0 +1,43 @@
+{
+    "root": "packages/firebase-connector",
+    "sourceRoot": "packages/firebase-connector/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nrwl/web:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "build/firebase-connector",
+                "tsConfig": "packages/firebase-connector/tsconfig.lib.json",
+                "project": "packages/firebase-connector/package.json",
+                "entryFile": "packages/firebase-connector/src/index.ts",
+                "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+                "compiler": "babel",
+                "buildableProjectDepsInPackageJsonType": "dependencies",
+                "assets": [
+                    {
+                        "glob": "packages/firebase-connector/README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["packages/firebase-connector/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/packages/firebase-connector"],
+            "options": {
+                "jestConfig": "packages/firebase-connector/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    }
+}

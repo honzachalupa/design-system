@@ -1,4 +1,4 @@
-import { ECurrencies, ICurrency, TCurrencyCodes } from "../types";
+import { ECurrencies, ICurrency, TCurrencyCodes } from "../../types";
 
 export const DATE_FORMAT = "D.M.YYYY";
 export const TIME_FORMAT = "H:mm";
