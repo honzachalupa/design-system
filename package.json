@@ -1,15 +1,16 @@
 {
     "name": "common",
-    "version": "1.5.1",
+    "version": "1.5.3",
     "license": "MIT",
     "scripts": {
         "start": "nx serve",
-        "build": "node tools/scripts/readme-composer.js && nx run-many --target=build --all && node tools/scripts/readme-composer.js ",
+        "build": "node tools/scripts/readme-composer.js && nx run-many --target=build --all && node tools/scripts/versions-matcher.js",
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
+        "postrelease": "node tools/scripts/versions-matcher.js",
         "release": "standard-version"
     },
     "dependencies": {
