@@ -1,19 +1,23 @@
 import LogRocket from "logrocket";
 import { useEffect } from "react";
 
-export const useLogRocket = (
-    logRocketId: string,
-    userId: string | undefined,
-    isCookiesAllowed: boolean,
-) => {
+export const useLogRocket = ({
+    token,
+    userId,
+    isEnabled,
+}: {
+    token: string;
+    userId: string | undefined;
+    isEnabled: boolean;
+}) => {
     useEffect(() => {
-        if (isCookiesAllowed) {
-            LogRocket.init(logRocketId);
+        if (isEnabled) {
+            LogRocket.init(token);
         }
-    }, [isCookiesAllowed]);
+    }, [isEnabled]);
 
     useEffect(() => {
-        if (userId && isCookiesAllowed) {
+        if (userId && isEnabled) {
             LogRocket.identify(userId);
         }
     }, [userId]);
