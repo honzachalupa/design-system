@@ -51,6 +51,7 @@ jobs:
               with:
                   package: build/ui/package.json
                   check-version: true
+                  access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish UI library storybook
@@ -65,6 +66,7 @@ jobs:
               with:
                   package: build/utils/package.json
                   check-version: true
+                  access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish Firebase Connector
@@ -72,6 +74,7 @@ jobs:
               with:
                   package: build/firebase-connector/package.json
                   check-version: true
+                  access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
             - name: Notify

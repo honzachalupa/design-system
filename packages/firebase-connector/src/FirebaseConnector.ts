@@ -13,10 +13,6 @@ import { Analytics, Auth, Firestore, Storage } from "./Firebase";
 import { TQuery } from "./types";
 
 export class FirebaseConnector {
-    private queryConstructor = Firestore.query;
-    private whereConstructor = Firestore.where;
-    private orderByConstructor = Firestore.orderBy;
-    private limitConstructor = Firestore.limit;
     public firestore: IFirestore;
     private auth: IAuth;
     private storage: IStorage;
@@ -48,11 +44,11 @@ export class FirebaseConnector {
         collection: CollectionReference,
         { where, orderBy, limit }: TQuery = {},
     ) =>
-        this.queryConstructor(
+        Firestore.query(
             collection,
-            ...(where?.map((x) => this.whereConstructor(...x)) || []),
-            ...(orderBy?.map((x) => this.orderByConstructor(...x)) || []),
-            this.limitConstructor(limit || 10000),
+            ...(where?.map((x) => Firestore.where(...x)) || []),
+            ...(orderBy?.map((x) => Firestore.orderBy(...x)) || []),
+            Firestore.limit(limit || 10000),
         );
 
     public Database = {
