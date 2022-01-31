@@ -5,7 +5,7 @@ export {
     TButtonColors,
 } from "./components/atoms/Button";
 export { Carousel } from "./components/atoms/Carousel";
-export { Icon } from "./components/atoms/Icon";
+export { Icon, TIconName } from "./components/atoms/Icon";
 export { Image } from "./components/atoms/Image";
 export { Link } from "./components/atoms/Link";
 export { Loader } from "./components/atoms/Loader";
@@ -13,8 +13,14 @@ export { IModalRefProps, Modal } from "./components/atoms/Modal";
 export { ProgressBar } from "./components/atoms/ProgressBar";
 export { Switch } from "./components/atoms/Switch";
 export { Text } from "./components/atoms/typography/Text";
-export { THeaderAlignments, Title } from "./components/atoms/typography/Title";
+export {
+    ITitleProps,
+    THeaderAlignments,
+    Title,
+} from "./components/atoms/typography/Title";
 export { ButtonsGroup } from "./components/molecules/ButtonsGroup";
+export { CookieBanner } from "./components/molecules/CookieBanner";
+export { CopyButton } from "./components/molecules/CopyButton";
 export {
     Form,
     StyledErrorMessage,
@@ -23,4 +29,4 @@ export {
 export { List } from "./components/molecules/List";
 export { PdfDocumentPreview } from "./components/molecules/PdfDocumentPreview";
 export { GlobalStyle } from "./Global.styled";
-export * from "./layouts/Main";
+export { Layout, StyledMargin } from "./layouts/Main";

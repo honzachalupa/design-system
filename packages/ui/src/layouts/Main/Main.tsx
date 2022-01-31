@@ -5,7 +5,7 @@ export interface IProps {
     children: React.ReactNode;
 }
 
-export const Layout_Main: React.FC<IProps> = ({ width, children }) => (
+export const Layout: React.FC<IProps> = ({ width, children }) => (
     <StyledContainer>
         <StyledMargin width={width}>{children}</StyledMargin>
     </StyledContainer>
