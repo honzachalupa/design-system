@@ -4,7 +4,7 @@
     "license": "MIT",
     "scripts": {
         "start": "nx serve",
-        "build": "nx run-many --target=build --all",
+        "build": "node tools/scripts/readme-composer.js && nx run-many --target=build --all",
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
