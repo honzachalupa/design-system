@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
     flex-direction: column;
 `;
 
-export const StyledMargin = styled.div<{ width?: TLayoutWidth }>`
+export const LayoutMargin = styled.div<{ width?: TLayoutWidth }>`
     width: 100%;
     max-width: ${({ width }) =>
         width === "narrow" ? 700 : width === "medium" ? 900 : 1200}px;

@@ -1,2 +1,2 @@
 export { Layout } from "./Main";
-export { StyledMargin } from "./Main.styled";
+export { LayoutMargin } from "./Main.styled";

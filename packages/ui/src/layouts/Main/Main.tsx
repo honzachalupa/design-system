@@ -1,4 +1,4 @@
-import { StyledContainer, StyledMargin, TLayoutWidth } from "./Main.styled";
+import { StyledContainer, TLayoutWidth } from "./Main.styled";
 
 export interface IProps {
     width?: TLayoutWidth;
@@ -6,7 +6,5 @@ export interface IProps {
 }
 
 export const Layout: React.FC<IProps> = ({ width, children }) => (
-    <StyledContainer>
-        <StyledMargin width={width}>{children}</StyledMargin>
-    </StyledContainer>
+    <StyledContainer>{children}</StyledContainer>
 );

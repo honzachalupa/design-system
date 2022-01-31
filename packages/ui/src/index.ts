@@ -29,4 +29,4 @@ export {
 export { List } from "./components/molecules/List";
 export { PdfDocumentPreview } from "./components/molecules/PdfDocumentPreview";
 export { GlobalStyle } from "./Global.styled";
-export { Layout, StyledMargin } from "./layouts/Main";
+export { Layout, LayoutMargin } from "./layouts/Main";
