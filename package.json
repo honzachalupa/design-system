@@ -1,6 +1,6 @@
 {
     "name": "common",
-    "version": "1.5.4",
+    "version": "1.5.5",
     "license": "MIT",
     "scripts": {
         "start": "nx serve",
@@ -10,7 +10,7 @@
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
-        "postchangelog": "node tools/scripts/versions-matcher.js",
+        "postbump": "node tools/scripts/versions-matcher.js",
         "release": "standard-version"
     },
     "dependencies": {
