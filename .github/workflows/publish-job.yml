@@ -67,6 +67,13 @@ jobs:
                   check-version: true
                   token: ${{ secrets.NPM_TOKEN }}
 
+            - name: Publish Firebase Connector
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  package: build/firebase-connector/package.json
+                  check-version: true
+                  token: ${{ secrets.NPM_TOKEN }}
+
             - name: Notify
               uses: rtCamp/action-slack-notify@v2.2.0
               env:
