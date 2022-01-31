@@ -15,4 +15,4 @@ const readmeComposed = readmeRoot
 
 fs.writeFileSync("./README.md", readmeComposed);
 
-console.log("Readme composed.");
+console.info("Root readme composed.");
