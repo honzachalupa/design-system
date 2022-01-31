@@ -50,7 +50,20 @@ jobs:
               uses: JS-DevTools/npm-publish@v1
               with:
                   package: build/ui/package.json
-                  check-version: true
+                  access: public
+                  token: ${{ secrets.NPM_TOKEN }}
+
+            - name: Publish Utilities library
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  package: build/utils/package.json
+                  access: public
+                  token: ${{ secrets.NPM_TOKEN }}
+
+            - name: Publish Firebase Connector
+              uses: JS-DevTools/npm-publish@v1
+              with:
+                  package: build/firebase-connector/package.json
                   access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
@@ -60,22 +73,6 @@ jobs:
                   storybookBuildDir: build/storybooks/ui
                   token: ${{ secrets.GITHUB_TOKEN }}
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-
-            - name: Publish Utilities library
-              uses: JS-DevTools/npm-publish@v1
-              with:
-                  package: build/utils/package.json
-                  check-version: true
-                  access: public
-                  token: ${{ secrets.NPM_TOKEN }}
-
-            - name: Publish Firebase Connector
-              uses: JS-DevTools/npm-publish@v1
-              with:
-                  package: build/firebase-connector/package.json
-                  check-version: true
-                  access: public
-                  token: ${{ secrets.NPM_TOKEN }}
 
             - name: Notify
               uses: rtCamp/action-slack-notify@v2.2.0
