@@ -5,7 +5,7 @@ const { version } = JSON.parse(packageRootData);
 
 console.info(`Root package version: v${version}`);
 
-["./packages/ui/package.json", "./packages/utils/package.json"].forEach(
+["./build/ui/package.json", "./build/utils/package.json"].forEach(
     (packagePath) => {
         const packageData = fs.readFileSync(packagePath);
         const package = JSON.parse(packageData);

@@ -36,7 +36,7 @@ jobs:
               run: yarn test
 
             - name: Build
-              run: yarn build
+              run: yarn build && node tools/scripts/versions-matcher.js
 
             - name: Build storybook
               run: yarn storybook:build
