@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.5.14...v1.6.0) (2022-01-31)
+
+
+### Features
+
+* Created Firebase connector package. ([2a22d89](https://github.com/mokkapps/changelog-generator-demo/commits/2a22d89dc9096c145f05e7e28584b2b3c2b7ab6f))
+
 ### [1.5.14](https://github.com/mokkapps/changelog-generator-demo/compare/v1.5.13...v1.5.14) (2022-01-31)
 
 ### [1.5.13](https://github.com/mokkapps/changelog-generator-demo/compare/v1.5.12...v1.5.13) (2022-01-31)

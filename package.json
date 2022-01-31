@@ -1,6 +1,6 @@
 {
     "name": "common",
-    "version": "1.5.14",
+    "version": "1.6.0",
     "license": "MIT",
     "scripts": {
         "start": "nx serve",
