@@ -11,6 +11,7 @@ export { Link } from "./components/atoms/Link";
 export { Loader } from "./components/atoms/Loader";
 export { IModalRefProps, Modal } from "./components/atoms/Modal";
 export { ProgressBar } from "./components/atoms/ProgressBar";
+export { QrCode } from "./components/atoms/QrCode";
 export { Switch } from "./components/atoms/Switch";
 export { Text } from "./components/atoms/typography/Text";
 export {

@@ -13,7 +13,7 @@ interface IProps {
     content: string;
     agreeButtonText: string;
     disagreeButtonText: string;
-    onSubmit: (value: boolean) => void;
+    onSubmit?: (value: boolean) => void;
 }
 
 export const CookieBanner: React.FC<IProps> = ({
@@ -29,7 +29,9 @@ export const CookieBanner: React.FC<IProps> = ({
     );
 
     useEffect(() => {
-        onSubmit(isCookiesAllowed);
+        if (onSubmit) {
+            onSubmit(isCookiesAllowed);
+        }
     }, [isCookiesAllowed]);
 
     return isCookiesAllowed === null ? (
