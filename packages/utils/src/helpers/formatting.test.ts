@@ -18,6 +18,14 @@ describe("Helpers: Formatting", () => {
         it("Case 4", () => {
             expect(formatCurrency(1000, "EUR")).toStrictEqual("€1000");
         });
+
+        it("Case 5", () => {
+            expect(formatCurrency(100, "USD")).toStrictEqual("$100");
+        });
+
+        it("Case 6", () => {
+            expect(formatCurrency(1000, "USD")).toStrictEqual("$1000");
+        });
     });
 
     describe("formatPhoneNumber", () => {
