@@ -2,6 +2,7 @@ import { ECurrencies, ICurrency, TCurrencyCodes } from "../types";
 
 export const DATE_FORMAT = "D.M.YYYY";
 export const TIME_FORMAT = "H:mm";
+
 export const DATE_TIME_FORMAT = `${DATE_FORMAT} ${TIME_FORMAT}`;
 
 export const formatCurrency = (
