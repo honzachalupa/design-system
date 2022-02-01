@@ -3,7 +3,7 @@ import {
     OrderByDirection,
     Timestamp as TFirestoreTimestamp,
     WhereFilterOp,
-} from "@firebase/firestore";
+} from "firebase/firestore";
 
 export type TTimestamp = TFirestoreTimestamp;
 

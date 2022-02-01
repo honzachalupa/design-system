@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import "firebase-functions/lib/logger/compat";
+import "firebase-functions/lib/logger";
 
 export const initFunction = (docPath: string) =>
     functions.region("europe-west3").firestore.document(docPath);

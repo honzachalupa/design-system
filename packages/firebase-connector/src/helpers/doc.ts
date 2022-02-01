@@ -1,4 +1,4 @@
-import { DocumentSnapshot, QuerySnapshot } from "@firebase/firestore";
+import { DocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 
 export const convertDocToItem = (doc: DocumentSnapshot) => ({
     id: doc.id,

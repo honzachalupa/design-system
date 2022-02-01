@@ -13,7 +13,6 @@
         "release": "standard-version"
     },
     "dependencies": {
-        "@firebase/firestore": "^3.4.4",
         "@react-pdf/renderer": "^2.1.1",
         "core-js": "^3.20.3",
         "firebase": "^9.6.5",
