@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.6.6...v1.7.0) (2022-02-02)
+
+
+### Features
+
+* Added new helpers and hooks. ([ddb4436](https://github.com/mokkapps/changelog-generator-demo/commits/ddb4436d161df2743597b29f0d168c398640686c))
+
 ### [1.6.6](https://github.com/mokkapps/changelog-generator-demo/compare/v1.6.5...v1.6.6) (2022-02-02)
 
 ### [1.6.5](https://github.com/mokkapps/changelog-generator-demo/compare/v1.6.4...v1.6.5) (2022-02-02)
