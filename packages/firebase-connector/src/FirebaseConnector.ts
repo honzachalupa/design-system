@@ -16,7 +16,7 @@ export class FirebaseConnector {
     public firestore: IFirestore;
     private auth: IAuth;
     private storage: IStorage;
-    private analytics: IAnalytics;
+    private analytics: IAnalytics | undefined;
     private log?: (props: {
         code: "EXCEPTION";
         message: string;
@@ -36,7 +36,11 @@ export class FirebaseConnector {
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);
         this.storage = Storage.getStorage(app);
-        this.analytics = Analytics.getAnalytics(app);
+
+        if (typeof window !== "undefined") {
+            this.analytics = Analytics.getAnalytics(app);
+        }
+
         this.log = logger;
     }
 
@@ -174,9 +178,26 @@ export class FirebaseConnector {
     };
 
     public Analytics = {
-        setUserId: (id: string) => Analytics.setUserId(this.analytics, id),
+        setUserId: (id: string) => () =>
+            this.analytics
+                ? Analytics.setUserId(this.analytics, id)
+                : new Promise((_, reject) => {
+                      reject(
+                          new Error(
+                              "Analytics are available on client-side only.",
+                          ),
+                      );
+                  }),
 
         setCurrentScreen: (routeId: string) =>
-            Analytics.setCurrentScreen(this.analytics, routeId),
+            this.analytics
+                ? Analytics.setCurrentScreen(this.analytics, routeId)
+                : new Promise((_, reject) => {
+                      reject(
+                          new Error(
+                              "Analytics are available on client-side only.",
+                          ),
+                      );
+                  }),
     };
 }
