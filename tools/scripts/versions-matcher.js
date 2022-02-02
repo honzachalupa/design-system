@@ -5,7 +5,7 @@ const { version } = JSON.parse(packageRootData);
 
 console.info(`Root package version: v${version}`);
 
-["ui", "utils", "firebase-connector"].forEach((projectKey) => {
+["ui", "utils", "firebase"].forEach((projectKey) => {
     const packagePath = `./packages/${projectKey}/package.json`;
     const packageData = fs.readFileSync(packagePath);
     const package = JSON.parse(packageData);

@@ -1,6 +1,6 @@
 {
-    "root": "packages/firebase-connector",
-    "sourceRoot": "packages/firebase-connector/src",
+    "root": "packages/firebase",
+    "sourceRoot": "packages/firebase/src",
     "projectType": "library",
     "tags": [],
     "targets": {
@@ -8,16 +8,16 @@
             "executor": "@nrwl/web:rollup",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "build/firebase-connector",
-                "tsConfig": "packages/firebase-connector/tsconfig.lib.json",
-                "project": "packages/firebase-connector/package.json",
-                "entryFile": "packages/firebase-connector/src/index.ts",
+                "outputPath": "build/firebase",
+                "tsConfig": "packages/firebase/tsconfig.lib.json",
+                "project": "packages/firebase/package.json",
+                "entryFile": "packages/firebase/src/index.ts",
                 "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
                 "compiler": "babel",
                 "buildableProjectDepsInPackageJsonType": "dependencies",
                 "assets": [
                     {
-                        "glob": "packages/firebase-connector/README.md",
+                        "glob": "packages/firebase/README.md",
                         "input": ".",
                         "output": "."
                     }
@@ -28,14 +28,14 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["packages/firebase-connector/**/*.ts"]
+                "lintFilePatterns": ["packages/firebase/**/*.ts"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/packages/firebase-connector"],
+            "outputs": ["coverage/packages/firebase"],
             "options": {
-                "jestConfig": "packages/firebase-connector/jest.config.js",
+                "jestConfig": "packages/firebase/jest.config.js",
                 "passWithNoTests": true
             }
         }

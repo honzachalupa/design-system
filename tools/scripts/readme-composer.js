@@ -5,7 +5,7 @@ const readmeRoot = dataRoot.toString();
 
 let readmeComposed = readmeRoot;
 
-["ui", "utils", "firebase-connector"].forEach((projectKey) => {
+["ui", "utils", "firebase"].forEach((projectKey) => {
     const data = fs.readFileSync(`./packages/${projectKey}/README.md`);
     const readme = data.toString();
 

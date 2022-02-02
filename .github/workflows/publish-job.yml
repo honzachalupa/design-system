@@ -60,10 +60,10 @@ jobs:
                   access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
-            - name: Publish Firebase Connector
+            - name: Publish Firebase library
               uses: JS-DevTools/npm-publish@v1
               with:
-                  package: build/firebase-connector/package.json
+                  package: build/firebase/package.json
                   access: public
                   token: ${{ secrets.NPM_TOKEN }}
 

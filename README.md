@@ -48,6 +48,19 @@ This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa
 
 This library is part of [`@honzachalupa/common`](https://github.com/honzachalupa/common) monorepo.
 
+## Installation
+
+When using on client-side, you may need to add Node.js fallbacks in your Webpack config.
+
+```
+fallback: {
+    stream: require.resolve("stream-browserify"),
+    zlib: require.resolve("browserify-zlib"),
+},
+```
+
+## Documentation
+
 ### App
 
 `cleanObject(object: object)`\

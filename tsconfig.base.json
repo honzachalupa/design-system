@@ -16,7 +16,6 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "paths": {
-            "@honzachalupa/ui": ["packages/ui/src/index.ts"],
             "@honzachalupa/utils": ["packages/utils/src/index.ts"]
         }
     },

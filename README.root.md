@@ -40,4 +40,4 @@ Thank you.
 
 ---
 
-{packagePlaceholder_firebase-connector}
+{packagePlaceholder_firebase}
