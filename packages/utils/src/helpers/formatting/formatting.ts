@@ -31,3 +31,74 @@ export const formatCurrency = (
 
 export const formatPhoneNumber = (phoneNumber: string): string =>
     phoneNumber.replace(/([+\d]{4})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
+
+export const boolToLabel = (
+    value: boolean | string,
+    trueText = "Yes",
+    falseText = "No",
+): string => (value.toString() === "true" ? trueText : falseText);
+
+export const addUnitLabel = (
+    value: number,
+    units:
+        | "years"
+        | "days"
+        | "persons-adults"
+        | "persons-children"
+        | "percents"
+        | "pieces",
+) => {
+    let unit;
+
+    switch (units) {
+        case "years":
+            if (value === 1) {
+                unit = " rok";
+            } else if (value < 5) {
+                unit = " roky";
+            } else {
+                unit = " let";
+            }
+            break;
+        case "days":
+            if (value === 1) {
+                unit = " den";
+            } else if (value < 5) {
+                unit = " dny";
+            } else {
+                unit = " dní";
+            }
+            break;
+        case "persons-adults":
+            if (value === 1) {
+                unit = " dospělý";
+            } else if (value <= 4) {
+                unit = " dospělí";
+            } else {
+                unit = " dospělých";
+            }
+            break;
+        case "persons-children":
+            if (value === 1) {
+                unit = " dítě";
+            } else if (value < 5) {
+                unit = " děti";
+            } else {
+                unit = " dětí";
+            }
+            break;
+        case "percents":
+            unit = "%";
+            break;
+        case "pieces":
+            unit = " ks";
+            break;
+        default:
+    }
+
+    if (!unit) {
+        throw new Error();
+    }
+
+    return `${value}${unit}`;
+};

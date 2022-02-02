@@ -1,5 +1,12 @@
 import { IAbstractObject } from "../../types";
 
+export const cleanObject = (object: IAbstractObject): IAbstractObject =>
+    Object.fromEntries(
+        Object.entries(object).filter(
+            ([_, v]) => v !== null && v !== undefined,
+        ),
+    );
+
 export const groupObjectsBy = (
     array: any[],
     key: string,

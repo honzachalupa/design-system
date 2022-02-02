@@ -1,5 +1,10 @@
 import { describe, expect, it } from "@jest/globals";
-import { formatCurrency, formatPhoneNumber } from "./formatting";
+import {
+    addUnitLabel,
+    boolToLabel,
+    formatCurrency,
+    formatPhoneNumber,
+} from "./formatting";
 
 describe("Helpers: Formatting", () => {
     describe("formatCurrency", () => {
@@ -39,6 +44,62 @@ describe("Helpers: Formatting", () => {
             expect(formatPhoneNumber("+420 606 789 910")).toStrictEqual(
                 "+420 606 789 910",
             );
+        });
+    });
+
+    describe("boolToLabel", () => {
+        it("Case 1", () => {
+            expect(boolToLabel(true)).toStrictEqual("Yes");
+        });
+
+        it("Case 2", () => {
+            expect(boolToLabel("true")).toStrictEqual("Yes");
+        });
+
+        it("Case 3", () => {
+            expect(boolToLabel(false)).toStrictEqual("No");
+        });
+
+        it("Case 4", () => {
+            expect(boolToLabel("false")).toStrictEqual("No");
+        });
+
+        it("Case 5", () => {
+            expect(boolToLabel("")).toStrictEqual("No");
+        });
+    });
+
+    describe("addUnitLabel", () => {
+        it("Case 1 - 1 rok", () => {
+            expect(addUnitLabel(1, "years")).toStrictEqual("1 rok");
+        });
+
+        it("Case 2", () => {
+            expect(addUnitLabel(4, "years")).toStrictEqual("4 roky");
+        });
+
+        it("Case 3", () => {
+            expect(addUnitLabel(5, "years")).toStrictEqual("5 let");
+        });
+
+        it("Case 4", () => {
+            expect(addUnitLabel(1, "days")).toStrictEqual("1 den");
+        });
+
+        it("Case 5", () => {
+            expect(addUnitLabel(4, "days")).toStrictEqual("4 dny");
+        });
+
+        it("Case 6", () => {
+            expect(addUnitLabel(5, "days")).toStrictEqual("5 dní");
+        });
+
+        it("Case 7", () => {
+            expect(addUnitLabel(90, "percents")).toStrictEqual("90%");
+        });
+
+        it("Case 8", () => {
+            expect(addUnitLabel(3, "pieces")).toStrictEqual("3 ks");
         });
     });
 });

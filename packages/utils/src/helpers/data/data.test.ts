@@ -1,7 +1,28 @@
 import { describe, expect, it } from "@jest/globals";
-import { groupObjectsBy } from "./data";
+import { cleanObject, groupObjectsBy } from "./data";
 
 describe("Helpers: Data", () => {
+    describe("cleanObject", () => {
+        it("Case 1", () => {
+            expect(cleanObject({ a: "abc", b: 1 })).toStrictEqual({
+                a: "abc",
+                b: 1,
+            });
+        });
+
+        it("Case 2", () => {
+            expect(
+                cleanObject({ a: undefined, b: null, c: "abc" }),
+            ).toStrictEqual({
+                c: "abc",
+            });
+        });
+
+        it("Case 3", () => {
+            expect(cleanObject({ a: undefined, b: null })).toStrictEqual({});
+        });
+    });
+
     describe("groupObjectsBy", () => {
         it("Case 1", () => {
             expect(

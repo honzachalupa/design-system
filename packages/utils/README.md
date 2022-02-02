@@ -17,20 +17,35 @@ fallback: {
 
 ### App
 
-`cleanObject(object: object)`\
+`initServiceWorker(path = "/service-worker.js", scope = "/")`
+`removeCachedData()`\
 `scrollToTop()`\
 `scrollToRef(ref: RefObject<HTMLElement>)`
 
+### Browser
+
+`getBrowserLanguage(fallbackLanguage?: string)`\
+`getDeviceInfo()`
+
 ### Data
 
+`cleanObject(object: object)`\
 `groupObjectsBy(array: any[], key: string)`\
 `fillStringVariables(string: string | number, variables: { [key: string]: string | number })`
 
 ### Formatting
 
 `formatCurrency(value: number, currencyCode: TCurrencyCodes)`\
-`formatPhoneNumber(phoneNumber: string)`
+`formatPhoneNumber(phoneNumber: string)`\
+`boolToLabel(value: boolean | string)`\
+`addUnitLabel(value: number, units: | "years" | "days" | "persons-adults" | "persons-children" | "percents" | "pieces")`
 
-### Browser
+### Hooks
 
-`getBrowserLanguage(fallbackLanguage?: string)`
+`useLogRocket({ token: string; userId: string | undefined; isEnabled: boolean; })`\
+`useDarkMode(defaultValue?: boolean)` (reimported from `usehooks-ts` library)\
+`useIsFirstRender()` (reimported from `usehooks-ts` library)\
+`useIsMounted()` (reimported from `usehooks-ts` library)\
+`useLocalStorage(key: string, initialValue: any)` (reimported from `usehooks-ts` library)\
+`useReadLocalStorage(key: string)` (reimported from `usehooks-ts` library)\
+`useWindowSize()` (reimported from `usehooks-ts` library)
