@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.0...v1.8.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* Added missing export. ([900d172](https://github.com/mokkapps/changelog-generator-demo/commits/900d172b1c4a25166333bbe814a37046966d441a))
+
 ## [1.8.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.7.0...v1.8.0) (2022-02-03)
 
 
