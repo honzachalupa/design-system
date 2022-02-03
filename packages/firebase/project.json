@@ -38,6 +38,18 @@
                 "jestConfig": "packages/firebase/jest.config.js",
                 "passWithNoTests": true
             }
+        },
+        "docs": {
+            "executor": "@twittwer/compodoc:compodoc",
+            "options": {
+                "tsConfig": "packages/firebase/tsconfig.lib.json",
+                "outputPath": "build/docs/firebase"
+            },
+            "configurations": {
+                "json": {
+                    "exportFormat": "json"
+                }
+            }
         }
     }
 }

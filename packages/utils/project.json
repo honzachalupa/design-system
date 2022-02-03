@@ -38,6 +38,18 @@
                 "jestConfig": "packages/utils/jest.config.js",
                 "passWithNoTests": true
             }
+        },
+        "docs": {
+            "executor": "@twittwer/compodoc:compodoc",
+            "options": {
+                "tsConfig": "packages/utils/tsconfig.lib.json",
+                "outputPath": "build/docs/utils"
+            },
+            "configurations": {
+                "json": {
+                    "exportFormat": "json"
+                }
+            }
         }
     }
 }

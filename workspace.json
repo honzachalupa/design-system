@@ -1,8 +1,8 @@
 {
     "version": 2,
     "projects": {
+        "firebase": "packages/firebase",
         "ui": "packages/ui",
-        "utils": "packages/utils",
-        "firebase": "packages/firebase"
+        "utils": "packages/utils"
     }
 }

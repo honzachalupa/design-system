@@ -70,6 +70,18 @@
                     "quiet": true
                 }
             }
+        },
+        "docs": {
+            "executor": "@twittwer/compodoc:compodoc",
+            "options": {
+                "tsConfig": "packages/ui/tsconfig.lib.json",
+                "outputPath": "build/docs/ui"
+            },
+            "configurations": {
+                "json": {
+                    "exportFormat": "json"
+                }
+            }
         }
     }
 }
