@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.1...v1.8.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* Fixed Slack notification after deploy. ([54fccaf](https://github.com/mokkapps/changelog-generator-demo/commits/54fccaffdae9849c0a4c5118b0cffef2c64160e6))
+
 ### [1.8.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.0...v1.8.1) (2022-02-03)
 
 
