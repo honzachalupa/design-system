@@ -89,12 +89,12 @@ fallback: {
 ### Hooks
 
 `useLogRocket({ token: string; userId: string | undefined; isEnabled: boolean; })`\
-`useDarkMode(defaultValue?: boolean)` (reimported from `usehooks-ts` library)\
-`useIsFirstRender()` (reimported from `usehooks-ts` library)\
-`useIsMounted()` (reimported from `usehooks-ts` library)\
-`useLocalStorage(key: string, initialValue: any)` (reimported from `usehooks-ts` library)\
-`useReadLocalStorage(key: string)` (reimported from `usehooks-ts` library)\
-`useWindowSize()` (reimported from `usehooks-ts` library)
+`useDarkMode(defaultValue?: boolean)` (reexported from `usehooks-ts` library)\
+`useIsFirstRender()` (reexported from `usehooks-ts` library)\
+`useIsMounted()` (reexported from `usehooks-ts` library)\
+`useLocalStorage(key: string, initialValue: any)` (reexported from `usehooks-ts` library)\
+`useReadLocalStorage(key: string)` (reexported from `usehooks-ts` library)\
+`useWindowSize()` (reexported from `usehooks-ts` library)
 
 
 ---
