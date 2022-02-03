@@ -80,3 +80,4 @@ jobs:
                   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
                   SLACK_USERNAME: honzachalupa/common
                   SLACK_ICON: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+                  SLACK_MESSAGE: ${{ github.event.head_commit.message }}
