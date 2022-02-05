@@ -1,9 +1,13 @@
 import { IAbstractObject } from "../../types";
 
 export const cleanObject = (object: IAbstractObject): IAbstractObject =>
-    Object.fromEntries(
-        Object.entries(object).filter(
-            ([_, v]) => v !== null && v !== undefined,
+    JSON.parse(
+        JSON.stringify(
+            Object.fromEntries(
+                Object.entries(object).filter(
+                    ([_, v]) => v !== null && v !== undefined,
+                ),
+            ),
         ),
     );
 
