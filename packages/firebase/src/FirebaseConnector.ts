@@ -9,6 +9,7 @@ import {
     QuerySnapshot,
 } from "firebase/firestore";
 import { FirebaseStorage as IStorage } from "firebase/storage";
+import moment from "moment";
 import { Analytics, Auth, Firestore, Storage } from "./Firebase";
 import { TQuery } from "./types";
 
@@ -63,7 +64,7 @@ export class FirebaseConnector {
         ) =>
             Firestore.addDoc(collection, {
                 ...cleanObject(data),
-                [timestampKey || "createdDate"]: Firestore.Timestamp.now(),
+                [timestampKey || "createdDate"]: moment().toString(),
             }),
 
         update: (
@@ -73,7 +74,7 @@ export class FirebaseConnector {
         ) =>
             Firestore.updateDoc(Firestore.doc(collection, id.toString()), {
                 ...cleanObject(data),
-                updatedDate: Firestore.Timestamp.now(),
+                updatedDate: moment().toString(),
             }),
 
         set: (
@@ -83,7 +84,7 @@ export class FirebaseConnector {
         ) =>
             Firestore.setDoc(Firestore.doc(collection, id.toString()), {
                 ...cleanObject(data),
-                createdDate: Firestore.Timestamp.now(),
+                createdDate: moment().toString(),
             }),
 
         get: (collection: CollectionReference, id: string | number) =>

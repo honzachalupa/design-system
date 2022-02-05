@@ -22,7 +22,6 @@ import {
     query,
     QuerySnapshot,
     setDoc,
-    Timestamp,
     updateDoc,
     where,
 } from "firebase/firestore";
@@ -51,7 +50,6 @@ export const Firestore = {
     orderBy,
     QuerySnapshot,
     where,
-    Timestamp,
 };
 
 export const Auth = {
