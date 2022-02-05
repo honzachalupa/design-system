@@ -12,6 +12,8 @@ import { FirebaseStorage as IStorage } from "firebase/storage";
 import { Analytics, Auth, Firestore, Storage } from "./Firebase";
 import { TQuery } from "./types";
 
+console.log(555, Firestore.Timestamp.now());
+
 export class FirebaseConnector {
     public firestore: IFirestore;
     private auth: IAuth;
@@ -82,7 +84,7 @@ export class FirebaseConnector {
             data: IAbstractObject,
         ) => {
             console.log(666, Firestore.Timestamp.now());
-            
+
             return Firestore.setDoc(Firestore.doc(collection, id.toString()), {
                 ...cleanObject(data),
                 createdDate: Firestore.Timestamp.now(),

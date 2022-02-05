@@ -1,3 +1,4 @@
+import { Timestamp } from "@firebase/firestore";
 import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
@@ -22,7 +23,6 @@ import {
     query,
     QuerySnapshot,
     setDoc,
-    Timestamp,
     updateDoc,
     where,
 } from "firebase/firestore";
