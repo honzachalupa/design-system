@@ -1,10 +1,3 @@
-import {
-    CollectionReference,
-    limit,
-    orderBy,
-    QuerySnapshot,
-    where,
-} from "@firebase/firestore";
 import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
@@ -17,16 +10,21 @@ import {
 import {
     addDoc,
     collection,
+    CollectionReference,
     doc,
     DocumentSnapshot,
     getDoc,
     getDocs,
     getFirestore,
+    limit,
     onSnapshot,
+    orderBy,
     query,
+    QuerySnapshot,
     setDoc,
     Timestamp,
     updateDoc,
+    where,
 } from "firebase/firestore";
 import {
     getDownloadURL,
