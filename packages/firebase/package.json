@@ -4,5 +4,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/honzachalupa/common.git"
+    },
+    "peerDependencies": {
+        "firebase": "^9.6.5",
+        "firebase-admin": "^10.0.2"
     }
 }

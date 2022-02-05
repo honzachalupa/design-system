@@ -61,39 +61,30 @@ export class FirebaseConnector {
             data: IAbstractObject,
             timestampKey?: string,
         ) =>
-            Firestore.addDoc(
-                collection,
-                cleanObject({
-                    ...data,
-                    [timestampKey || "createdDate"]: Firestore.Timestamp.now(),
-                }),
-            ),
+            Firestore.addDoc(collection, {
+                ...cleanObject(data),
+                [timestampKey || "createdDate"]: Firestore.Timestamp.now(),
+            }),
 
         update: (
             collection: CollectionReference,
             id: string | number,
             data: IAbstractObject,
         ) =>
-            Firestore.updateDoc(
-                Firestore.doc(collection, id.toString()),
-                cleanObject({
-                    ...data,
-                    updatedDate: Firestore.Timestamp.now(),
-                }),
-            ),
+            Firestore.updateDoc(Firestore.doc(collection, id.toString()), {
+                ...cleanObject(data),
+                updatedDate: Firestore.Timestamp.now(),
+            }),
 
         set: (
             collection: CollectionReference,
             id: string | number,
             data: IAbstractObject,
         ) =>
-            Firestore.setDoc(
-                Firestore.doc(collection, id.toString()),
-                cleanObject({
-                    ...data,
-                    createdDate: Firestore.Timestamp.now(),
-                }),
-            ),
+            Firestore.setDoc(Firestore.doc(collection, id.toString()), {
+                ...cleanObject(data),
+                createdDate: Firestore.Timestamp.now(),
+            }),
 
         get: (collection: CollectionReference, id: string | number) =>
             Firestore.getDoc(Firestore.doc(collection, id.toString())),
