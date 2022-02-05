@@ -80,11 +80,14 @@ export class FirebaseConnector {
             collection: CollectionReference,
             id: string | number,
             data: IAbstractObject,
-        ) =>
-            Firestore.setDoc(Firestore.doc(collection, id.toString()), {
+        ) => {
+            console.log(666, Firestore.Timestamp.now());
+            
+            return Firestore.setDoc(Firestore.doc(collection, id.toString()), {
                 ...cleanObject(data),
                 createdDate: Firestore.Timestamp.now(),
-            }),
+            });
+        },
 
         get: (collection: CollectionReference, id: string | number) =>
             Firestore.getDoc(Firestore.doc(collection, id.toString())),

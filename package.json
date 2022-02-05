@@ -3,7 +3,7 @@
     "version": "1.8.2",
     "license": "MIT",
     "scripts": {
-        "start": "nx serve",
+        "start": "nx run-many --target=build --all --watch",
         "build": "node tools/scripts/readme-composer.js && nx run-many --target=build --all",
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
