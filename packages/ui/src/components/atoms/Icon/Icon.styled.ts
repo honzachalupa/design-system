@@ -9,6 +9,7 @@ export const StyledContainer = styled.div<{ size?: number; color?: string }>`
 
     svg {
         fill: ${({ color }) => color};
+        color: ${({ color }) => color};
         width: 100%;
         height: 100%;
 
