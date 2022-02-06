@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.10](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.9...v1.8.10) (2022-02-06)
+
+
+### Bug Fixes
+
+* **DNS-60:** Done. ([f995807](https://github.com/mokkapps/changelog-generator-demo/commits/f99580787ee4814efd255bbec0eaaf0abfd7ccc4))
+
 ### [1.8.9](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.8...v1.8.9) (2022-02-05)
 
 ### [1.8.8](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.7...v1.8.8) (2022-02-05)
