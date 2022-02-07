@@ -42,7 +42,7 @@ export const StyledCellsContainer = styled.div<{ hasActions: boolean }>`
     align-items: center;
 `;
 
-export const StyledCell = styled.p<{ count: number; isBold?: boolean }>`
+export const StyledCell = styled.div<{ count: number; isBold?: boolean }>`
     width: ${({ count }) => `${100 / count}%`};
     font-weight: ${({ isBold }) => (isBold ? 600 : undefined)};
     text-overflow: ellipsis;
