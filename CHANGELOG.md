@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.12...v1.9.0) (2022-02-07)
+
+
+### Features
+
+* **utils:** Added new React hooks. ([794b5b4](https://github.com/mokkapps/changelog-generator-demo/commits/794b5b464b827a0da203fc81ebef929f242b0165))
+
 ### [1.8.12](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.10...v1.8.12) (2022-02-07)
 
 ### [1.8.11](https://github.com/mokkapps/changelog-generator-demo/compare/v1.8.10...v1.8.11) (2022-02-07)
