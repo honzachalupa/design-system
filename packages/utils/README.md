@@ -38,7 +38,8 @@ fallback: {
 `formatCurrency(value: number, currencyCode: TCurrencyCodes)`\
 `formatPhoneNumber(phoneNumber: string)`\
 `boolToLabel(value: boolean | string)`\
-`addUnitLabel(value: number, units: | "years" | "days" | "persons-adults" | "persons-children" | "percents" | "pieces")`
+`addUnitLabel(value: number, units: | "years" | "days" | "persons-adults" | "persons-children" | "percents" | "pieces")`\
+`getRandomHexColor()`
 
 ### Hooks
 

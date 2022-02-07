@@ -1,6 +1,7 @@
 import {
     Document,
     Font,
+    Image,
     Page,
     PDFDownloadLink,
     Text,
@@ -11,6 +12,7 @@ export const PdfRenderer = {
     Document,
     Font,
     Page,
+    Image,
     Text,
     View,
     PDFDownloadLink,
