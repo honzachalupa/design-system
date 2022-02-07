@@ -4,7 +4,6 @@ import {
     boolToLabel,
     formatCurrency,
     formatPhoneNumber,
-    getRandomHexColor,
 } from "./formatting";
 
 describe("Helpers: Formatting", () => {
@@ -101,12 +100,6 @@ describe("Helpers: Formatting", () => {
 
         it("Case 8", () => {
             expect(addUnitLabel(3, "pieces")).toStrictEqual("3 ks");
-        });
-    });
-
-    describe("getRandomHexColor", () => {
-        it("Case 1", () => {
-            expect(getRandomHexColor()).toMatch(/^#([a-z]|\d){6}$/i);
         });
     });
 });
