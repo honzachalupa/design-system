@@ -17,3 +17,7 @@ export const StyledErrorIcon = styled(Icon)`
 export const StyledErrorMessage = styled.p`
     font-size: 14px;
 `;
+
+export const StyledImage = styled.img`
+    object-fit: cover;
+`;

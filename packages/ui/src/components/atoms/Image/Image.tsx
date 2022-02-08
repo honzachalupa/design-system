@@ -5,6 +5,7 @@ import {
     StyledContainer,
     StyledErrorIcon,
     StyledErrorMessage,
+    StyledImage,
 } from "./Image.styled";
 
 export interface IProps {
@@ -60,7 +61,7 @@ export const Image: React.FC<IProps> = ({
             <StyledErrorMessage>{fetchFailedText}</StyledErrorMessage>
         </StyledContainer>
     ) : (
-        <img
+        <StyledImage
             src={url}
             alt={fetchFailedText}
             className={className}
