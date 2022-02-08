@@ -1,20 +1,20 @@
 import {
-    BlobProvider,
     Document,
     Font,
     Image,
     Page,
+    pdf,
     PDFDownloadLink,
     Text,
     View,
 } from "@react-pdf/renderer";
 
 export const PdfRenderer = {
-    BlobProvider,
     Document,
     Font,
     Image,
     Page,
+    pdf,
     PDFDownloadLink,
     Text,
     View,
