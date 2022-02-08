@@ -3,6 +3,7 @@
     "rules": {
         "subject-case": [0],
         "subject-full-stop": [0],
+        "subject-empty": [0],
         "type-empty": [0]
     }
 }
