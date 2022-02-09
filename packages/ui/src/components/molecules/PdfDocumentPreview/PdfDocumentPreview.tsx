@@ -25,7 +25,7 @@ export const PdfDocumentPreview: React.FC<IProps> = ({ document }) => {
         <StyledDocumentViewerContainer>
             {!isLoaded && <StyledLoader color={theme.colors.grayLight} />}
 
-            <StyledDocumentViewer isLoaded={isLoaded} showToolbar={false}>
+            <StyledDocumentViewer loaded={isLoaded} showToolbar={false}>
                 {document}
             </StyledDocumentViewer>
         </StyledDocumentViewerContainer>

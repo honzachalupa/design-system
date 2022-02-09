@@ -14,11 +14,11 @@ export const StyledLoader = styled(Loader)`
     position: absolute;
 `;
 
-export const StyledDocumentViewer = styled(PDFViewer)<{ isLoaded: boolean }>`
+export const StyledDocumentViewer = styled(PDFViewer)<{ loaded: boolean }>`
     width: 100%;
     height: 100%;
     aspect-ratio: 1.44/1;
     border: none;
     margin: -5px;
-    opacity: ${({ isLoaded }) => (isLoaded ? 1 : 0)};
+    opacity: ${({ loaded }) => (loaded ? 1 : 0)};
 `;
