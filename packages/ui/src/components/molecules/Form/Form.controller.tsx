@@ -53,7 +53,7 @@ export interface IProps {
     };
     className?: string;
     buttonsRenderer?: (onSubmit: any) => IButtonProps[];
-    onChange?: (event: any) => void;
+    onChange?: (formData: any) => void;
     onSubmit?: (formData: any) => void;
 }
 
