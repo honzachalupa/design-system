@@ -13,25 +13,24 @@ import moment from "moment";
 import { Analytics, Auth, Firestore, Storage } from "./Firebase";
 import { TQuery } from "./types";
 
+export interface ILoggerProps {
+    code: "EXCEPTION";
+    scope: string;
+    error?: Error;
+    message?: string;
+    data?: IAbstractObject;
+}
+
+type TLogger = (props: ILoggerProps) => void;
+
 export class FirebaseConnector {
     public firestore: IFirestore;
     private auth: IAuth;
     private storage: IStorage;
     private analytics: IAnalytics | undefined;
-    private log?: (props: {
-        code: "EXCEPTION";
-        message: string;
-        data?: IAbstractObject;
-    }) => void;
+    private log?: TLogger;
 
-    constructor(
-        credentials: FirebaseOptions,
-        logger?: (props: {
-            code: "EXCEPTION";
-            message: string;
-            data?: IAbstractObject;
-        }) => void,
-    ) {
+    constructor(credentials: FirebaseOptions, logger?: TLogger) {
         const app = initializeApp(credentials);
 
         this.firestore = Firestore.getFirestore(app);
@@ -104,17 +103,20 @@ export class FirebaseConnector {
 
                         return;
                     } else if (callbackError) {
-                        const errorMessage = `Document with id ${id} doesn't exists.`;
+                        const error = new Error(
+                            `Document with id ${id} doesn't exists.`,
+                        );
 
                         this.log?.({
                             code: "EXCEPTION",
-                            message: errorMessage,
+                            scope: this.constructor.name,
+                            error,
                             data: {
                                 id,
                             },
                         });
 
-                        callbackError(new Error(errorMessage));
+                        callbackError(error);
                     }
                 },
                 callbackError,
@@ -162,7 +164,8 @@ export class FirebaseConnector {
                 .catch((error) => {
                     this.log?.({
                         code: "EXCEPTION",
-                        message: error,
+                        scope: this.constructor.name,
+                        error,
                         data: {
                             path,
                         },
