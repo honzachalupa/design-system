@@ -1,43 +1,112 @@
-import { useCallback, useEffect, useState } from "react";
+// Reexported from react-use library.
 
-// Source: https://usehooks.com/useAsync/
+import {
+    DependencyList,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 
-export const useAsync = (
-    asyncFunction: () => Promise<any>,
-    immediate = true,
-) => {
-    const [status, setStatus] = useState("idle");
-    const [value, setValue] = useState(null);
-    const [error, setError] = useState(null);
+export type PromiseType<P extends Promise<any>> = P extends Promise<infer T>
+    ? T
+    : never;
 
-    // The execute function wraps asyncFunction and
-    // handles setting state for pending, value, and error.
-    // useCallback ensures the below useEffect is not called
-    // on every render, but only if asyncFunction changes.
-    const execute = useCallback(() => {
-        setStatus("pending");
-        setValue(null);
-        setError(null);
+export type FunctionReturningPromise = (...args: any[]) => Promise<any>;
 
-        return asyncFunction()
-            .then((response) => {
-                setValue(response);
-                setStatus("success");
-            })
-            .catch((error) => {
-                setError(error);
-                setStatus("error");
-            });
-    }, [asyncFunction]);
+export type AsyncState<T> =
+    | {
+          loading: boolean;
+          error?: undefined;
+          value?: undefined;
+      }
+    | {
+          loading: true;
+          error?: Error | undefined;
+          value?: T;
+      }
+    | {
+          loading: false;
+          error: Error;
+          value?: undefined;
+      }
+    | {
+          loading: false;
+          error?: undefined;
+          value: T;
+      };
 
-    // Call execute if we want to fire it right away.
-    // Otherwise execute can be called later, such as
-    // in an onClick handler.
+type StateFromFunctionReturningPromise<T extends FunctionReturningPromise> =
+    AsyncState<PromiseType<ReturnType<T>>>;
+
+export type AsyncFnReturn<
+    T extends FunctionReturningPromise = FunctionReturningPromise,
+> = [StateFromFunctionReturningPromise<T>, T];
+
+function useMountedState(): () => boolean {
+    const mountedRef = useRef<boolean>(false);
+    const get = useCallback(() => mountedRef.current, []);
+
     useEffect(() => {
-        if (immediate) {
-            execute();
-        }
-    }, [execute, immediate]);
+        mountedRef.current = true;
 
-    return { execute, status, value, error };
-};
+        return () => {
+            mountedRef.current = false;
+        };
+    }, []);
+
+    return get;
+}
+
+function useAsyncFn<T extends FunctionReturningPromise>(
+    fn: T,
+    deps: DependencyList = [],
+    initialState: StateFromFunctionReturningPromise<T> = { loading: false },
+): AsyncFnReturn<T> {
+    const lastCallId = useRef(0);
+    const isMounted = useMountedState();
+    const [state, set] =
+        useState<StateFromFunctionReturningPromise<T>>(initialState);
+
+    const callback = useCallback((...args: Parameters<T>): ReturnType<T> => {
+        const callId = ++lastCallId.current;
+
+        if (!state.loading) {
+            set((prevState) => ({ ...prevState, loading: true }));
+        }
+
+        return fn(...args).then(
+            (value) => {
+                isMounted() &&
+                    callId === lastCallId.current &&
+                    set({ value, loading: false });
+
+                return value;
+            },
+            (error) => {
+                isMounted() &&
+                    callId === lastCallId.current &&
+                    set({ error, loading: false });
+
+                return error;
+            },
+        ) as ReturnType<T>;
+    }, deps);
+
+    return [state, callback as unknown as T];
+}
+
+export default function useAsync<T extends FunctionReturningPromise>(
+    fn: T,
+    deps: DependencyList = [],
+) {
+    const [state, callback] = useAsyncFn(fn, deps, {
+        loading: true,
+    });
+
+    useEffect(() => {
+        callback();
+    }, [callback]);
+
+    return state;
+}
