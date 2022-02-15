@@ -22,6 +22,7 @@ export const StyledButton = styled.button<{
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 0 15px ${({ theme }) => theme.colors.grayLight};
+    cursor: pointer;
     transition: 200ms background-color, color, opacity;
 
     &:hover {
@@ -82,7 +83,7 @@ export const StyledButton = styled.button<{
     ${({ isDisabled }) =>
         isDisabled &&
         `
-            cursor: default;
+            cursor: not-allowed;
             pointer-events: none;
             opacity: 0.5;
         `}
