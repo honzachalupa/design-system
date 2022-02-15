@@ -1,5 +1,5 @@
+import { useLocalStorage } from "@honzachalupa/utils";
 import { useEffect } from "react";
-import { useLocalStorage } from "usehooks-ts";
 import { Button } from "../../atoms/Button";
 import { Text } from "../../atoms/typography/Text";
 import {
