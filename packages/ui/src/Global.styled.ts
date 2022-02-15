@@ -1,28 +1,27 @@
 import { createGlobalStyle } from "styled-components";
-import { DefaultTheme } from "./DefaultTheme";
 
-export const GlobalStyle = createGlobalStyle<{ isScrollDisabled: boolean }>`
+export const GlobalStyle = createGlobalStyle<{ isScrollDisabled?: boolean }>`
     * {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-family: ${DefaultTheme.fonts.primary};
+        font-family: ${({ theme }) => theme.fonts.primary};
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        color: ${DefaultTheme.fontColors.faded};
+        color: ${({ theme }) => theme.fontColors.faded};
     }
 
     html {
         font-size: 18px;
     }
 
-    @media (max-width: ${DefaultTheme.breakpoints.sm}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         html {
             font-size: 10px;
         }
     }
 
-    @media (max-width: ${DefaultTheme.breakpoints.md}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
         html {
             font-size: 14px;
         }
@@ -31,7 +30,7 @@ export const GlobalStyle = createGlobalStyle<{ isScrollDisabled: boolean }>`
     body {
         width: 100vw;
         height: 100vh;
-        background-color: ${DefaultTheme.background};
+        background-color: ${({ theme }) => theme.background};
         overflow-x: hidden;
 
         button {
@@ -68,7 +67,7 @@ export const GlobalStyle = createGlobalStyle<{ isScrollDisabled: boolean }>`
         }
 
         a {
-            color: ${DefaultTheme.colors.accentSecondary};
+            color: ${({ theme }) => theme.colors.accentSecondary};
             text-decoration: none;
         }
 

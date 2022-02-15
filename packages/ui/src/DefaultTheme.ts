@@ -17,8 +17,8 @@ export const DefaultTheme: ITheme = {
     colors,
     background: colors.white,
     fonts: {
-        primary: "'Barlow', sans-serif",
-        secondary: "'Playfair Display', sans-serif",
+        primary: "sans-serif",
+        secondary: "sans-serif",
     },
     fontColors: {
         black: colors.black,
