@@ -2418,6 +2418,27 @@
     "@logtail/tools" "^0.1.8"
     "@logtail/types" "^0.1.8"
 
+"@logtail/js@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@logtail/js/-/js-0.1.10.tgz#49db4594db6154617248346147078fbf06567aa9"
+  integrity sha512-Ny+Fvb8VVGsr7OJpX2OmuJOg2fiPbkmSqBffBEGnf0/uMazyWbo2iJ6PLqTRY716soABR4nyDktV7oUMyiSIIw==
+  dependencies:
+    "@logtail/browser" "^0.1.10"
+    "@logtail/node" "^0.1.10"
+
+"@logtail/node@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@logtail/node/-/node-0.1.10.tgz#836160f68aade6e14b2abc482e746e5dad827dd8"
+  integrity sha512-zJgKm593NkMMI3QJBCR1ry6pS/2YKINO9cNZWBDEOeG06L2vVFn/BdK/Uxuypyi9LtQ9kc5lZSbFPBi91NiHlg==
+  dependencies:
+    "@logtail/core" "^0.1.10"
+    "@logtail/types" "^0.1.8"
+    "@msgpack/msgpack" "^2.5.1"
+    "@types/stack-trace" "^0.0.29"
+    cross-fetch "^3.0.4"
+    minimatch "^3.0.4"
+    stack-trace "^0.0.10"
+
 "@logtail/tools@^0.1.8":
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@logtail/tools/-/tools-0.1.8.tgz#9598c37c830de27bc676fc1f33f720d3a76aaafe"
@@ -2483,6 +2504,11 @@
   dependencies:
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
+
+"@msgpack/msgpack@^2.5.1":
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/@msgpack/msgpack/-/msgpack-2.7.2.tgz#f34b8aa0c49f0dd55eb7eba577081299cbf3f90b"
+  integrity sha512-rYEi46+gIzufyYUAoHDnRzkWGxajpD9vVXFQ3g1vbjrBm6P7MBmm+s/fqPa46sxa+8FOUdEuRQKaugo5a4JWpw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -5049,6 +5075,11 @@
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
   integrity sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
+
+"@types/stack-trace@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/stack-trace/-/stack-trace-0.0.29.tgz#eb7a7c60098edb35630ed900742a5ecb20cfcb4d"
+  integrity sha512-TgfOX+mGY/NyNxJLIbDWrO9DjGoVSW9+aB8H2yy1fy32jsvxijhmyJI9fDFgvz3YP4lvJaq9DzdR/M1bOgVc9g==
 
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
@@ -16805,6 +16836,11 @@ stable@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
+
+stack-trace@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
+  integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
 stack-utils@^2.0.2, stack-utils@^2.0.3:
   version "2.0.5"

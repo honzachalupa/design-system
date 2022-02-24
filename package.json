@@ -14,7 +14,7 @@
         "docs": "nx run-many --target=docs --all"
     },
     "dependencies": {
-        "@logtail/browser": "^0.1.10",
+        "@logtail/js": "^0.1.10",
         "@react-pdf/renderer": "^2.1.1",
         "core-js": "^3.21.0",
         "firebase": "^9.6.5",
