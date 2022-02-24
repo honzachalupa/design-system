@@ -1,3 +1,4 @@
+export { Logtail } from "@logtail/browser";
 export * from "./helpers/app";
 export * from "./helpers/browser";
 export * from "./helpers/data";

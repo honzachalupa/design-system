@@ -2401,6 +2401,37 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@logtail/browser@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@logtail/browser/-/browser-0.1.10.tgz#88c1cc4292d0a2f7593f6b55b40d51e682d46d1a"
+  integrity sha512-OtL7rpXaQtLC/tFAleBRF+YNoy8VZU1zikZ7VzmgDxp4ySBhL42GQCa8NBNwinyk6B82KMk20m0aOmixD1mQ8A==
+  dependencies:
+    "@logtail/core" "^0.1.10"
+    "@logtail/tools" "^0.1.8"
+    cross-fetch "^3.0.4"
+
+"@logtail/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@logtail/core/-/core-0.1.10.tgz#83154b1e1e86f073604c73b340fe1c069ca471d8"
+  integrity sha512-76q951W7EoaF7SwAZbLsnAjD0QUXNHHGXnsBu/tGHd5UT50jlyxI0t27Lev9IQiF08NFy9SlBE1V26RAeMDccQ==
+  dependencies:
+    "@logtail/tools" "^0.1.8"
+    "@logtail/types" "^0.1.8"
+
+"@logtail/tools@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@logtail/tools/-/tools-0.1.8.tgz#9598c37c830de27bc676fc1f33f720d3a76aaafe"
+  integrity sha512-Q2lQBrTRzLCFYJXxhQFfigSpU5Vanhi/EAwOULfNZQn4vV68PKKfqTWK3IRSqOVJ4YpjPusu+BpNGasZfyWACQ==
+  dependencies:
+    "@logtail/types" "^0.1.8"
+
+"@logtail/types@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@logtail/types/-/types-0.1.8.tgz#a87489ceba1150453a0fc81eee032f8ddcf3272e"
+  integrity sha512-2XsXMGLK675kkJ+Pq0RE4c0hGFUr7hP4kt2/GTf/5FTzKre3VE0M9yRIXubpsQq4pIrnMgzVnH42A+z92QwL/A==
+  dependencies:
+    js "^0.1.0"
+
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.6.22.tgz#d9e8fe7f8185ff13c9c8639c048b123e30d322c4"
@@ -7348,6 +7379,13 @@ commander@^8.3.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
 
+commander@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-1.1.1.tgz#50d1651868ae60eccff0a2d9f34595376bc6b041"
+  integrity sha1-UNFlGGiuYOzP8KLZ80WVN2vGsEE=
+  dependencies:
+    keypress "0.1.x"
+
 commitlint@^16.1.0:
   version "16.2.1"
   resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-16.2.1.tgz#1fbe7571b0f926440973a19ea916af6f4f3a54ba"
@@ -7862,7 +7900,7 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
-cross-fetch@^3.1.5:
+cross-fetch@^3.0.4, cross-fetch@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.5.tgz#e1389f44d9e7ba767907f7af8454787952ab534f"
   integrity sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==
@@ -12401,6 +12439,13 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
+js@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/js/-/js-0.1.0.tgz#e1d0afd55ea39c2b28da304e8143eaf2c133f366"
+  integrity sha1-4dCv1V6jnCso2jBOgUPq8sEz82Y=
+  dependencies:
+    commander "~1.1.1"
+
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
@@ -12631,6 +12676,11 @@ jws@^4.0.0:
   dependencies:
     jwa "^2.0.0"
     safe-buffer "^5.0.1"
+
+keypress@0.1.x:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/keypress/-/keypress-0.1.0.tgz#4a3188d4291b66b4f65edb99f806aa9ae293592a"
+  integrity sha1-SjGI1CkbZrT2XtuZ+AaqmuKTWSo=
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -18192,8 +18242,10 @@ watchpack@^1.7.4:
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.5.tgz#1267e6c55e0b9b5be44c2023aed5437a2c26c453"
   integrity sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==
   dependencies:
+    chokidar "^3.4.1"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
+    watchpack-chokidar2 "^2.0.1"
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
