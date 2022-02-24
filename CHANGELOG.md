@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.10.0...v1.11.0) (2022-02-24)
+
+
+### Features
+
+* Changed Logtail service reexport. ([14dc0f5](https://github.com/mokkapps/changelog-generator-demo/commits/14dc0f528d709d0a5ccfccf294132ec0862bb8e4))
+
 ## [1.10.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.9.10...v1.10.0) (2022-02-24)
 
 
