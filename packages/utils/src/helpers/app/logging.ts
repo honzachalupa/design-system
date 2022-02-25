@@ -3,7 +3,9 @@ import { IAbstractObject } from "../../types";
 import { cleanObject } from "../data";
 
 interface IProps {
-    logtailToken?: string;
+    logtail?: {
+        token: string;
+    };
     levelsMap: {
         [key in TLogEntryLevels]: string[];
     };
@@ -22,13 +24,13 @@ export interface ILogProps {
 }
 
 export const initializeLogger = ({
-    logtailToken,
+    logtail,
     levelsMap,
     appVersion,
 }: IProps) => {
-    const logtail = logtailToken ? new Logtail(logtailToken) : undefined;
+    const logger = logtail ? new Logtail(logtail.token) : undefined;
 
-    if (!logtail) {
+    if (!logger) {
         console.info("Logger initialized without Logtail connection.");
     }
 
@@ -58,8 +60,8 @@ export const initializeLogger = ({
             data: data && cleanObject(data),
         };
 
-        if (logtail) {
-            logtail[level](payload.message, payload as any);
+        if (logger) {
+            logger[level](payload.message, payload as any);
         }
 
         if (!isSilent) {
