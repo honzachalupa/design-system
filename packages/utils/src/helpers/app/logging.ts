@@ -28,7 +28,7 @@ export const initializeLogger = ({
     levelsMap,
     appVersion,
 }: IProps) => {
-    const logger = logtail ? new Logtail(logtail.token) : undefined;
+    const logger = logtail?.token ? new Logtail(logtail.token) : null;
 
     if (!logger) {
         console.info("Logger initialized without Logtail connection.");
