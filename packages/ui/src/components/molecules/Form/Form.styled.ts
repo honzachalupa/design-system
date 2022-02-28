@@ -37,6 +37,14 @@ export const StyledInputContainer = styled.div<{
         `}
     }
 
+    select {
+        ${({ isReadOnly }) =>
+            isReadOnly &&
+            `
+            pointer-events: none;
+        `}
+    }
+
     textarea {
         height: 96px;
         resize: none;

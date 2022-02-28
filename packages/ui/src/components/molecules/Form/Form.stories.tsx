@@ -16,10 +16,33 @@ Default.args = {
         {
             id: "input-1",
             controlType: "input",
-            label: "Input 1",
+            label: "Input",
             rules: {
                 required: true,
             },
+        },
+        {
+            id: "input-2",
+            controlType: "select",
+            label: "Select",
+            options: [
+                {
+                    id: "1",
+                    label: "Option 1",
+                },
+                {
+                    id: "2",
+                    label: "Option 2",
+                },
+                {
+                    id: "3",
+                    label: "Option 3",
+                },
+            ],
+            rules: {
+                required: true,
+            },
+            isReadOnly: true,
         },
     ],
     validationTexts: {
