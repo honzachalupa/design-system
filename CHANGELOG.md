@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.4](https://github.com/mokkapps/changelog-generator-demo/compare/v1.11.3...v1.11.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* **ui:** Fixed Select in read-only mode. ([f878e16](https://github.com/mokkapps/changelog-generator-demo/commits/f878e166cc0148357ef5b8fc47d76485a1ff60d5))
+* **utils:** Fixed Logtail initialization. ([bcd4744](https://github.com/mokkapps/changelog-generator-demo/commits/bcd4744c9a32a27854c1779a974cf6cec46aaccd))
+
 ### [1.11.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.11.2...v1.11.3) (2022-02-25)
 
 ### [1.11.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.11.1...v1.11.2) (2022-02-25)
