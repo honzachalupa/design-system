@@ -4,7 +4,7 @@ import { cleanObject } from "../data";
 
 interface IProps {
     logtail?: {
-        token: string;
+        token?: string;
     };
     levelsMap: {
         [key in TLogEntryLevels]: string[];
