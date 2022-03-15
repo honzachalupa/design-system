@@ -2,11 +2,14 @@ import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
     getAuth,
+    getRedirectResult,
     GoogleAuthProvider,
     OAuthProvider,
     onAuthStateChanged,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
+    signInWithPopup,
+    signInWithRedirect,
     signOut,
 } from "firebase/auth";
 import {
@@ -60,6 +63,9 @@ export const Auth = {
     onAuthStateChanged,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
+    signInWithPopup,
+    signInWithRedirect,
+    getRedirectResult,
     signOut,
     OAuthProvider,
     GoogleAuthProvider,
