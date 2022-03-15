@@ -1,6 +1,6 @@
 import { cleanObject, IAbstractObject } from "@honzachalupa/utils";
 import { Analytics as IAnalytics } from "firebase/analytics";
-import { FirebaseOptions, initializeApp } from "firebase/app";
+import { FirebaseOptions, getApps, initializeApp } from "firebase/app";
 import { Auth as IAuth, User } from "firebase/auth";
 import {
     CollectionReference,
@@ -31,7 +31,10 @@ export class FirebaseConnector {
     private log?: TLogger;
 
     constructor(credentials: FirebaseOptions, logger?: TLogger) {
-        const app = initializeApp(credentials);
+        const apps = getApps();
+        const app = apps?.[0] || initializeApp(credentials);
+
+        console.log({ app, apps });
 
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);

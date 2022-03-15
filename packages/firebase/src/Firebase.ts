@@ -2,6 +2,8 @@ import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
     getAuth,
+    GoogleAuthProvider,
+    OAuthProvider,
     onAuthStateChanged,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
@@ -59,6 +61,8 @@ export const Auth = {
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
     signOut,
+    OAuthProvider,
+    GoogleAuthProvider,
 };
 
 export const Storage = {
