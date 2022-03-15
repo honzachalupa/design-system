@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.12.0...v1.13.0) (2022-03-15)
+
+
+### Features
+
+* **firebase:** Added new authentication providers. ([ed45f31](https://github.com/mokkapps/changelog-generator-demo/commits/ed45f31e57a46e4191eea6e0022e117ebaaf0abd))
+
 ## [1.12.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.11.4...v1.12.0) (2022-03-15)
 
 
