@@ -52,3 +52,7 @@ export const scrollToTop = (): void => window.scrollTo({ top: 0 });
 
 export const scrollToRef = (ref: RefObject<HTMLElement>): void =>
     ref.current?.scrollIntoView();
+
+export const getTestId = (id: string) => ({
+    "data-test-id": id,
+});
