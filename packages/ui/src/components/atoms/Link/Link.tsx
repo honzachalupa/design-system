@@ -1,4 +1,6 @@
+import { getTestId } from "@honzachalupa/utils";
 import { MouseEvent } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import {
     EButtonTypes,
     TButtonColors,
@@ -6,12 +8,11 @@ import {
 } from "../Button/Button.types";
 import { StyledLink } from "./Link.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     label: string;
     type?: EButtonTypes | "submit";
     color?: TButtonColors;
     size?: TButtonSizes;
-    className?: string;
     isDisabled?: boolean;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -22,6 +23,7 @@ export const Link: React.FC<IProps> = ({
     color = "accentSecondary",
     size = "medium",
     className,
+    testId,
     isDisabled = false,
     onClick = () => {},
 }) => (
@@ -33,5 +35,6 @@ export const Link: React.FC<IProps> = ({
         className={className}
         isDisabled={isDisabled}
         onClick={onClick}
+        {...getTestId(Link.name, testId)}
     />
 );

@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
+import { IComponentProps } from "../../../../interfaces/component";
 
-export interface ITextProps {
+export interface ITextProps extends IComponentProps {
     children: ReactNode;
     color?: string;
     sizeRem?: number;
     weight?: number;
     alignment?: "left" | "center" | "right";
-    className?: string;
 }
 
 export const StyledText = styled.p<ITextProps>`

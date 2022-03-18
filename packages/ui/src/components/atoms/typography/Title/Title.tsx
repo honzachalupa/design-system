@@ -1,3 +1,4 @@
+import { getTestId } from "@honzachalupa/utils";
 import { ITitleProps, StyledTitle } from "./Title.styled";
 
 export const Title: React.FC<ITitleProps> = (props) => {
@@ -9,5 +10,11 @@ export const Title: React.FC<ITitleProps> = (props) => {
         throw new Error("Invalid Title level.");
     }
 
-    return <StyledTitle tagName={tagName} {...props} />;
+    return (
+        <StyledTitle
+            tagName={tagName}
+            {...props}
+            {...getTestId(Title.name, props.testId)}
+        />
+    );
 };

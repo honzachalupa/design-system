@@ -1,4 +1,6 @@
+import { getTestId } from "@honzachalupa/utils";
 import { useTheme } from "styled-components";
+import { IComponentProps } from "../../../interfaces/component";
 import {
     StyledContainer,
     StyledIcon,
@@ -7,18 +9,25 @@ import {
     StyledOverlay,
 } from "./Loader.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     message?: string;
     color?: string;
-    className?: string;
     isFullscreen?: boolean;
 }
 
-const LoadingIndicator: React.FC<IProps> = ({ message, color, className }) => {
+const LoadingIndicator: React.FC<IProps> = ({
+    message,
+    color,
+    className,
+    testId,
+}) => {
     const theme = useTheme();
 
     return (
-        <StyledContainer className={className}>
+        <StyledContainer
+            className={className}
+            {...getTestId(Loader.name, testId)}
+        >
             <StyledIconContainer>
                 <StyledIcon
                     name="loading"
@@ -42,6 +51,7 @@ export const Loader: React.FC<IProps> = ({
     message,
     color,
     className,
+    testId,
     isFullscreen,
 }) =>
     isFullscreen ? (
@@ -50,6 +60,7 @@ export const Loader: React.FC<IProps> = ({
                 message={message}
                 color={color}
                 className={className}
+                testId={testId}
                 isFullscreen={isFullscreen}
             />
         </StyledOverlay>

@@ -1,14 +1,14 @@
 import { createElement } from "react";
 import styled from "styled-components";
+import { IComponentProps } from "../../../../interfaces/component";
 
 export type THeaderAlignments = "left" | "center" | "right";
 
-export interface ITitleProps {
+export interface ITitleProps extends IComponentProps {
     level: 1 | 2 | 3 | 4 | 5 | 6;
     styledAs?: 1 | 2 | 3 | 4 | 5 | 6;
     size?: number;
     alignment?: THeaderAlignments;
-    className?: string;
     hasMargin?: boolean;
 }
 

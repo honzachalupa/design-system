@@ -1,3 +1,4 @@
+import { getTestId } from "@honzachalupa/utils";
 import { ITextProps, StyledText } from "./Text.styled";
 
 export const Text: React.FC<ITextProps> = ({
@@ -7,6 +8,7 @@ export const Text: React.FC<ITextProps> = ({
     weight,
     alignment,
     className,
+    testId,
 }) => (
     <StyledText
         color={color}
@@ -14,6 +16,7 @@ export const Text: React.FC<ITextProps> = ({
         weight={weight}
         alignment={alignment}
         className={className}
+        {...getTestId(Text.name, testId)}
     >
         {children}
     </StyledText>

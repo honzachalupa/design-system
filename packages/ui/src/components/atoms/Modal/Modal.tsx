@@ -1,3 +1,4 @@
+import { getTestId } from "@honzachalupa/utils";
 import {
     forwardRef,
     ReactNode,
@@ -7,6 +8,7 @@ import {
     useState,
 } from "react";
 import { useTheme } from "styled-components";
+import { IComponentProps } from "../../../interfaces/component";
 import {
     StyledContainer,
     StyledContent,
@@ -22,7 +24,7 @@ export interface IModalRefProps {
     toggle: () => void;
 }
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     width?: number;
     height?: number;
     closeButtonText: string;
@@ -38,6 +40,8 @@ export const Modal: React.FC<IProps & RefAttributes<IModalRefProps>> =
                 width,
                 height,
                 closeButtonText,
+                className,
+                testId,
                 children,
                 setIsScrollDisabled,
                 onClose,
@@ -76,7 +80,10 @@ export const Modal: React.FC<IProps & RefAttributes<IModalRefProps>> =
             );
 
             return isOpened ? (
-                <StyledContainer>
+                <StyledContainer
+                    className={className}
+                    {...getTestId(Modal.name, testId)}
+                >
                     <StyledOverlay onClick={handleClose} />
 
                     <StyledContent width={width} height={height}>

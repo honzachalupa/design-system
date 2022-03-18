@@ -1,13 +1,14 @@
+import { getTestId } from "@honzachalupa/utils";
 import { Fragment, ReactChild, useState } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import { StyledContainer } from "./Carousel.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     transitionTime?: number;
     slides: {
         backgroundColor?: string;
         renderer: () => ReactChild;
     }[];
-    className?: string;
     isIndicatorsShown?: boolean;
     isInfiniteLoop?: boolean;
     isAutoPlayOn?: boolean;
@@ -17,6 +18,7 @@ export const Carousel: React.FC<IProps> = ({
     transitionTime = 500,
     slides,
     className,
+    testId,
     isIndicatorsShown = false,
     isInfiniteLoop = false,
     isAutoPlayOn = false,
@@ -39,6 +41,7 @@ export const Carousel: React.FC<IProps> = ({
             showIndicators={isIndicatorsShown}
             showThumbs={false}
             onChange={setIndex}
+            {...getTestId(Carousel.name, testId)}
         >
             {slides.map(({ renderer }, i) => (
                 <Fragment key={i}>{renderer()}</Fragment>

@@ -1,15 +1,16 @@
+import { getTestId } from "@honzachalupa/utils";
 import { createElement } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import { icons } from "./Icon.imports";
 import { StyledContainer } from "./Icon.styled";
 
 export type TIconName = keyof typeof icons;
 
-export interface IIconProps {
+export interface IIconProps extends IComponentProps {
     name: TIconName;
     color?: string;
     size?: number;
     label?: string;
-    className?: string;
     onClick?: () => void;
 }
 
@@ -19,6 +20,7 @@ export const Icon: React.FC<IIconProps> = ({
     size,
     label,
     className,
+    testId,
     onClick = () => {},
 }) => (
     <StyledContainer
@@ -27,6 +29,7 @@ export const Icon: React.FC<IIconProps> = ({
         title={label}
         className={className}
         onClick={onClick}
+        {...getTestId(Icon.name, testId)}
     >
         {createElement(icons[name])}
     </StyledContainer>

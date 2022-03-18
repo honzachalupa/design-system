@@ -1,7 +1,9 @@
+import { getTestId } from "@honzachalupa/utils";
 import ReactSwitch from "react-switch";
+import { IComponentProps } from "../../../interfaces/component";
 import { StyledContainer, StyledLabel } from "./Switch.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     checkedText?: string;
     uncheckedText?: string;
     isChecked: boolean;
@@ -12,9 +14,11 @@ export const Switch: React.FC<IProps> = ({
     checkedText,
     uncheckedText,
     isChecked,
+    className,
+    testId,
     onChange,
 }) => (
-    <StyledContainer>
+    <StyledContainer className={className} {...getTestId(Switch.name, testId)}>
         {isChecked && checkedText && <StyledLabel>{checkedText}</StyledLabel>}
         {!isChecked && uncheckedText && (
             <StyledLabel>{uncheckedText}</StyledLabel>

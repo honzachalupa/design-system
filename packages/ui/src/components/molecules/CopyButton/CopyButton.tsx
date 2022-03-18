@@ -1,7 +1,9 @@
+import { getTestId } from "@honzachalupa/utils";
 import React, { useEffect, useState } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import { StyledButton } from "./CopyButton.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     value: string | number;
     className?: string;
     copyText: string;
@@ -10,9 +12,10 @@ export interface IProps {
 
 export const CopyButton: React.FC<IProps> = ({
     value,
-    className,
     copyText,
     copiedText,
+    className,
+    testId,
 }) => {
     const [isSuccess, setIsSuccess] = useState<boolean>();
 
@@ -39,6 +42,7 @@ export const CopyButton: React.FC<IProps> = ({
             }}
             color="green"
             className={className}
+            {...getTestId(CopyButton.name, testId)}
         />
     ) : (
         <StyledButton
@@ -50,6 +54,7 @@ export const CopyButton: React.FC<IProps> = ({
             color="grayLight"
             className={className}
             onClick={handleCopy}
+            {...getTestId(CopyButton.name, testId)}
         />
     );
 };

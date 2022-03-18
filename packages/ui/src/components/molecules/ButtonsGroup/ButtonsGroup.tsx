@@ -1,3 +1,4 @@
+import { getTestId } from "@honzachalupa/utils";
 import { IProps, StyledContainer } from "./ButtonsGroup.styled";
 
 export const ButtonsGroup: React.FC<IProps> = ({
@@ -5,11 +6,13 @@ export const ButtonsGroup: React.FC<IProps> = ({
     alignment,
     orientation,
     className,
+    testId,
 }) => (
     <StyledContainer
         alignment={alignment}
         orientation={orientation}
         className={className}
+        {...getTestId(ButtonsGroup.name, testId)}
     >
         {children}
     </StyledContainer>

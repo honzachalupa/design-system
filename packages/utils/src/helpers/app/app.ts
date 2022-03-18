@@ -53,6 +53,13 @@ export const scrollToTop = (): void => window.scrollTo({ top: 0 });
 export const scrollToRef = (ref: RefObject<HTMLElement>): void =>
     ref.current?.scrollIntoView();
 
-export const getTestId = (id: string) => ({
-    "data-test-id": id,
+export const getTestId = (
+    componentName: string,
+    customTestId?: string,
+): {
+    "data-test-id": string;
+} => ({
+    "data-test-id": [componentName.replace("index_esm_", ""), customTestId]
+        .filter(Boolean)
+        .join("_"),
 });

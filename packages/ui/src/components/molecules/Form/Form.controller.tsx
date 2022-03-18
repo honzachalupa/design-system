@@ -1,3 +1,4 @@
+import { getTestId } from "@honzachalupa/utils";
 import {
     CSSProperties,
     forwardRef,
@@ -8,6 +9,7 @@ import {
     useState,
 } from "react";
 import { useForm } from "react-hook-form";
+import { IComponentProps } from "../../../interfaces/component";
 import { IButtonProps } from "../../atoms/Button";
 import { View } from "./Form.view";
 
@@ -43,7 +45,7 @@ export interface IFormRefProps {
     validate: () => void;
 }
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     inputs: (IFormInput | null)[];
     validationTexts: {
         isRequired: string;
@@ -51,7 +53,6 @@ export interface IProps {
         minLength: string;
         pattern: string;
     };
-    className?: string;
     buttonsRenderer?: (onSubmit: any) => IButtonProps[];
     onChange?: (formData: any) => void;
     onSubmit?: (formData: any) => void;
@@ -63,6 +64,7 @@ export const Form = forwardRef(
             inputs: inputsProp,
             validationTexts,
             className,
+            testId,
             buttonsRenderer,
             onChange,
             onSubmit = () => {},
@@ -184,6 +186,7 @@ export const Form = forwardRef(
                 handleInputChange={handleInputChange}
                 handleSubmit={handleSubmit}
                 onSubmit={onSubmit}
+                {...getTestId(Form.name, testId)}
             />
         );
     },

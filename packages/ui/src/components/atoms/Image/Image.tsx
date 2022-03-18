@@ -1,5 +1,7 @@
+import { getTestId } from "@honzachalupa/utils";
 import { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
+import { IComponentProps } from "../../../interfaces/component";
 import { Loader } from "../Loader";
 import {
     StyledContainer,
@@ -8,7 +10,7 @@ import {
     StyledImage,
 } from "./Image.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     storagePath: string;
     fetchFailedText: string;
     className?: string;
@@ -22,6 +24,7 @@ export const Image: React.FC<IProps> = ({
     fetchFailedText,
     className,
     fetchStorageImage,
+    testId,
     onClick,
     onFetchFailed,
 }) => {
@@ -50,12 +53,17 @@ export const Image: React.FC<IProps> = ({
         }
     }, []);
 
+    const props = {
+        className,
+        ...getTestId(Image.name, testId),
+    };
+
     return isLoading ? (
-        <StyledContainer className={className}>
+        <StyledContainer {...props}>
             <Loader color={theme.colors.grayLight} />
         </StyledContainer>
     ) : isFailed ? (
-        <StyledContainer className={className}>
+        <StyledContainer {...props}>
             <StyledErrorIcon name="cross" color="red" />
 
             <StyledErrorMessage>{fetchFailedText}</StyledErrorMessage>
@@ -64,7 +72,7 @@ export const Image: React.FC<IProps> = ({
         <StyledImage
             src={url}
             alt={fetchFailedText}
-            className={className}
+            {...props}
             onClick={() => onClick?.(url)}
         />
     );

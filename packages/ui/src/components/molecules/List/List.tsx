@@ -1,5 +1,6 @@
-import { IAbstractObject } from "@honzachalupa/utils";
+import { getTestId, IAbstractObject } from "@honzachalupa/utils";
 import { ReactNode } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import { Button } from "../../atoms/Button";
 import { THeaderAlignments, Title } from "../../atoms/typography/Title";
 import { ButtonsGroup } from "../ButtonsGroup";
@@ -12,7 +13,7 @@ import {
     StyledHeaderRow,
 } from "./List.styled";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     headline?: string;
     headlineAlignment?: THeaderAlignments;
     data: IAbstractObject[];
@@ -33,7 +34,6 @@ export interface IProps {
         isLightGray?: (row: any) => boolean;
         isFaded?: (row: any) => boolean;
     };
-    className?: string;
     isHeadersShown?: boolean;
     isCountShown?: boolean;
 }
@@ -46,6 +46,7 @@ export const List: React.FC<IProps> = ({
     actions,
     rowHighlighting,
     className,
+    testId,
     isHeadersShown,
     isCountShown,
 }) => {
@@ -57,7 +58,7 @@ export const List: React.FC<IProps> = ({
     const hasActions = !!(actions && actions.length > 0);
 
     return (
-        <div className={className}>
+        <div className={className} {...getTestId(List.name, testId)}>
             {headline && (
                 <Title level={3} alignment={headlineAlignment}>
                     {headline}

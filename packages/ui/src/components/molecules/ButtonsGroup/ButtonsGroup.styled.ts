@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
+import { IComponentProps } from "../../../interfaces/component";
 
-export interface IProps {
+export interface IProps extends IComponentProps {
     children: ReactNode;
     alignment?: "left" | "right";
     orientation?: "vertical";
-    className?: string;
 }
 
 export const StyledContainer = styled.div<IProps>`

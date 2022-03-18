@@ -1,5 +1,6 @@
-import { useLocalStorage } from "@honzachalupa/utils";
+import { getTestId, useLocalStorage } from "@honzachalupa/utils";
 import { useEffect } from "react";
+import { IComponentProps } from "../../../interfaces/component";
 import { Button } from "../../atoms/Button";
 import { Text } from "../../atoms/typography/Text";
 import {
@@ -8,7 +9,7 @@ import {
     StyledContent,
 } from "./CookieBanner.styled";
 
-interface IProps {
+interface IProps extends IComponentProps {
     headline: string;
     content: string;
     agreeButtonText: string;
@@ -21,6 +22,8 @@ export const CookieBanner: React.FC<IProps> = ({
     content,
     agreeButtonText,
     disagreeButtonText,
+    className,
+    testId,
     onSubmit,
 }) => {
     const [isCookiesAllowed, setCookiesAllowed] = useLocalStorage(
@@ -35,7 +38,10 @@ export const CookieBanner: React.FC<IProps> = ({
     }, [isCookiesAllowed]);
 
     return isCookiesAllowed === null ? (
-        <StyledContainer>
+        <StyledContainer
+            className={className}
+            {...getTestId(CookieBanner.name, testId)}
+        >
             <StyledContent>
                 <Text sizeRem={1}>{headline}</Text>
 
