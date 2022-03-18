@@ -58,12 +58,8 @@ export const getTestId = (
     customTestId?: string,
 ): {
     "data-test-id": string;
-} => {
-    console.log("getTestId()", { componentName });
-
-    return {
-        "data-test-id": [componentName?.replace("index_esm_", ""), customTestId]
-            .filter(Boolean)
-            .join("_"),
-    };
-};
+} => ({
+    "data-test-id": [componentName?.replace("index_esm_", ""), customTestId]
+        .filter(Boolean)
+        .join("_"),
+});
