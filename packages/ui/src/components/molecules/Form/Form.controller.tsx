@@ -1,4 +1,3 @@
-import { getTestId } from "@honzachalupa/utils";
 import {
     CSSProperties,
     forwardRef,
@@ -182,11 +181,11 @@ export const Form = forwardRef(
                 control={control}
                 buttonsRenderer={buttonsRenderer}
                 className={className}
+                testId={testId}
                 getErrorMessage={getErrorMessage}
                 handleInputChange={handleInputChange}
                 handleSubmit={handleSubmit}
                 onSubmit={onSubmit}
-                {...getTestId(Form.name, testId)}
             />
         );
     },

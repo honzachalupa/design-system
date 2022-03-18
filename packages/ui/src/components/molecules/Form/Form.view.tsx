@@ -1,7 +1,8 @@
-import { DATE_FORMAT } from "@honzachalupa/utils";
+import { DATE_FORMAT, getTestId } from "@honzachalupa/utils";
 import moment from "moment";
 import DatePickerInput from "react-day-picker/DayPickerInput";
 import { Controller } from "react-hook-form";
+import { IComponentProps } from "../../../interfaces/component";
 import { Button, IButtonProps } from "../../atoms/Button";
 import { IFormInput } from "./Form.controller";
 import {
@@ -12,12 +13,11 @@ import {
     StyledInputLabel,
 } from "./Form.styled";
 
-interface IView {
+interface IView extends IComponentProps {
     formData: any;
     inputs: IFormInput[];
     control: any;
     buttonsRenderer: ((onSubmit: any) => IButtonProps[]) | undefined;
-    className: string | undefined;
     getErrorMessage: any;
     handleInputChange: any;
     handleSubmit: any;
@@ -30,6 +30,7 @@ export const View: React.FC<IView> = ({
     control,
     buttonsRenderer,
     className,
+    testId,
     getErrorMessage,
     handleInputChange,
     handleSubmit,
@@ -38,6 +39,7 @@ export const View: React.FC<IView> = ({
     <form
         onSubmit={onSubmit ? handleSubmit(onSubmit) : undefined}
         className={className}
+        {...getTestId("Form", testId)}
     >
         {inputs.map(
             ({
