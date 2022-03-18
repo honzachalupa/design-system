@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.13.2...v1.13.3) (2022-03-18)
+
+
+### Bug Fixes
+
+* **ui:** Added textId prop. ([33876f2](https://github.com/mokkapps/changelog-generator-demo/commits/33876f2e6bb4d58f185d08c1775278e4c12a4c8b))
+
 ### [1.13.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.13.1...v1.13.2) (2022-03-18)
 
 ### [1.13.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.13.0...v1.13.1) (2022-03-16)
