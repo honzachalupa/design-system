@@ -82,7 +82,7 @@ export const Modal: React.FC<IProps & RefAttributes<IModalRefProps>> =
             return isOpened ? (
                 <StyledContainer
                     className={className}
-                    {...getTestId(Modal.name, testId)}
+                    {...getTestId(Modal.displayName as string, testId)}
                 >
                     <StyledOverlay onClick={handleClose} />
 
