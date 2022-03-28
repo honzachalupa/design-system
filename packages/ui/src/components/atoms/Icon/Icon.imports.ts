@@ -37,7 +37,7 @@ export const icons = {
     plus: MdAdd,
     minus: MdRemove,
     shield: MdOutlineShield,
-    certificate: IoDocumentTextOutline,
+    document: IoDocumentTextOutline,
     airplaneTicket: MdOutlineAirplaneTicket,
     time: MdTimerOff,
     giftcard: MdCardGiftcard,
