@@ -1,6 +1,7 @@
 import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
+    FacebookAuthProvider,
     getAuth,
     getRedirectResult,
     GoogleAuthProvider,
@@ -69,6 +70,7 @@ export const Auth = {
     signOut,
     OAuthProvider,
     GoogleAuthProvider,
+    FacebookAuthProvider,
 };
 
 export const Storage = {
