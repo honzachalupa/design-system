@@ -21,9 +21,11 @@ import {
     MdRemove,
     MdTimerOff,
 } from "react-icons/md";
-import { RiShareForwardFill } from "react-icons/ri";
+import { RiHome2Fill, RiHome2Line, RiShareForwardFill } from "react-icons/ri";
 
 export const icons = {
+    home: RiHome2Line,
+    homeFilled: RiHome2Fill,
     diamond: GiCutDiamond,
     share: RiShareForwardFill,
     edit: MdOutlineModeEditOutline,
