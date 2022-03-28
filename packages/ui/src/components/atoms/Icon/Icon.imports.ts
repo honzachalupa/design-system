@@ -1,6 +1,7 @@
 import { AiOutlineLoading } from "react-icons/ai";
 import { GiCutDiamond, GiSpeedometer } from "react-icons/gi";
 import { HiUsers } from "react-icons/hi";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IoDocumentTextOutline, IoHelp } from "react-icons/io5";
 import {
     MdAdd,
@@ -26,6 +27,8 @@ import { RiHome2Fill, RiHome2Line, RiShareForwardFill } from "react-icons/ri";
 export const icons = {
     home: RiHome2Line,
     homeFilled: RiHome2Fill,
+    arrowLeft: IoIosArrowBack,
+    arrowRight: IoIosArrowForward,
     diamond: GiCutDiamond,
     share: RiShareForwardFill,
     edit: MdOutlineModeEditOutline,
