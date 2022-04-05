@@ -1,2 +1,6 @@
 export { Form } from "./Form.controller";
-export { StyledErrorMessage, StyledInputLabel } from "./Form.styled";
+export {
+    StyledErrorMessage,
+    StyledInputContainer,
+    StyledInputLabel,
+} from "./Form.styled";
