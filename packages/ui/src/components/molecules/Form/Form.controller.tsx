@@ -12,6 +12,11 @@ import { IComponentProps } from "../../../interfaces/component";
 import { IButtonProps } from "../../atoms/Button";
 import { View } from "./Form.view";
 
+export interface ISelectOption {
+    id: string;
+    label: string;
+}
+
 export interface IValidationRules {
     required?: boolean;
     minLength?: number;
@@ -28,7 +33,7 @@ export interface IFormInput {
     children?: ReactNode;
     controlType: "input" | "textarea" | "select" | "custom";
     inputType?: "text" | "number" | "email" | "password" | "tel" | "date";
-    options?: { id: string; label: string }[];
+    options?: ISelectOption[];
     rules?: IValidationRules;
     error?: string;
     isReadOnly?: boolean;

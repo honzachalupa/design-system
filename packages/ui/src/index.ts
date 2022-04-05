@@ -24,6 +24,7 @@ export { CookieBanner } from "./components/molecules/CookieBanner";
 export { CopyButton } from "./components/molecules/CopyButton";
 export {
     Form,
+    ISelectOption,
     StyledErrorMessage,
     StyledInputContainer,
     StyledInputLabel,
