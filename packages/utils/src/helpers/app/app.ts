@@ -7,13 +7,13 @@ export const initServiceWorker = (
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register(path, { scope }).then(
             (registration) => {
-                console.log(
+                console.info(
                     "Service worker successfully registered on scope:",
                     registration.scope,
                 );
             },
             (error) => {
-                console.log("Service worker failed to register:", error);
+                console.error("Service worker failed to register:", error);
             },
         );
     }
@@ -27,7 +27,7 @@ export const removeCachedData = (): void => {
                 cacheKeys.forEach((cacheName) => {
                     caches.delete(cacheName);
 
-                    console.log("Cache removed.");
+                    console.info("Cache removed.");
                 });
             })
             .then(() => {
@@ -37,14 +37,14 @@ export const removeCachedData = (): void => {
                         registrations.forEach((registration) => {
                             registration.unregister();
 
-                            console.log("Service worker unregistered.");
+                            console.info("Service worker unregistered.");
                         });
                     });
 
                 window.location.reload();
             });
     } catch (error) {
-        console.log("Service worker - Unable to clear the cache.", error);
+        console.error("Service worker - Unable to clear the cache.", error);
     }
 };
 

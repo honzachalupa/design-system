@@ -103,5 +103,8 @@ export const addUnitLabel = (
     return `${value}${unit}`;
 };
 
+export const replaceAccentedCharacters = (value: string) =>
+    value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 export const getRandomHexColor = (): string =>
     `#${Math.floor(Math.random() * 16777215).toString(16)}`;

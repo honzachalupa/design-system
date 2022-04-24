@@ -34,8 +34,6 @@ export class FirebaseConnector {
         const apps = getApps();
         const app = apps?.[0] || initializeApp(credentials);
 
-        console.log({ app, apps });
-
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);
         this.storage = Storage.getStorage(app);
