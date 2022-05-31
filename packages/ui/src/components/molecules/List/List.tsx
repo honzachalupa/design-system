@@ -88,7 +88,6 @@ export const List: React.FC<IProps> = ({
 
                 {data.map((item) => (
                     <StyledBodyRow
-                        // @ts-ignore // TODO
                         key={item.id}
                         highlightColor={
                             rowHighlighting?.isGreen?.(item)
