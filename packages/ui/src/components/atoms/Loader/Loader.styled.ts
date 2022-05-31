@@ -12,6 +12,7 @@ export const StyledOverlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
 `;
 
 export const StyledContainer = styled.div`
