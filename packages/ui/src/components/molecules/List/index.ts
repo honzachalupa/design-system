@@ -1,1 +1,1 @@
-export { List } from "./List";
+export { IProps as IListProps, List } from "./List";

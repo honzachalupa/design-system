@@ -1,1 +1,1 @@
-export { QrCode } from "./QrCode";
+export { IProps as IQrCodeProps, QrCode } from "./QrCode";

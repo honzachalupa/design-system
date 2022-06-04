@@ -1,1 +1,1 @@
-export { Carousel } from "./Carousel";
+export { Carousel, IProps as ICarouselProps } from "./Carousel";

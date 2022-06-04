@@ -1,1 +1,1 @@
-export { Switch } from "./Switch";
+export { IProps as ISwitchProps, Switch } from "./Switch";

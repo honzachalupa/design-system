@@ -1,1 +1,1 @@
-export { Image } from "./Image";
+export { Image, IProps as IImageProps } from "./Image";

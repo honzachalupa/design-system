@@ -1,1 +1,1 @@
-export { Loader } from "./Loader";
+export { IProps as ILoaderProps, Loader } from "./Loader";

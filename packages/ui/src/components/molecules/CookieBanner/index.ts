@@ -1,1 +1,1 @@
-export { CookieBanner } from "./CookieBanner";
+export { CookieBanner, IProps as ICookieBannerProps } from "./CookieBanner";

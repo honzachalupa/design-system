@@ -1,1 +1,1 @@
-export { Link } from "./Link";
+export { IProps as ILinkProps, Link } from "./Link";

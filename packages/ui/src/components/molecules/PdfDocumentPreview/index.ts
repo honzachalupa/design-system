@@ -1,1 +1,4 @@
-export { PdfDocumentPreview } from "./PdfDocumentPreview";
+export {
+    IProps as IPdfDocumentPreviewProps,
+    PdfDocumentPreview,
+} from "./PdfDocumentPreview";

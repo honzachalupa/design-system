@@ -1,4 +1,4 @@
-export { Form, ISelectOption } from "./Form.controller";
+export { Form, IProps as IFormProps, ISelectOption } from "./Form.controller";
 export {
     StyledErrorMessage,
     StyledInputContainer,

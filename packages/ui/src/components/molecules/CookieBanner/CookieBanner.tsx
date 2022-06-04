@@ -9,7 +9,7 @@ import {
     StyledContent,
 } from "./CookieBanner.styled";
 
-interface IProps extends IComponentProps {
+export interface IProps extends IComponentProps {
     headline: string;
     content: string;
     agreeButtonText: string;
