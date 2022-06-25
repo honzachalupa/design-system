@@ -1,5 +1,5 @@
 import { getTestId } from "@honzachalupa/utils";
-import { CSSProperties, ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { IComponentProps } from "../../../interfaces/component";
 import {
     StyledContainer,
@@ -9,54 +9,47 @@ import {
 } from "./TabsView.styled";
 
 export interface IProps extends IComponentProps {
-    tabs: {
-        title: string;
-        content: ReactNode;
-        isDefault?: boolean;
-    }[];
-    tabHeaderStyle?: CSSProperties;
-    tabHeaderButtonStyle?: CSSProperties;
+    labels: string[];
+    children: ReactNode[];
+    defaultIndex?: number;
+    onChange?: (index: number) => void;
 }
 
 export const TabsView: React.FC<IProps> = ({
-    tabs,
+    labels,
+    children,
+    defaultIndex = 0,
     className,
-    tabHeaderStyle,
-    tabHeaderButtonStyle,
     testId,
+    onChange,
 }) => {
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [index, setIndex] = useState<number>(defaultIndex);
 
     useEffect(() => {
-        tabs.forEach(({ isDefault }, i) => {
-            if (isDefault) {
-                setCurrentIndex(i);
-            }
-        });
-    }, []);
+        onChange?.(index);
+    }, [index]);
 
     return (
         <StyledContainer
             className={className}
             {...getTestId("TabsView", testId)}
         >
-            <header style={tabHeaderStyle}>
-                {tabs.map(({ title }, i) => (
+            <header>
+                {labels.map((label, i) => (
                     <StyledHeaderButton
                         key={i}
-                        style={tabHeaderButtonStyle}
-                        isSelected={currentIndex === i}
-                        onClick={() => setCurrentIndex(i)}
+                        isSelected={index === i}
+                        onClick={() => setIndex(i)}
                     >
-                        {title}
+                        {label}
                     </StyledHeaderButton>
                 ))}
             </header>
 
             <StyledContentContainer>
-                {tabs.map(({ content }, i) => (
-                    <StyledContent isVisible={currentIndex === i}>
-                        {content}
+                {children.map((children, i) => (
+                    <StyledContent isVisible={index === i}>
+                        {children}
                     </StyledContent>
                 ))}
             </StyledContentContainer>
