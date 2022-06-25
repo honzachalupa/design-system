@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.14.2...v1.15.0) (2022-06-25)
+
+
+### Features
+
+* **INT-724:** Changed TabsView component. ([4fc710d](https://github.com/mokkapps/changelog-generator-demo/commits/4fc710d54432d8a1f667d88d81b4b2ec44cc2c99))
+
 ### [1.14.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.14.1...v1.14.2) (2022-06-25)
 
 
