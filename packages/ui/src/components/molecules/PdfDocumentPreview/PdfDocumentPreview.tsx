@@ -30,7 +30,7 @@ export const PdfDocumentPreview: React.FC<IProps> = ({
     return (
         <StyledDocumentViewerContainer
             className={className}
-            {...getTestId(PdfDocumentPreview.name, testId)}
+            {...getTestId("PdfDocumentPreview", testId)}
         >
             {!isLoaded && <StyledLoader color={theme.colors.grayLight} />}
 

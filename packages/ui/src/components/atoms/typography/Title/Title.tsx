@@ -14,7 +14,7 @@ export const Title: React.FC<ITitleProps> = (props) => {
         <StyledTitle
             tagName={tagName}
             {...props}
-            {...getTestId(Title.name, props.testId)}
+            {...getTestId("Title", props.testId)}
         />
     );
 };

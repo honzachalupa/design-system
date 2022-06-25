@@ -35,6 +35,6 @@ export const Link: React.FC<IProps> = ({
         className={className}
         isDisabled={isDisabled}
         onClick={onClick}
-        {...getTestId(Link.name, testId)}
+        {...getTestId("Link", testId)}
     />
 );

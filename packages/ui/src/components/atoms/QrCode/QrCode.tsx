@@ -7,5 +7,5 @@ export interface IProps extends IComponentProps {
 }
 
 export const QrCode: React.FC<IProps> = ({ value, testId }) => (
-    <ReactQRCode value={value} {...getTestId(QrCode.name, testId)} />
+    <ReactQRCode value={value} {...getTestId("QrCode", testId)} />
 );

@@ -25,25 +25,18 @@ export const Button: React.FC<IProps> = ({
     className,
     isDisabled = false,
     onClick = () => {},
-}) => {
-    console.log("Button name used for generating test ID:", {
-        name: Button.name,
-        displayName: Button.displayName,
-    });
-
-    return (
-        <StyledButton
-            title={label}
-            type={type}
-            color={color}
-            size={size}
-            hasIcon={!!icon}
-            className={className}
-            isDisabled={isDisabled}
-            onClick={onClick}
-            {...getTestId("Button", testId)}
-        >
-            {icon ? <StyledIcon {...icon} /> : label}
-        </StyledButton>
-    );
-};
+}) => (
+    <StyledButton
+        title={label}
+        type={type}
+        color={color}
+        size={size}
+        hasIcon={!!icon}
+        className={className}
+        isDisabled={isDisabled}
+        onClick={onClick}
+        {...getTestId("Button", testId)}
+    >
+        {icon ? <StyledIcon {...icon} /> : label}
+    </StyledButton>
+);

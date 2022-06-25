@@ -12,7 +12,7 @@ export const ButtonsGroup: React.FC<IProps> = ({
         alignment={alignment}
         orientation={orientation}
         className={className}
-        {...getTestId(ButtonsGroup.name, testId)}
+        {...getTestId("ButtonsGroup", testId)}
     >
         {children}
     </StyledContainer>

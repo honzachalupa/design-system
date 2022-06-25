@@ -41,7 +41,7 @@ export const Carousel: React.FC<IProps> = ({
             showIndicators={isIndicatorsShown}
             showThumbs={false}
             onChange={setIndex}
-            {...getTestId(Carousel.name, testId)}
+            {...getTestId("Carousel", testId)}
         >
             {slides.map(({ renderer }, i) => (
                 <Fragment key={i}>{renderer()}</Fragment>

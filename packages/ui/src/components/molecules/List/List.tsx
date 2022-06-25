@@ -58,7 +58,7 @@ export const List: React.FC<IProps> = ({
     const hasActions = !!(actions && actions.length > 0);
 
     return (
-        <div className={className} {...getTestId(List.name, testId)}>
+        <div className={className} {...getTestId("List", testId)}>
             {headline && (
                 <Title level={3} alignment={headlineAlignment}>
                     {headline}

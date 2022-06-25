@@ -13,7 +13,7 @@ export const ProgressBar: React.FC<IProps> = ({
 }) => (
     <StyledContainer
         className={className}
-        {...getTestId(ProgressBar.name, testId)}
+        {...getTestId("ProgressBar", testId)}
     >
         <StyledBar percents={progress} />
     </StyledContainer>

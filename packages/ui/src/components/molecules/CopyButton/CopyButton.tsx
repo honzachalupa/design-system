@@ -42,7 +42,7 @@ export const CopyButton: React.FC<IProps> = ({
             }}
             color="green"
             className={className}
-            {...getTestId(CopyButton.name, testId)}
+            {...getTestId("CopyButton", testId)}
         />
     ) : (
         <StyledButton
@@ -54,7 +54,7 @@ export const CopyButton: React.FC<IProps> = ({
             color="grayLight"
             className={className}
             onClick={handleCopy}
-            {...getTestId(CopyButton.name, testId)}
+            {...getTestId("CopyButton", testId)}
         />
     );
 };

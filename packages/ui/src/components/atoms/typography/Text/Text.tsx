@@ -16,7 +16,7 @@ export const Text: React.FC<ITextProps> = ({
         weight={weight}
         alignment={alignment}
         className={className}
-        {...getTestId(Text.name, testId)}
+        {...getTestId("Text", testId)}
     >
         {children}
     </StyledText>

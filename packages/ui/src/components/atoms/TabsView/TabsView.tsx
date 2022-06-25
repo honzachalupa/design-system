@@ -38,7 +38,7 @@ export const TabsView: React.FC<IProps> = ({
     return (
         <StyledContainer
             className={className}
-            {...getTestId(TabsView.name, testId)}
+            {...getTestId("TabsView", testId)}
         >
             <header style={tabHeaderStyle}>
                 {tabs.map(({ title }, i) => (

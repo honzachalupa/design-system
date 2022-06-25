@@ -40,7 +40,7 @@ export const CookieBanner: React.FC<IProps> = ({
     return isCookiesAllowed === null ? (
         <StyledContainer
             className={className}
-            {...getTestId(CookieBanner.name, testId)}
+            {...getTestId("CookieBanner", testId)}
         >
             <StyledContent>
                 <Text sizeRem={1}>{headline}</Text>

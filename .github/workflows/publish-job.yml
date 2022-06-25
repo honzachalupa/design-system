@@ -37,9 +37,6 @@ jobs:
             - name: Build
               run: node tools/scripts/versions-matcher.js && yarn build
 
-            - name: Build storybook
-              run: yarn storybook:build
-
             - name: Save artifact
               uses: actions/upload-artifact@master
               with:
@@ -66,6 +63,9 @@ jobs:
                   package: build/firebase/package.json
                   access: public
                   token: ${{ secrets.NPM_TOKEN }}
+
+            - name: Build storybook
+              run: yarn storybook:build
 
             - name: Publish UI library storybook
               uses: chromaui/action@v1

@@ -29,7 +29,7 @@ export const Icon: React.FC<IIconProps> = ({
         title={label}
         className={className}
         onClick={onClick}
-        {...getTestId(Icon.name, testId)}
+        {...getTestId("Icon", testId)}
     >
         {createElement(icons[name])}
     </StyledContainer>

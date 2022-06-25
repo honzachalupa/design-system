@@ -55,7 +55,7 @@ export const Image: React.FC<IProps> = ({
 
     const props = {
         className,
-        ...getTestId(Image.name, testId),
+        ...getTestId("Image", testId),
     };
 
     return isLoading ? (

@@ -10,12 +10,6 @@ describe("Helpers: App", () => {
         });
 
         it("Case 2", () => {
-            expect(getTestId("index_esm_Button")).toStrictEqual({
-                "data-test-id": "Button",
-            });
-        });
-
-        it("Case 3", () => {
             expect(getTestId("Button", "submit")).toStrictEqual({
                 "data-test-id": "Button_submit",
             });

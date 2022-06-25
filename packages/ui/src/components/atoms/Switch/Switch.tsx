@@ -18,7 +18,7 @@ export const Switch: React.FC<IProps> = ({
     testId,
     onChange,
 }) => (
-    <StyledContainer className={className} {...getTestId(Switch.name, testId)}>
+    <StyledContainer className={className} {...getTestId("Switch", testId)}>
         {isChecked && checkedText && <StyledLabel>{checkedText}</StyledLabel>}
         {!isChecked && uncheckedText && (
             <StyledLabel>{uncheckedText}</StyledLabel>

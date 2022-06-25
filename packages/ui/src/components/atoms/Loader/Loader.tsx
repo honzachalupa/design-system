@@ -24,10 +24,7 @@ const LoadingIndicator: React.FC<IProps> = ({
     const theme = useTheme();
 
     return (
-        <StyledContainer
-            className={className}
-            {...getTestId(Loader.name, testId)}
-        >
+        <StyledContainer className={className} {...getTestId("Loader", testId)}>
             <StyledIconContainer>
                 <StyledIcon
                     name="loading"
