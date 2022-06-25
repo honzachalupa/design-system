@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.14.1...v1.14.2) (2022-06-25)
+
+
+### Bug Fixes
+
+* Fixed Title props interface. ([95f994a](https://github.com/mokkapps/changelog-generator-demo/commits/95f994ab0859e905c440681ce950955c171f5e50))
+
 ### [1.14.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.14.0...v1.14.1) (2022-06-25)
 
 ## [1.14.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.13.17...v1.14.0) (2022-06-25)
