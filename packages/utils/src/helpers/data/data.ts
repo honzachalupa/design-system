@@ -5,6 +5,7 @@ export const cleanObject = (object: IAbstractObject): IAbstractObject =>
         JSON.stringify(
             Object.fromEntries(
                 Object.entries(object).filter(
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     ([_, v]) => v !== null && v !== undefined,
                 ),
             ),

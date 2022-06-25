@@ -13,6 +13,7 @@ export { IModalRefProps, Modal } from "./components/atoms/Modal";
 export { IProgressBarProps, ProgressBar } from "./components/atoms/ProgressBar";
 export { IQrCodeProps, QrCode } from "./components/atoms/QrCode";
 export { ISwitchProps, Switch } from "./components/atoms/Switch";
+export { ITabsViewProps, TabsView } from "./components/atoms/TabsView";
 export { ITextProps, Text } from "./components/atoms/typography/Text";
 export {
     ITitleProps,
