@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import { createElement, ReactNode } from "react";
 import styled from "styled-components";
 import { IComponentProps } from "../../../../interfaces/component";
 
@@ -9,6 +9,7 @@ export interface ITitleProps extends IComponentProps {
     styledAs?: 1 | 2 | 3 | 4 | 5 | 6;
     size?: number;
     alignment?: THeaderAlignments;
+    children: string | ReactNode;
     hasMargin?: boolean;
 }
 
