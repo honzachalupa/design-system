@@ -4457,11 +4457,6 @@
   resolved "https://registry.yarnpkg.com/@swc/core-darwin-x64/-/core-darwin-x64-1.2.140.tgz#4b33e69a691a3f0c85db8be33509e4e8e8d94e26"
   integrity sha512-d44A0PW+ZP8wRh/iFhu0UzUwRkcswGkUXJy1187Q3jLm6uxdW2rH4DoFQHRuABXh4tDjd3cXRClz/xSURNIJDA==
 
-"@swc/core-darwin-x64@^1.2.205":
-  version "1.2.205"
-  resolved "https://registry.yarnpkg.com/@swc/core-darwin-x64/-/core-darwin-x64-1.2.205.tgz#7a6552acd42482ecb84b1c90c0defad408ac81cc"
-  integrity sha512-malz2I+w6xFF1QyTmPGt0Y0NEMbUcrvfr5gUfZDGjxMhPPlS7k6fXucuZxVr9VVaM+JGq1SidVODmZ84jb1qHg==
-
 "@swc/core-freebsd-x64@1.2.140":
   version "1.2.140"
   resolved "https://registry.yarnpkg.com/@swc/core-freebsd-x64/-/core-freebsd-x64-1.2.140.tgz#852866e4683bfc7a4f9ada9c2ee98e043dace6e1"
