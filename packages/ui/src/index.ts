@@ -9,7 +9,7 @@ export { Icon, IIconProps, TIconName } from "./components/atoms/Icon";
 export { IImageProps, Image } from "./components/atoms/Image";
 export { ILinkProps, Link } from "./components/atoms/Link";
 export { ILoaderProps, Loader } from "./components/atoms/Loader";
-export { IModalRefProps, Modal } from "./components/atoms/Modal";
+export { IModalProps, IModalRefProps, Modal } from "./components/atoms/Modal";
 export { IProgressBarProps, ProgressBar } from "./components/atoms/ProgressBar";
 export { IQrCodeProps, QrCode } from "./components/atoms/QrCode";
 export { ISwitchProps, Switch } from "./components/atoms/Switch";
