@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.16.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.15.1...v1.16.0) (2022-07-03)
+
+
+### Features
+
+* Added theming for Button and Input components. ([b6cd100](https://github.com/mokkapps/changelog-generator-demo/commits/b6cd1004b9af33fd876d78421b82064f9b4815d0))
+
 ### [1.15.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.15.0...v1.15.1) (2022-06-25)
 
 ## [1.15.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.14.2...v1.15.0) (2022-06-25)
