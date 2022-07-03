@@ -12,11 +12,14 @@ export const StyledInputContainer = styled.div<{
     textarea,
     select {
         width: 100%;
-        height: 48px;
-        font-size: 16px;
-        border: 1px solid ${({ theme }) => theme.colors.grayLight};
-        border-radius: 2px;
-        padding: 0 15px;
+        height: ${({ theme }) => theme.input?.height || 48}px;
+        font-size: ${({ theme }) => theme.input?.font?.size || 16}px;
+        border-width: ${({ theme }) => theme.input?.border?.width || 1}px;
+        border-color: ${({ theme }) =>
+            theme.input?.border?.color || theme.colors.grayLight};
+        border-style: solid;
+        border-radius: ${({ theme }) => theme.input?.border?.radius || 2}px;
+        padding: ${({ theme }) => theme.input?.padding || "0 15px"};
 
         ${({ isReadOnly, theme }) =>
             isReadOnly

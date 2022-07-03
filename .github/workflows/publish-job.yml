@@ -37,6 +37,13 @@ jobs:
             - name: Build
               run: node tools/scripts/versions-matcher.js && yarn build
 
+            - name: Publish UI library storybook
+              uses: chromaui/action@v1
+              with:
+                  storybookBuildDir: build/storybooks/ui
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
             - name: Save artifact
               uses: actions/upload-artifact@master
               with:
@@ -66,13 +73,6 @@ jobs:
 
             - name: Build storybook
               run: yarn storybook:build
-
-            - name: Publish UI library storybook
-              uses: chromaui/action@v1
-              with:
-                  storybookBuildDir: build/storybooks/ui
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
             - name: Notify
               uses: rtCamp/action-slack-notify@v2.2.0

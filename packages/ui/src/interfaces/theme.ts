@@ -31,6 +31,22 @@ export interface ITheme {
         light: string;
         dark: string;
     };
+    button?: {
+        font?: {
+            size?: number;
+            weight?: number;
+        };
+        border?: { width?: number; color?: string; radius?: number };
+        padding?: string;
+    };
+    input?: {
+        height?: number;
+        font?: {
+            size?: number;
+        };
+        border?: { width?: number; color?: string; radius?: number };
+        padding?: string;
+    };
 }
 
 declare module "styled-components" {
