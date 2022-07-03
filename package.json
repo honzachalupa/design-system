@@ -10,7 +10,7 @@
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
-        "release": "standard-version",
+        "release": "standard-version && git push",
         "docs": "nx run-many --target=docs --all"
     },
     "dependencies": {
