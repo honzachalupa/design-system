@@ -48,7 +48,7 @@ export const TabsView: React.FC<IProps> = ({
 
             <StyledContentContainer>
                 {children.map((children, i) => (
-                    <StyledContent isVisible={index === i}>
+                    <StyledContent key={i} isVisible={index === i}>
                         {children}
                     </StyledContent>
                 ))}
