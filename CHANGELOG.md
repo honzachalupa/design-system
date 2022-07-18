@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.16.4](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.3...v1.16.4) (2022-07-18)
+
+
+### Bug Fixes
+
+* Fixed Select appearance in read-only state. ([6aa57da](https://github.com/mokkapps/changelog-generator-demo/commits/6aa57da438a9b102fb49bbb12820f69821fd7fd4))
+
 ### [1.16.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.2...v1.16.3) (2022-07-18)
 
 
