@@ -45,6 +45,9 @@ export const StyledInputContainer = styled.div<{
             isReadOnly &&
             `
             pointer-events: none;
+            cursor: not-allowed;
+            -webkit-appearance: none;
+            -moz-appearance: none;
         `}
     }
 
