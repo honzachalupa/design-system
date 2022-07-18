@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.16.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.2...v1.16.3) (2022-07-18)
+
+
+### Bug Fixes
+
+* Changed Loader position. ([78af5ee](https://github.com/mokkapps/changelog-generator-demo/commits/78af5eeb6406a503993d2ed247fb06e810d43596))
+* Fixed TabsView tab key. ([d2283d3](https://github.com/mokkapps/changelog-generator-demo/commits/d2283d3bc9ba225c9b647cd6b19bce72adae5480))
+
 ### [1.16.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.1...v1.16.2) (2022-07-18)
 
 ### [1.16.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.0...v1.16.1) (2022-07-03)
