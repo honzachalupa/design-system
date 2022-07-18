@@ -9,7 +9,7 @@ export const StyledOverlay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
@@ -23,8 +23,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledIconContainer = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     position: relative;
 `;
 
