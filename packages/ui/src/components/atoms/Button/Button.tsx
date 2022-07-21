@@ -3,12 +3,12 @@ import { MouseEvent } from "react";
 import { IComponentProps } from "../../../interfaces/component";
 import { IIconProps } from "../Icon";
 import { StyledButton, StyledIcon } from "./Button.styled";
-import { EButtonTypes, TButtonColors, TButtonSizes } from "./Button.types";
+import { EButtonTypes, TButtonSizes } from "./Button.types";
 
 export interface IProps extends IComponentProps {
     label: string;
     type?: EButtonTypes;
-    color?: TButtonColors;
+    color?: string;
     size?: TButtonSizes;
     icon?: Omit<IIconProps, "onClick">;
     isDisabled?: boolean;
@@ -18,7 +18,7 @@ export interface IProps extends IComponentProps {
 export const Button: React.FC<IProps> = ({
     label,
     type = "button",
-    color = "transparent",
+    color = "default",
     size = "medium",
     icon,
     testId,

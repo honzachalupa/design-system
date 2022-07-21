@@ -1,19 +1,9 @@
-import { lighten } from "polished";
 import styled from "styled-components";
 import { Icon } from "../Icon";
-import { TButtonColors, TButtonSizes } from "./Button.types";
-
-const getColors = (backgroundColor: string, color: string) => `
-    background-color: ${backgroundColor};
-    color: ${color};
-
-    &:hover {
-        background-color: ${lighten(0.05, backgroundColor)};
-    }
-`;
+import { TButtonSizes } from "./Button.types";
 
 export const StyledButton = styled.button<{
-    color: TButtonColors;
+    color: string;
     size: TButtonSizes;
     hasIcon: boolean;
     isDisabled: boolean;
@@ -26,28 +16,35 @@ export const StyledButton = styled.button<{
     border-radius: ${({ theme }) => theme.button?.border?.radius || 2}px;
     padding: ${({ theme }) => theme.button?.padding || "0 15px"};
     white-space: nowrap;
-    box-shadow: 0 0 15px ${({ theme }) => theme.colors.grayLight};
     cursor: pointer;
     transition: 200ms background-color, color, opacity;
 
     &:hover {
-        background-color: ${({ theme }) => theme.colors.grayLight};
+        opacity: 0.8;
     }
 
-    ${({ color, theme }) =>
-        color === "accentPrimary"
-            ? getColors(theme.colors.accentPrimary, theme.fontColors.white)
-            : color === "accentSecondary"
-            ? getColors(theme.colors.accentSecondary, theme.fontColors.white)
-            : color === "blue"
-            ? getColors(theme.colors.blueDark, theme.fontColors.white)
-            : color === "green"
-            ? getColors(theme.colors.green, theme.fontColors.white)
-            : color === "red"
-            ? getColors(theme.colors.red, theme.fontColors.white)
-            : color === "transparentInverted"
-            ? getColors("transparent", theme.fontColors.white)
-            : getColors("lightgray", theme.fontColors.faded)}
+    ${({ color, theme }) => `
+        background-color: ${
+            theme.button?.styles?.[color]?.backgroundColor ||
+            theme.button?.styles?.default?.backgroundColor ||
+            theme.colors.grayLight
+        };
+        color: ${
+            theme.button?.styles?.[color]?.color ||
+            theme.button?.styles?.default?.color ||
+            "black"
+        };
+        border-color: ${
+            theme.button?.styles?.[color]?.borderColor ||
+            theme.button?.styles?.default?.borderColor ||
+            "transparent"
+        };
+        box-shadow: ${
+            theme.button?.styles?.[color]?.boxShadow ||
+            theme.button?.styles?.default?.boxShadow ||
+            `0 0 15px ${theme.colors.grayLight}`
+        };
+    `};
 
     ${({ size }) =>
         size === "small"

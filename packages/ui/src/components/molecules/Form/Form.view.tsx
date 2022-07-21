@@ -176,7 +176,7 @@ export const View: React.FC<IView> = ({
                     (buttonProps) => (
                         <Button
                             key={buttonProps.label}
-                            color={buttonProps.color || "accentSecondary"}
+                            color={buttonProps.color || "default"}
                             size={buttonProps.size || "medium"}
                             type={buttonProps.type || "submit"}
                             {...buttonProps}

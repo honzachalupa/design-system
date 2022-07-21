@@ -1,7 +1,6 @@
 import { lighten } from "polished";
 import styled from "styled-components";
 import { Button } from "../Button";
-import { TButtonColors } from "../Button/Button.types";
 
 const getColors = (color: string) => `
     background-color: transparent;
@@ -14,7 +13,7 @@ const getColors = (color: string) => `
 `;
 
 export const StyledLink = styled(Button)<{
-    color: TButtonColors;
+    color: string;
 }>`
     min-width: 0;
     max-width: 100%;

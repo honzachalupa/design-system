@@ -20,7 +20,6 @@ export const Advanced = Template.bind({});
 Advanced.args = {
     label: "Label",
     type: "submit",
-    color: "accentPrimary",
     size: "big",
 };
 
@@ -28,7 +27,6 @@ export const Icon = Template.bind({});
 Icon.args = {
     label: "Label",
     type: "submit",
-    color: "accentSecondary",
     icon: {
         name: "share",
         color: "yellow",

@@ -1,5 +1,12 @@
 import "styled-components";
 
+interface IButtonStyle {
+    backgroundColor?: string;
+    color?: string;
+    borderColor?: string;
+    boxShadow?: string;
+}
+
 export interface ITheme {
     colors: {
         accentPrimary: string;
@@ -38,6 +45,10 @@ export interface ITheme {
         };
         border?: { width?: number; color?: string; radius?: number };
         padding?: string;
+        styles?: {
+            default: IButtonStyle;
+            [key: string]: IButtonStyle;
+        };
     };
     input?: {
         height?: number;

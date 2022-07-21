@@ -1,2 +1,2 @@
 export { Button, IProps as IButtonProps } from "./Button";
-export { EButtonTypes, TButtonColors } from "./Button.types";
+export { EButtonTypes } from "./Button.types";

@@ -1,9 +1,4 @@
-export {
-    Button,
-    EButtonTypes,
-    IButtonProps,
-    TButtonColors,
-} from "./components/atoms/Button";
+export { Button, EButtonTypes, IButtonProps } from "./components/atoms/Button";
 export { Carousel, ICarouselProps } from "./components/atoms/Carousel";
 export { Icon, IIconProps, TIconName } from "./components/atoms/Icon";
 export { IImageProps, Image } from "./components/atoms/Image";

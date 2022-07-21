@@ -1,17 +1,13 @@
 import { getTestId } from "@honzachalupa/utils";
 import { MouseEvent } from "react";
 import { IComponentProps } from "../../../interfaces/component";
-import {
-    EButtonTypes,
-    TButtonColors,
-    TButtonSizes,
-} from "../Button/Button.types";
+import { EButtonTypes, TButtonSizes } from "../Button/Button.types";
 import { StyledLink } from "./Link.styled";
 
 export interface IProps extends IComponentProps {
     label: string;
     type?: EButtonTypes | "submit";
-    color?: TButtonColors;
+    color?: string;
     size?: TButtonSizes;
     isDisabled?: boolean;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
