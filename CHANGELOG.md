@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.17.0...v1.18.0) (2022-07-22)
+
+
+### Features
+
+* Added Form columns option. ([cfffac7](https://github.com/mokkapps/changelog-generator-demo/commits/cfffac7461a7c9e8efc56a67239197d4b878d393))
+
 ## [1.17.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.16.4...v1.17.0) (2022-07-21)
 
 
