@@ -9,11 +9,11 @@ export const StyledContainer = styled.form`
 `;
 
 export const StyledInputContainer = styled.div<{
-    columns: number;
+    columns?: number;
     isRequired?: boolean;
     isReadOnly?: boolean;
 }>`
-    flex-basis: calc(100% / ${({ columns }) => columns} - 10px);
+    flex-basis: calc(100% / ${({ columns }) => columns || 1} - 10px);
     float: left;
 
     input,
