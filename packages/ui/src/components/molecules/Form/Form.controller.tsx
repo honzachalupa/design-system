@@ -50,6 +50,7 @@ export interface IFormRefProps {
 }
 
 export interface IProps extends IComponentProps {
+    columns?: number;
     inputs: (IFormInput | null)[];
     validationTexts: {
         isRequired: string;
@@ -65,6 +66,7 @@ export interface IProps extends IComponentProps {
 export const Form = forwardRef(
     (
         {
+            columns = 1,
             inputs: inputsProp,
             validationTexts,
             className,
@@ -182,6 +184,7 @@ export const Form = forwardRef(
         return (
             <View
                 formData={formData}
+                columns={columns}
                 inputs={inputs}
                 control={control}
                 buttonsRenderer={buttonsRenderer}

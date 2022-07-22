@@ -7,6 +7,7 @@ import { Button, IButtonProps } from "../../atoms/Button";
 import { IFormInput } from "./Form.controller";
 import {
     StyledButtonsGroup,
+    StyledContainer,
     StyledDatePickerInputContainer,
     StyledErrorMessage,
     StyledInputContainer,
@@ -15,6 +16,7 @@ import {
 
 interface IView extends IComponentProps {
     formData: any;
+    columns: number;
     inputs: IFormInput[];
     control: any;
     buttonsRenderer: ((onSubmit: any) => IButtonProps[]) | undefined;
@@ -26,6 +28,7 @@ interface IView extends IComponentProps {
 
 export const View: React.FC<IView> = ({
     formData,
+    columns,
     inputs,
     control,
     buttonsRenderer,
@@ -36,7 +39,7 @@ export const View: React.FC<IView> = ({
     handleSubmit,
     onSubmit,
 }) => (
-    <form
+    <StyledContainer
         onSubmit={onSubmit ? handleSubmit(onSubmit) : undefined}
         className={className}
         {...getTestId("Form", testId)}
@@ -67,6 +70,7 @@ export const View: React.FC<IView> = ({
                         fieldState: { error },
                     }) => (
                         <StyledInputContainer
+                            columns={columns}
                             style={containerStyle}
                             isReadOnly={isReadOnly}
                         >
@@ -185,5 +189,5 @@ export const View: React.FC<IView> = ({
                 )}
             </StyledButtonsGroup>
         )}
-    </form>
+    </StyledContainer>
 );
