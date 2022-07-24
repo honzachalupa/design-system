@@ -29,6 +29,7 @@ export {
 } from "./components/molecules/CopyButton";
 export {
     Form,
+    IFormInput,
     IFormProps,
     ISelectOption,
     StyledErrorMessage,

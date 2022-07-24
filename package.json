@@ -10,7 +10,7 @@
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
-        "release": "standard-version && git push",
+        "release": "standard-version && git push --tags",
         "docs": "nx run-many --target=docs --all"
     },
     "dependencies": {
@@ -32,8 +32,7 @@
         "react-switch": "^6.0.0",
         "regenerator-runtime": "0.13.9",
         "tslib": "^2.3.1",
-        "ua-parser-js": "^1.0.2",
-        "use-deep-compare-effect": "^1.8.1"
+        "ua-parser-js": "^1.0.2"
     },
     "devDependencies": {
         "@babel/core": "7.17.0",
