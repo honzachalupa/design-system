@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.18.1...v1.19.0) (2022-07-24)
+
+
+### Features
+
+* Changed Loader size. ([83e3101](https://github.com/mokkapps/changelog-generator-demo/commits/83e3101f94a50ea667d659c13d0f71efb48eed4f))
+
+
+### Bug Fixes
+
+* Debugging Form. ([711d12c](https://github.com/mokkapps/changelog-generator-demo/commits/711d12c3977b1a5d26029ef93bad5f10e56abc64))
+
 ### [1.18.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.18.0...v1.18.1) (2022-07-22)
 
 
