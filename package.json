@@ -1,6 +1,6 @@
 {
     "name": "common",
-    "version": "1.19.1",
+    "version": "1.19.2",
     "license": "MIT",
     "scripts": {
         "start": "nx run-many --target=build --all --watch",
@@ -10,7 +10,7 @@
         "code:check": "yarn lint && yarn test && yarn build",
         "storybook:watch": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
-        "release": "standard-version && git push --tags",
+        "release": "standard-version && git push && git push --tags",
         "docs": "nx run-many --target=docs --all"
     },
     "dependencies": {
