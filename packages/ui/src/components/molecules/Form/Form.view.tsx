@@ -77,7 +77,7 @@ export const View: React.FC<IView> = ({
                             {label && (
                                 <StyledInputLabel
                                     htmlFor={id}
-                                    isRequired={rules?.required}
+                                    isRequired={!isReadOnly && rules?.required}
                                 >
                                     {label}
                                 </StyledInputLabel>
@@ -157,12 +157,12 @@ export const View: React.FC<IView> = ({
                                 children
                             ) : null}
 
-                            {rules && error && (
+                            {error && (
                                 <StyledErrorMessage>
                                     {error.type !== "manual"
                                         ? getErrorMessage(
                                               error.type,
-                                              rules,
+                                              rules!,
                                               value,
                                           )
                                         : error.message}

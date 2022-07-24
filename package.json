@@ -32,7 +32,8 @@
         "react-switch": "^6.0.0",
         "regenerator-runtime": "0.13.9",
         "tslib": "^2.3.1",
-        "ua-parser-js": "^1.0.2"
+        "ua-parser-js": "^1.0.2",
+        "use-deep-compare-effect": "^1.8.1"
     },
     "devDependencies": {
         "@babel/core": "7.17.0",

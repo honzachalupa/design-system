@@ -25,6 +25,7 @@ Default.args = {
             id: "input-2",
             controlType: "select",
             label: "Select",
+            value: "2",
             options: [
                 {
                     id: "1",
@@ -42,7 +43,6 @@ Default.args = {
             rules: {
                 required: true,
             },
-            isReadOnly: true,
         },
     ],
     validationTexts: {
@@ -92,7 +92,6 @@ MultipleColumns.args = {
             rules: {
                 required: true,
             },
-            isReadOnly: true,
         },
     ],
     validationTexts: {

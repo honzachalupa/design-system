@@ -8,6 +8,7 @@ import {
     useState,
 } from "react";
 import { useForm } from "react-hook-form";
+import { useDeepCompareEffectNoCheck as useEffectDeep } from "use-deep-compare-effect";
 import { IComponentProps } from "../../../interfaces/component";
 import { IButtonProps } from "../../atoms/Button";
 import { View } from "./Form.view";
@@ -134,7 +135,7 @@ export const Form = forwardRef(
             callback(value);
         };
 
-        useEffect(() => {
+        useEffectDeep(() => {
             if (onChange && formData) {
                 onChange(formData);
             }
