@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.19.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.19.0...v1.19.1) (2022-07-24)
+
+
+### Bug Fixes
+
+* Fixed Form component. ([7db2f79](https://github.com/mokkapps/changelog-generator-demo/commits/7db2f792f461c65388597d8bb917b979d3866ad6))
+
 ## [1.19.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.18.1...v1.19.0) (2022-07-24)
 
 
