@@ -23,8 +23,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledIconContainer = styled.div`
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     position: relative;
 `;
 
