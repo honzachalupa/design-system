@@ -26,6 +26,8 @@ export const StyledLink = styled(Button)<{
     user-select: text;
     white-space: normal;
     word-wrap: break-word;
+    border: none;
+    outline: none;
 
     ${({ color, theme }) =>
         color === "accentPrimary"
