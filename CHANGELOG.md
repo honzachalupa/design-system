@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.21.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.21.1...v1.21.2) (2022-07-27)
+
+
+### Bug Fixes
+
+* **Button:** Fixed Button hover style. ([8fdfb7a](https://github.com/mokkapps/changelog-generator-demo/commits/8fdfb7ad48ad87cd38c150876913d647a7ecb2b2))
+
 ### [1.21.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.21.0...v1.21.1) (2022-07-27)
 
 
