@@ -23,8 +23,7 @@ export const StyledContainer = styled.div`
 export const StyledOverlay = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: ${({ theme }) =>
-        transparentize(0.2, theme.colors.grayDark)};
+    background: ${({ theme }) => transparentize(0.2, theme.colors.grayDark)};
     backdrop-filter: blur(3px);
     position: absolute;
 
@@ -37,7 +36,7 @@ export const StyledContent = styled.div<{ width?: number; height?: number }>`
     width: ${({ width }) => width || 800}px;
     height: ${({ height }) => (height ? `${height}px` : "auto")};
     max-height: 80vh;
-    background-color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.white};
     padding: 20px;
     overflow-y: scroll;
     position: relative;

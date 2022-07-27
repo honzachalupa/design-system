@@ -4,7 +4,7 @@ import { Icon } from "../Icon";
 export const StyledOverlay = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     display: flex;
     align-items: center;

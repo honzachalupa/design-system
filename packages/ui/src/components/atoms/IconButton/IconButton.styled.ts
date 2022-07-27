@@ -11,14 +11,14 @@ export const StyledIconButton = styled.button<{
     border-style: solid;
     border-radius: 50%;
     cursor: pointer;
-    transition: 200ms background-color, color, opacity;
+    transition: 200ms background, color, opacity;
 
     &:hover {
         opacity: 0.8;
     }
 
     ${({ color, theme }) => `
-        background-color: ${
+        background: ${
             theme.button?.styles?.[color]?.backgroundColor ||
             theme.button?.styles?.default?.backgroundColor ||
             theme.colors.grayLight

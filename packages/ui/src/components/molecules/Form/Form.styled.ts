@@ -200,7 +200,7 @@ export const StyledDatePickerInputContainer = styled.div`
 
     .DayPicker-TodayButton {
         border: none;
-        background-color: transparent;
+        background: transparent;
         background-image: none;
         box-shadow: none;
         color: #4a90e2;
@@ -224,7 +224,7 @@ export const StyledDatePickerInputContainer = styled.div`
     }
 
     .DayPicker-Day--sunday {
-        background-color: #f7f8f8;
+        background: #f7f8f8;
     }
 
     .DayPicker-Day--sunday:not(.DayPicker-Day--today) {
@@ -233,17 +233,17 @@ export const StyledDatePickerInputContainer = styled.div`
 
     .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
         position: relative;
-        background-color: #4a90e2;
+        background: #4a90e2;
         color: #f0f8ff;
     }
 
     .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
-        background-color: #51a0fa;
+        background: #51a0fa;
     }
 
     .DayPicker:not(.DayPicker--interactionDisabled)
         .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-        background-color: #f0f8ff;
+        background: #f0f8ff;
     }
 
     .DayPickerInput {

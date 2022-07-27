@@ -7,8 +7,8 @@ export const StyledContainer = styled(Carousel)<{
 }>`
     width: 100%;
     height: 100%;
-    background-color: ${({ backgroundColor }) => backgroundColor};
-    transition: ${({ transitionTime }) => transitionTime}ms background-color;
+    background: ${({ backgroundColor }) => backgroundColor};
+    transition: ${({ transitionTime }) => transitionTime}ms background;
 
     .carousel .control-arrow,
     .carousel.carousel-slider .control-arrow {

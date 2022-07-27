@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.grayLight};
+    background: ${({ theme }) => theme.colors.grayLight};
     border-radius: 11px;
     overflow: hidden;
     display: flex;
@@ -11,6 +11,6 @@ export const StyledContainer = styled.div`
 export const StyledBar = styled.div<{ percents: number }>`
     width: ${({ percents }) => percents}%;
     height: 22px;
-    background-color: ${({ theme }) => theme.colors.blueDark};
+    background: ${({ theme }) => theme.colors.blueDark};
     transition: 250ms width;
 `;

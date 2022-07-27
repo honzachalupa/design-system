@@ -7,7 +7,7 @@ export const StyledHeaderButton = styled.button<{ isSelected: boolean }>`
     &:hover,
     &:focus {
         min-width: 180px;
-        background-color: #ededf0;
+        background: #ededf0;
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -26,7 +26,7 @@ export const StyledHeaderButton = styled.button<{ isSelected: boolean }>`
         ${({ isSelected }) =>
             isSelected &&
             `
-                background-color: white;
+                background: white;
                 border-bottom: 1px solid transparent;
             `}
     }

@@ -3,7 +3,7 @@ import { ButtonsGroup } from "../ButtonsGroup";
 
 export const StyledContainer = styled.div`
     width: 100%;
-    background-color: #eff5f7;
+    background: #eff5f7;
     padding: 15px;
     display: flex;
     justify-content: space-between;

@@ -12,7 +12,7 @@ export const StyledBodyRow = styled.li<{
     highlightColor?: string | undefined;
     opacity?: number | undefined;
 }>`
-    background-color: ${({ highlightColor }) =>
+    background: ${({ highlightColor }) =>
         highlightColor === "red"
             ? "rgba(255, 0, 0, 0.07)"
             : highlightColor === "green"
