@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.19.2...v1.20.0) (2022-07-27)
+
+
+### Features
+
+* **TabsView:** Added index persistency. ([86e45f8](https://github.com/mokkapps/changelog-generator-demo/commits/86e45f8a83c9ad3c619d55a316ea48a17c73c0b3))
+
 ### [1.19.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.19.1...v1.19.2) (2022-07-24)
 
 ### [1.19.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.19.0...v1.19.1) (2022-07-24)
