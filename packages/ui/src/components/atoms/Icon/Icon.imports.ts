@@ -2,7 +2,11 @@ import { AiOutlineLoading } from "react-icons/ai";
 import { GiCutDiamond, GiSpeedometer } from "react-icons/gi";
 import { HiUsers } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { IoDocumentTextOutline, IoHelp } from "react-icons/io5";
+import {
+    IoDocumentTextOutline,
+    IoHelp,
+    IoPersonOutline,
+} from "react-icons/io5";
 import {
     MdAdd,
     MdCancelPresentation,
@@ -46,7 +50,8 @@ export const icons = {
     giftcard: MdCardGiftcard,
     list: MdOutlineList,
     speed: GiSpeedometer,
-    person: MdOutlinePersonPin,
+    person: IoPersonOutline,
+    personPin: MdOutlinePersonPin,
     persons: HiUsers,
     photo: MdOutlinePhoto,
     cross: MdClose,
