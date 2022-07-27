@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.20.0...v1.21.0) (2022-07-27)
+
+
+### Features
+
+* **Icon:** Added new icon. ([5fe6708](https://github.com/mokkapps/changelog-generator-demo/commits/5fe6708514d9e1347ac9c4790aa18c17d83059eb))
+* **Icon:** Added new icons. ([629e2f1](https://github.com/mokkapps/changelog-generator-demo/commits/629e2f133febd54724cad2eaaaec5a088ba68095))
+* **IconButton:** Created IconButton component. ([a264cf3](https://github.com/mokkapps/changelog-generator-demo/commits/a264cf3463d22c69873b95460c7f403835a8cd89))
+
+
+### Bug Fixes
+
+* **Link:** Fixed hover style. ([a3708ee](https://github.com/mokkapps/changelog-generator-demo/commits/a3708ee61d182440f0241839135e841c6e1b0c73))
+
 ## [1.20.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.19.2...v1.20.0) (2022-07-27)
 
 
