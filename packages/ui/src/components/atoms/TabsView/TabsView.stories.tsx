@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { TabsView as Component } from "./TabsView";
+import { TabsView as Component } from "./";
 
 export default {
     title: "Atoms/TabsView",
@@ -28,4 +28,5 @@ const Template: ComponentStory<typeof Component> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
     labels: ["Tab 1", "Tab 2", "Tab 3"],
+    persistencyKey: "xxxx",
 };

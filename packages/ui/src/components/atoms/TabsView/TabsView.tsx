@@ -12,21 +12,28 @@ export interface IProps extends IComponentProps {
     labels: string[];
     children: ReactNode[];
     defaultIndex?: number;
+    persistencyKey?: string | number;
     onChange?: (index: number) => void;
 }
 
-export const TabsView: React.FC<IProps> = ({
+const TabsView: React.FC<IProps & { PERSISTENCY_KEY: string }> = ({
     labels,
     children,
     defaultIndex = 0,
+    persistencyKey,
     className,
     testId,
     onChange,
+    PERSISTENCY_KEY,
 }) => {
     const [index, setIndex] = useState<number>(defaultIndex);
 
     useEffect(() => {
         onChange?.(index);
+
+        if (persistencyKey) {
+            localStorage.setItem(PERSISTENCY_KEY, index.toString());
+        }
     }, [index]);
 
     return (
@@ -55,4 +62,32 @@ export const TabsView: React.FC<IProps> = ({
             </StyledContentContainer>
         </StyledContainer>
     );
+};
+
+export const TabsView_Wrapper: React.FC<IProps> = (props) => {
+    const [defaultIndex, setDefaultIndex] = useState<number>(-1);
+
+    const PERSISTENCY_KEY = `TabsView_${props.persistencyKey}`;
+
+    useEffect(() => {
+        if (props.persistencyKey) {
+            const index = Number(
+                localStorage.getItem(PERSISTENCY_KEY) ||
+                    props.defaultIndex ||
+                    0,
+            );
+
+            setDefaultIndex(index);
+        } else {
+            setDefaultIndex(props.defaultIndex || 0);
+        }
+    }, []);
+
+    return defaultIndex >= 0 ? (
+        <TabsView
+            {...props}
+            defaultIndex={defaultIndex}
+            PERSISTENCY_KEY={PERSISTENCY_KEY}
+        />
+    ) : null;
 };
