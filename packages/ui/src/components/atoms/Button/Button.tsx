@@ -31,12 +31,14 @@ export const Button: React.FC<IProps> = ({
         type={type}
         color={color}
         size={size}
-        hasIcon={!!icon}
         className={className}
         isDisabled={isDisabled}
         onClick={onClick}
         {...getTestId("Button", testId)}
     >
-        {icon ? <StyledIcon {...icon} /> : label}
+        {/* @ts-ignore */}
+        {icon && <StyledIcon size={size} {...icon} />}
+
+        <span>{label}</span>
     </StyledButton>
 );

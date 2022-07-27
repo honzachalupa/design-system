@@ -3,7 +3,9 @@ import "styled-components";
 interface IButtonStyle {
     backgroundColor?: string;
     color?: string;
-    borderColor?: string;
+    border?: {
+        color: string;
+    };
     boxShadow?: string;
 }
 

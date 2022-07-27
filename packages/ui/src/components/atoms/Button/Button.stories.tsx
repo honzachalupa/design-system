@@ -23,12 +23,31 @@ Advanced.args = {
     size: "big",
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const WithIcon = Template.bind({});
+WithIcon.args = {
     label: "Label",
     type: "submit",
     icon: {
         name: "share",
         color: "yellow",
+    },
+};
+
+export const Facebook = Template.bind({});
+Facebook.args = {
+    label: "Sign Up with Facebook",
+    type: "submit",
+    icon: {
+        name: "facebook",
+        color: "black",
+    },
+};
+
+export const Google = Template.bind({});
+Google.args = {
+    label: "Sign Up with Google",
+    type: "submit",
+    icon: {
+        name: "googleColored",
     },
 };

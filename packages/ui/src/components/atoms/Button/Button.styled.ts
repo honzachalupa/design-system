@@ -5,7 +5,6 @@ import { TButtonSizes } from "./Button.types";
 export const StyledButton = styled.button<{
     color: string;
     size: TButtonSizes;
-    hasIcon: boolean;
     isDisabled: boolean;
 }>`
     font-size: ${({ theme }) => theme.button?.font?.size || 16}px;
@@ -16,6 +15,9 @@ export const StyledButton = styled.button<{
     border-radius: ${({ theme }) => theme.button?.border?.radius || 2}px;
     padding: ${({ theme }) => theme.button?.padding || "0 15px"};
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 200ms background-color, color, opacity;
 
@@ -35,8 +37,8 @@ export const StyledButton = styled.button<{
             "black"
         };
         border-color: ${
-            theme.button?.styles?.[color]?.borderColor ||
-            theme.button?.styles?.default?.borderColor ||
+            theme.button?.styles?.[color]?.border?.color ||
+            theme.button?.styles?.default?.border?.color ||
             "transparent"
         };
         box-shadow: ${
@@ -47,33 +49,23 @@ export const StyledButton = styled.button<{
     `};
 
     ${({ size }) =>
-        size === "small"
-            ? `
-            min-width: 110px;
-            font-size: 13px;
-            padding: 10px;
-        `
-            : size === "big"
-            ? `
-            min-width: 180px;
-            font-size: 17px;
-            padding: 20px;
-        `
-            : `
-            min-width: 160px;
-            font-size: 15px;
-            padding: 15px;
-        `}
-
-    ${({ hasIcon }) =>
-        hasIcon &&
-        `
-            width: 40px;
-            min-width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            padding: 10px;
-        `}
+        ({
+            small: {
+                "min-width": 110,
+                "font-size": 13,
+                padding: "0 10",
+            },
+            medium: {
+                "min-width": 160,
+                "font-size": 15,
+                padding: "0 15",
+            },
+            big: {
+                "min-width": 180,
+                "font-size": 17,
+                padding: "0 20",
+            },
+        }[size])}
 
     &:hover,
     &:focus,
@@ -89,9 +81,41 @@ export const StyledButton = styled.button<{
             pointer-events: none;
             opacity: 0.5;
         `}
+
+    span {
+        ${({ size }) =>
+            ({
+                small: {
+                    padding: "10px 0",
+                },
+                medium: {
+                    padding: "15px 0",
+                },
+                big: {
+                    padding: "20px 0",
+                },
+            }[size])}
+    }
 `;
 
-export const StyledIcon = styled(Icon)`
-    width: 100%;
-    height: 100%;
+export const StyledIcon = styled(Icon)<{
+    size: TButtonSizes;
+}>`
+    margin-right: 12px;
+
+    ${({ size }) =>
+        ({
+            small: {
+                width: 20,
+                height: 20,
+            },
+            medium: {
+                width: 28,
+                height: 28,
+            },
+            big: {
+                width: 35,
+                height: 35,
+            },
+        }[size])}
 `;
