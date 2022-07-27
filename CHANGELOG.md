@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.21.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.21.0...v1.21.1) (2022-07-27)
+
+
+### Bug Fixes
+
+* **Button:** Fixed theme color property. ([e1744e1](https://github.com/mokkapps/changelog-generator-demo/commits/e1744e19ac8c6b7d3836a7d798237ed390d3def8))
+
 ## [1.21.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.20.0...v1.21.0) (2022-07-27)
 
 
