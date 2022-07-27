@@ -1,44 +1,20 @@
-import { lighten } from "polished";
 import styled from "styled-components";
-import { Button } from "../Button";
 
-const getColors = (color: string) => `
-    background-color: transparent;
-    color: ${color};
+export const StyledLink = styled.span<{ isDisabled: boolean }>`
+    color: ${({ theme }) => theme.colors.accentPrimary};
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
 
     &:hover {
-        background-color: transparent;
-        color: ${lighten(0.05, color)};
+        opacity: 0.8;
     }
-`;
 
-export const StyledLink = styled(Button)<{
-    color: string;
-}>`
-    min-width: 0;
-    max-width: 100%;
-    background-color: transparent;
-    color: ${({ color }) => color};
-    text-decoration: underline;
-    box-shadow: none;
-    margin: 0;
-    padding: 5px;
-    user-select: text;
-    white-space: normal;
-    word-wrap: break-word;
-    border: none;
-    outline: none;
-
-    ${({ color, theme }) =>
-        color === "accentPrimary"
-            ? getColors(theme.colors.accentPrimary)
-            : color === "accentSecondary"
-            ? getColors(theme.colors.accentSecondary)
-            : color === "blue"
-            ? getColors(theme.colors.blueDark)
-            : color === "green"
-            ? getColors(theme.colors.green)
-            : color === "red"
-            ? getColors(theme.colors.red)
-            : getColors("gray")}
+    ${({ isDisabled }) =>
+        isDisabled &&
+        `
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.5;
+    `}
 `;
