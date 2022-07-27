@@ -31,11 +31,6 @@ export const StyledButton = styled.button<{
             theme.button?.styles?.default?.backgroundColor ||
             theme.colors.grayLight
         };
-        color: ${
-            theme.button?.styles?.[color]?.color ||
-            theme.button?.styles?.default?.color ||
-            "black"
-        };
         border-color: ${
             theme.button?.styles?.[color]?.border?.color ||
             theme.button?.styles?.default?.border?.color ||
@@ -83,6 +78,11 @@ export const StyledButton = styled.button<{
         `}
 
     span {
+        color: ${({ color, theme }) =>
+            theme.button?.styles?.[color]?.color ||
+            theme.button?.styles?.default?.color ||
+            "black"};
+
         ${({ size }) =>
             ({
                 small: {
