@@ -1,6 +1,7 @@
 export { Button, EButtonTypes, IButtonProps } from "./components/atoms/Button";
 export { Carousel, ICarouselProps } from "./components/atoms/Carousel";
 export { Icon, IIconProps, TIconName } from "./components/atoms/Icon";
+export { IconButton } from "./components/atoms/IconButton";
 export { IImageProps, Image } from "./components/atoms/Image";
 export { ILinkProps, Link } from "./components/atoms/Link";
 export { ILoaderProps, Loader } from "./components/atoms/Loader";
