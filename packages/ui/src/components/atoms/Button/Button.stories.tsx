@@ -39,7 +39,7 @@ Facebook.args = {
     type: "submit",
     icon: {
         name: "facebook",
-        color: "black",
+        color: "#4267B2",
     },
 };
 

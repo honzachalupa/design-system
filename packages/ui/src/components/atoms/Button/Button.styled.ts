@@ -7,25 +7,27 @@ export const StyledButton = styled.button<{
     size: TButtonSizes;
     isDisabled: boolean;
 }>`
-    font-size: ${({ theme }) => theme.button?.font?.size || 16}px;
-    font-weight: ${({ theme }) => theme.button?.font?.weight || 600};
-    border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
-    border-color: ${({ theme }) => theme.button?.border?.color};
-    border-style: solid;
-    border-radius: ${({ theme }) => theme.button?.border?.radius || 2}px;
-    padding: ${({ theme }) => theme.button?.padding || "0 15px"};
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 200ms background-color, color, opacity;
-
+    &,
     &:hover {
-        opacity: 0.8;
-    }
+        font-size: ${({ theme }) => theme.button?.font?.size || 16}px;
+        font-weight: ${({ theme }) => theme.button?.font?.weight || 600};
+        border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
+        border-color: ${({ theme }) => theme.button?.border?.color};
+        border-style: solid;
+        border-radius: ${({ theme }) => theme.button?.border?.radius || 2}px;
+        padding: ${({ theme }) => theme.button?.padding || "0 15px"};
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 200ms background-color, color, opacity;
 
-    ${({ color, theme }) => `
+        &:hover {
+            opacity: 0.8;
+        }
+
+        ${({ color, theme }) => `
         background-color: ${
             theme.button?.styles?.[color]?.backgroundColor ||
             theme.button?.styles?.default?.backgroundColor ||
@@ -43,58 +45,49 @@ export const StyledButton = styled.button<{
         };
     `};
 
-    ${({ size }) =>
-        ({
-            small: {
-                "min-width": 110,
-                "font-size": 13,
-                padding: "0 10",
-            },
-            medium: {
-                "min-width": 160,
-                "font-size": 15,
-                padding: "0 15",
-            },
-            big: {
-                "min-width": 180,
-                "font-size": 17,
-                padding: "0 20",
-            },
-        }[size])}
+        ${({ size }) =>
+            ({
+                small: {
+                    "min-width": 110,
+                },
+                medium: {
+                    "font-size": 15,
+                },
+                big: {
+                    "font-size": 17,
+                },
+            }[size])}
 
-    &:hover,
-    &:focus,
-    &:active {
-        border: none;
-        outline: none;
-    }
-
-    ${({ isDisabled }) =>
-        isDisabled &&
-        `
+        ${({ isDisabled }) =>
+            isDisabled &&
+            `
             cursor: not-allowed;
             pointer-events: none;
             opacity: 0.5;
         `}
 
     span {
-        color: ${({ color, theme }) =>
-            theme.button?.styles?.[color]?.color ||
-            theme.button?.styles?.default?.color ||
-            "black"};
+            color: ${({ color, theme }) =>
+                theme.button?.styles?.[color]?.color ||
+                theme.button?.styles?.default?.color ||
+                "black"};
 
-        ${({ size }) =>
-            ({
-                small: {
-                    padding: "10px 0",
-                },
-                medium: {
-                    padding: "15px 0",
-                },
-                big: {
-                    padding: "20px 0",
-                },
-            }[size])}
+            ${({ size }) =>
+                ({
+                    small: {
+                        "font-size": 13,
+                        padding: "10px 0",
+                    },
+                    medium: {
+                        "min-width": 160,
+                        padding: "15px 0",
+                    },
+                    big: {
+                        "min-width": 180,
+                        padding: "20px 0",
+                    },
+                }[size])}
+        }
     }
 `;
 
