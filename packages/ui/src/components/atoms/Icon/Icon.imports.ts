@@ -1,4 +1,9 @@
-import { AiOutlineLoading } from "react-icons/ai";
+import {
+    AiFillFacebook,
+    AiOutlineGoogle,
+    AiOutlineLoading,
+} from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
 import { GiCutDiamond, GiSpeedometer } from "react-icons/gi";
 import { HiUsers } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -58,4 +63,7 @@ export const icons = {
     temp: MdCancelPresentation,
     hamburger: MdMenu,
     loading: AiOutlineLoading,
+    facebook: AiFillFacebook,
+    google: AiOutlineGoogle,
+    googleColored: FcGoogle,
 };
