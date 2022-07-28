@@ -13,7 +13,6 @@ export const StyledButton = styled.button<{
         font-weight: ${({ theme }) => theme.button?.font?.weight || 600};
         border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
         border-color: ${({ theme }) => theme.button?.border?.color};
-        border-style: solid;
         border-radius: ${({ theme }) => theme.button?.border?.radius || 2}px;
         padding: ${({ theme }) => theme.button?.padding || "0 15px"};
         white-space: nowrap;

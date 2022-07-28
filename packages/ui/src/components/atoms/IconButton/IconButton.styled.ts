@@ -10,7 +10,6 @@ export const StyledIconButton = styled.button<{
     &:hover {
         border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
         border-color: ${({ theme }) => theme.button?.border?.color};
-        border-style: solid;
         border-radius: 50%;
         cursor: pointer;
         transition: 200ms background, color, opacity;

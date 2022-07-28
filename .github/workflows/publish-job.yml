@@ -58,15 +58,15 @@ jobs:
                   access: public
                   token: ${{ secrets.NPM_TOKEN }}
 
-            - name: Build storybook
-              run: yarn storybook:build
+            # - name: Build storybook
+            #   run: yarn storybook:build
 
-            - name: Publish UI library storybook
-              uses: chromaui/action@v1
-              with:
-                  storybookBuildDir: build/storybooks/ui
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+            # - name: Publish UI library storybook
+            #   uses: chromaui/action@v1
+            #   with:
+            #       storybookBuildDir: build/storybooks/ui
+            #       token: ${{ secrets.GITHUB_TOKEN }}
+            #       projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
             - name: Save artifact
               uses: actions/upload-artifact@master
