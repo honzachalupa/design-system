@@ -1,6 +1,7 @@
 export {
     Form,
     IFormInput,
+    IFormRefProps,
     IProps as IFormProps,
     ISelectOption,
 } from "./Form.controller";
