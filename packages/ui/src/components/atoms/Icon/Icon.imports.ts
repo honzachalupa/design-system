@@ -3,6 +3,7 @@ import {
     AiOutlineGoogle,
     AiOutlineLoading,
 } from "react-icons/ai";
+import { CgLock, CgLockUnlock } from "react-icons/cg";
 import { FcGoogle } from "react-icons/fc";
 import { GiCutDiamond, GiSpeedometer } from "react-icons/gi";
 import { HiUsers } from "react-icons/hi";
@@ -66,4 +67,6 @@ export const icons = {
     facebook: AiFillFacebook,
     google: AiOutlineGoogle,
     googleColored: FcGoogle,
+    lockLocked: CgLock,
+    lockUnlocked: CgLockUnlock,
 };
