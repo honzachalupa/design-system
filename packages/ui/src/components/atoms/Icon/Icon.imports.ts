@@ -1,5 +1,6 @@
 import {
     AiFillFacebook,
+    AiOutlineExperiment,
     AiOutlineGoogle,
     AiOutlineLoading,
 } from "react-icons/ai";
@@ -69,4 +70,5 @@ export const icons = {
     googleColored: FcGoogle,
     lockLocked: CgLock,
     lockUnlocked: CgLockUnlock,
+    chemistry: AiOutlineExperiment,
 };
