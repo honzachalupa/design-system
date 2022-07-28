@@ -90,7 +90,10 @@ export const Modal: React.FC<IProps & RefAttributes<IModalRefProps>> =
                         <StyledIcon
                             label={closeButtonText}
                             name="cross"
-                            color={theme.colors.blueDark}
+                            color={
+                                theme.modal?.closeIcon?.color ||
+                                theme.colors.blueDark
+                            }
                             onClick={handleClose}
                         />
 

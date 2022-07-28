@@ -23,8 +23,12 @@ export const StyledContainer = styled.div`
 export const StyledOverlay = styled.div`
     width: 100vw;
     height: 100vh;
-    background: ${({ theme }) => transparentize(0.2, theme.colors.grayDark)};
-    backdrop-filter: blur(3px);
+    background: ${({ theme }) =>
+        transparentize(
+            theme.modal?.overlay?.opacity || 0.2,
+            theme.modal?.overlay?.background || theme.colors.grayDark,
+        )};
+    backdrop-filter: blur(${({ theme }) => theme.modal?.overlay?.blur || 3}px);
     position: absolute;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -36,8 +40,11 @@ export const StyledContent = styled.div<{ width?: number; height?: number }>`
     width: ${({ width }) => width || 800}px;
     height: ${({ height }) => (height ? `${height}px` : "auto")};
     max-height: 80vh;
-    background: ${({ theme }) => theme.colors.white};
-    padding: 20px;
+    background: ${({ theme }) => theme.modal?.background || theme.background};
+    border-width: ${({ theme }) => theme.modal?.border?.width || 0}px;
+    border-color: ${({ theme }) => theme.modal?.border?.color};
+    border-radius: ${({ theme }) => theme.modal?.border?.radius || 2}px;
+    padding: ${({ theme }) => theme.modal?.padding || 20}px;
     overflow-y: scroll;
     position: relative;
     z-index: 99;
@@ -50,8 +57,8 @@ export const StyledContent = styled.div<{ width?: number; height?: number }>`
 `;
 
 export const StyledIcon = styled(Icon)`
-    width: 35px;
-    height: 35px;
+    width: ${({ theme }) => theme.modal?.closeIcon?.size || 35}px;
+    height: ${({ theme }) => theme.modal?.closeIcon?.size || 35}px;
     cursor: pointer;
     position: absolute;
     right: 10px;

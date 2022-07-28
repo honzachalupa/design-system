@@ -46,7 +46,7 @@ export interface ITheme {
             weight?: number;
         };
         border?: { width?: number; color?: string; radius?: number };
-        padding?: string;
+        padding?: number;
         styles?: {
             default: IButtonStyle;
             [key: string]: IButtonStyle;
@@ -58,7 +58,21 @@ export interface ITheme {
             size?: number;
         };
         border?: { width?: number; color?: string; radius?: number };
-        padding?: string;
+        padding?: number;
+    };
+    modal?: {
+        background?: string;
+        border: { width?: number; color?: string; radius?: number };
+        padding?: number;
+        closeIcon?: {
+            size?: number;
+            color?: string;
+        };
+        overlay?: {
+            background?: string;
+            opacity?: number;
+            blur?: number;
+        };
     };
 }
 
