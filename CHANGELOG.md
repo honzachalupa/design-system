@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.22.2...v1.23.0) (2022-07-28)
+
+
+### Features
+
+* **Icon:** Added new icon. ([5b9dbee](https://github.com/mokkapps/changelog-generator-demo/commits/5b9dbee257f1e828cebc619644606ee1c3a6af8e))
+
 ### [1.22.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.22.1...v1.22.2) (2022-07-28)
 
 
