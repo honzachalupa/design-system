@@ -23,10 +23,6 @@ export const StyledButton = styled.button<{
         cursor: pointer;
         transition: 200ms background, color, opacity;
 
-        &:hover {
-            opacity: 0.8;
-        }
-
         ${({ color, theme }) => `
         background: ${
             theme.button?.styles?.[color]?.backgroundColor ||
@@ -88,6 +84,10 @@ export const StyledButton = styled.button<{
                     },
                 }[size])}
         }
+    }
+
+    &:hover {
+        opacity: 0.8;
     }
 `;
 
