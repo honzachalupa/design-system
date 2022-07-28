@@ -6,18 +6,16 @@ export const StyledIconButton = styled.button<{
     size: TButtonSizes;
     isDisabled: boolean;
 }>`
-    border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
-    border-color: ${({ theme }) => theme.button?.border?.color};
-    border-style: solid;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 200ms background, color, opacity;
-
+    &,
     &:hover {
-        opacity: 0.8;
-    }
+        border-width: ${({ theme }) => theme.button?.border?.width || 0}px;
+        border-color: ${({ theme }) => theme.button?.border?.color};
+        border-style: solid;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 200ms background, color, opacity;
 
-    ${({ color, theme }) => `
+        ${({ color, theme }) => `
         background: ${
             theme.button?.styles?.[color]?.backgroundColor ||
             theme.button?.styles?.default?.backgroundColor ||
@@ -35,37 +33,35 @@ export const StyledIconButton = styled.button<{
         };
     `};
 
-    ${({ size }) =>
-        ({
-            small: {
-                width: 35,
-                height: 35,
-                padding: 8,
-            },
-            medium: {
-                width: 46,
-                height: 46,
-                padding: 10,
-            },
-            big: {
-                width: 60,
-                height: 60,
-                padding: 15,
-            },
-        }[size])}
+        ${({ size }) =>
+            ({
+                small: {
+                    width: 35,
+                    height: 35,
+                    padding: 8,
+                },
+                medium: {
+                    width: 46,
+                    height: 46,
+                    padding: 10,
+                },
+                big: {
+                    width: 60,
+                    height: 60,
+                    padding: 15,
+                },
+            }[size])}
 
-    &:hover,
-    &:focus,
-    &:active {
-        border: none;
-        outline: none;
-    }
-
-    ${({ isDisabled }) =>
-        isDisabled &&
-        `
+        ${({ isDisabled }) =>
+            isDisabled &&
+            `
             cursor: not-allowed;
             pointer-events: none;
             opacity: 0.5;
         `}
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
 `;
