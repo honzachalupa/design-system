@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.22.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.22.1...v1.22.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* **Form:** Added IFormRefProps export. ([cf64651](https://github.com/mokkapps/changelog-generator-demo/commits/cf646516639287694c5451fb18a14d1cfb8e65b2))
+
 ### [1.22.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.22.0...v1.22.1) (2022-07-28)
 
 
