@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.24.0...v1.25.0) (2022-07-29)
+
+
+### Features
+
+* **Modal:** Added color property to theme. ([64876af](https://github.com/mokkapps/changelog-generator-demo/commits/64876af5fb5305656cd44019370d0097f319887e))
+* **Storybook:** Added theme switcher and sample theme. ([5fa1604](https://github.com/mokkapps/changelog-generator-demo/commits/5fa16040e9a6ab78c81c35ab9a769ca1a8381dca))
+
 ## [1.24.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.23.0...v1.24.0) (2022-07-28)
 
 
