@@ -1,20 +1,21 @@
 import {
     AiFillFacebook,
+    AiOutlineBarChart,
     AiOutlineExperiment,
     AiOutlineGoogle,
     AiOutlineLoading,
-} from "react-icons/ai";
-import { CgLock, CgLockUnlock } from "react-icons/cg";
-import { FcGoogle } from "react-icons/fc";
-import { GiCutDiamond, GiSpeedometer } from "react-icons/gi";
-import { HiUsers } from "react-icons/hi";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import {
+    CgLock,
+    CgLockUnlock,
+    FcGoogle,
+    GiCutDiamond,
+    GiMaterialsScience,
+    GiSpeedometer,
+    HiUsers,
     IoDocumentTextOutline,
     IoHelp,
+    IoIosArrowBack,
+    IoIosArrowForward,
     IoPersonOutline,
-} from "react-icons/io5";
-import {
     MdAdd,
     MdCancelPresentation,
     MdCardGiftcard,
@@ -32,8 +33,11 @@ import {
     MdOutlineShield,
     MdRemove,
     MdTimerOff,
-} from "react-icons/md";
-import { RiHome2Fill, RiHome2Line, RiShareForwardFill } from "react-icons/ri";
+    RiComputerLine,
+    RiHome2Fill,
+    RiHome2Line,
+    RiShareForwardFill,
+} from "react-icons/all";
 
 export const icons = {
     home: RiHome2Line,
@@ -70,5 +74,8 @@ export const icons = {
     googleColored: FcGoogle,
     lockLocked: CgLock,
     lockUnlocked: CgLockUnlock,
+    computer: RiComputerLine,
+    math: AiOutlineBarChart,
     chemistry: AiOutlineExperiment,
+    physics: GiMaterialsScience,
 };
