@@ -65,7 +65,7 @@ export const StyledIcon = styled(Icon)`
     height: ${({ theme }) => theme.modal?.closeIcon?.size || 35}px;
     cursor: pointer;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: ${({ theme }) => theme.modal?.closeIcon?.margin || 10}px;
+    top: ${({ theme }) => theme.modal?.closeIcon?.margin || 10}px;
     z-index: 9;
 `;

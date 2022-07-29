@@ -70,6 +70,7 @@ export interface ITheme {
         closeIcon?: {
             size?: number;
             color?: string;
+            margin?: number;
         };
         overlay?: {
             background?: string;
