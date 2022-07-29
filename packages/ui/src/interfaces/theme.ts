@@ -1,5 +1,7 @@
 import "styled-components";
 
+export type TThemes = "default" | "sample-1";
+
 interface IButtonStyle {
     backgroundColor?: string;
     color?: string;

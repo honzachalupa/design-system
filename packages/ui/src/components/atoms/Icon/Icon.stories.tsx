@@ -1,4 +1,3 @@
-import { getRandomHexColor } from "@honzachalupa/utils";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import styled from "styled-components";
 import { Icon as Component, TIconName } from "./Icon";
@@ -32,11 +31,7 @@ const TemplateAll: ComponentStory<typeof Component> = (args) => (
     <StyledIconsContainer>
         {Object.keys(icons).map((name: string) => (
             <StyledIconContainer key={name}>
-                <Component
-                    {...args}
-                    name={name as TIconName}
-                    color={getRandomHexColor()}
-                />
+                <Component {...args} name={name as TIconName} />
 
                 <p>{name}</p>
             </StyledIconContainer>
@@ -45,4 +40,4 @@ const TemplateAll: ComponentStory<typeof Component> = (args) => (
 );
 
 export const IconsList = TemplateAll.bind({});
-IconsList.args = { size: 80 };
+IconsList.args = { size: 60 };

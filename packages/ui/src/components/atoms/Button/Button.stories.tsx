@@ -29,7 +29,7 @@ WithIcon.args = {
     type: "submit",
     icon: {
         name: "share",
-        color: "yellow",
+        color: "red",
     },
 };
 

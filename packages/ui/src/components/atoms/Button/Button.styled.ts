@@ -46,10 +46,10 @@ export const StyledButton = styled.button<{
                     "min-width": 110,
                 },
                 medium: {
-                    "font-size": 15,
+                    "min-width": 160,
                 },
                 big: {
-                    "font-size": 17,
+                    "min-width": 180,
                 },
             }[size])}
 
@@ -74,11 +74,11 @@ export const StyledButton = styled.button<{
                         padding: "10px 0",
                     },
                     medium: {
-                        "min-width": 160,
+                        "font-size": 15,
                         padding: "15px 0",
                     },
                     big: {
-                        "min-width": 180,
+                        "font-size": 17,
                         padding: "20px 0",
                     },
                 }[size])}
