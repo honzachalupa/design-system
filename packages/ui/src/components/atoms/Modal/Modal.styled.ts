@@ -54,6 +54,10 @@ export const StyledContent = styled.div<{ width?: number; height?: number }>`
         height: 100vh;
         max-height: 100vh;
     }
+
+    * {
+        color: ${({ theme }) => theme.modal?.color || theme.fontColors.black};
+    }
 `;
 
 export const StyledIcon = styled(Icon)`

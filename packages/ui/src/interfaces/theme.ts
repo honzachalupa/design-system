@@ -64,6 +64,7 @@ export interface ITheme {
     };
     modal?: {
         background?: string;
+        color?: string;
         border: { width?: number; color?: string; radius?: number };
         padding?: number;
         closeIcon?: {

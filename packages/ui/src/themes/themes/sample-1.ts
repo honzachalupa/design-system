@@ -52,6 +52,7 @@ export const themeSample1: ITheme = {
     },
     modal: {
         background: "white",
+        color: "blue",
         border: { width: 5, color: "lightgray", radius: 20 },
         padding: 50,
         closeIcon: {
