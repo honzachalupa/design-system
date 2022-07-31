@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.27.0...v1.28.0) (2022-07-31)
+
+
+### Features
+
+* **List:** Added theming. ([f9f4606](https://github.com/mokkapps/changelog-generator-demo/commits/f9f4606c0f454fdd0bb6d44d611dc7f251782c20))
+
 ## [1.27.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.26.0...v1.27.0) (2022-07-29)
 
 
