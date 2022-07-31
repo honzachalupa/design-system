@@ -4,8 +4,28 @@ const actionsContainerWidth = 180;
 
 export const StyledContainer = styled.ul`
     width: 100%;
-    border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
     overflow-x: auto;
+`;
+
+const fixDefaultValue = (value: number | undefined, defaultValue: number) =>
+    value === undefined ? defaultValue : value;
+
+export const StyledHeaderRow = styled.li`
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: ${({ theme }) =>
+        fixDefaultValue(theme.list?.header?.borderBottom?.width, 1)}px;
+    border-bottom-color: ${({ theme }) =>
+        theme.list?.header?.borderBottom?.color || theme.colors.grayLight};
+    list-style: none;
+    display: flex;
+
+    * {
+        color: ${({ theme }) => theme.list?.header?.font?.color};
+        font-size: ${({ theme }) => theme.list?.header?.font?.size || 16}px;
+        font-weight: ${({ theme }) => theme.list?.header?.font?.weight || 600};
+        text-align: ${({ theme }) => theme.list?.header?.font?.align};
+    }
 `;
 
 export const StyledBodyRow = styled.li<{
@@ -20,16 +40,14 @@ export const StyledBodyRow = styled.li<{
             : highlightColor === "lightgray"
             ? "rgba(0, 0, 0, 0.03)"
             : "transparent"};
-    font-size: 16px;
+    border-bottom-style: solid;
+    border-bottom-width: ${({ theme }) =>
+        fixDefaultValue(theme.list?.body?.borderBottom?.width, 1)}px;
+    border-bottom-color: ${({ theme }) =>
+        theme.list?.body?.borderBottom?.color || theme.colors.grayLight};
     list-style: none;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.grayLight};
     display: flex;
     opacity: ${({ opacity }) => opacity};
-`;
-
-export const StyledHeaderRow = styled(StyledBodyRow)`
-    width: 100%;
-    font-weight: 600;
 `;
 
 export const StyledCellsContainer = styled.div<{ hasActions: boolean }>`
@@ -42,9 +60,30 @@ export const StyledCellsContainer = styled.div<{ hasActions: boolean }>`
     align-items: center;
 `;
 
-export const StyledCell = styled.div<{ count: number; isBold?: boolean }>`
+const StyledCell = styled.div<{ count: number }>`
     width: ${({ count }) => `${100 / count}%`};
-    font-weight: ${({ isBold }) => (isBold ? 600 : undefined)};
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+`;
+
+export const StyledHeaderCell = styled(StyledCell)`
+    width: ${({ count }) => `${100 / count}%`};
+    color: ${({ theme }) => theme.list?.header?.font?.color};
+    font-size: ${({ theme }) => theme.list?.header?.font?.size || 16}px;
+    font-weight: ${({ theme }) => theme.list?.header?.font?.weight};
+    text-align: ${({ theme }) => theme.list?.header?.font?.align};
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+`;
+
+export const StyledBodyCell = styled(StyledCell)`
+    width: ${({ count }) => `${100 / count}%`};
+    color: ${({ theme }) => theme.list?.body?.font?.color};
+    font-size: ${({ theme }) => theme.list?.body?.font?.size || 16}px;
+    font-weight: ${({ theme }) => theme.list?.body?.font?.weight};
+    text-align: ${({ theme }) => theme.list?.body?.font?.align};
     text-overflow: ellipsis;
     overflow: hidden;
     padding-right: 10px;

@@ -78,6 +78,32 @@ export interface ITheme {
             blur?: number;
         };
     };
+    list?: {
+        header?: {
+            font?: {
+                color?: string;
+                size?: number;
+                weight?: number;
+                align?: string;
+            };
+            borderBottom?: {
+                width?: number;
+                color?: string;
+            };
+        };
+        body?: {
+            font?: {
+                color?: string;
+                size?: number;
+                weight?: number;
+                align?: string;
+            };
+            borderBottom?: {
+                width?: number;
+                color?: string;
+            };
+        };
+    };
 }
 
 declare module "styled-components" {

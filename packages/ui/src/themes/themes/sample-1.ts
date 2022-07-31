@@ -65,4 +65,21 @@ export const themeSample1: ITheme = {
             blur: 5,
         },
     },
+    list: {
+        header: {
+            font: {
+                color: "red",
+                align: "center",
+            },
+        },
+        body: {
+            font: {
+                color: "black",
+                align: "center",
+            },
+            borderBottom: {
+                width: 0,
+            },
+        },
+    },
 };

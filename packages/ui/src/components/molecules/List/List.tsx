@@ -6,10 +6,11 @@ import { THeaderAlignments, Title } from "../../atoms/typography/Title";
 import { ButtonsGroup } from "../ButtonsGroup";
 import {
     StyledActionsContainer,
+    StyledBodyCell,
     StyledBodyRow,
-    StyledCell,
     StyledCellsContainer,
     StyledContainer,
+    StyledHeaderCell,
     StyledHeaderRow,
 } from "./List.styled";
 
@@ -20,7 +21,6 @@ export interface IProps extends IComponentProps {
     columns: {
         id: string;
         label?: string;
-        isBold?: boolean;
         renderer?: (row: any) => string | number | ReactNode | null;
     }[];
     actions?: {
@@ -72,9 +72,12 @@ export const List: React.FC<IProps> = ({
                     <StyledHeaderRow>
                         <StyledCellsContainer hasActions={hasActions}>
                             {columns.map(({ id, label }) => (
-                                <StyledCell key={id} count={columns.length}>
+                                <StyledHeaderCell
+                                    key={id}
+                                    count={columns.length}
+                                >
                                     {label}
-                                </StyledCell>
+                                </StyledHeaderCell>
                             ))}
                         </StyledCellsContainer>
 
@@ -103,16 +106,12 @@ export const List: React.FC<IProps> = ({
                         }
                     >
                         <StyledCellsContainer hasActions={hasActions}>
-                            {columns.map(({ id, renderer, isBold }) => (
-                                <StyledCell
-                                    key={id}
-                                    count={columns.length}
-                                    isBold={isBold}
-                                >
+                            {columns.map(({ id, renderer }) => (
+                                <StyledBodyCell key={id} count={columns.length}>
                                     {(renderer?.(item) !== undefined
                                         ? renderer?.(item)
                                         : item[id]) || ""}
-                                </StyledCell>
+                                </StyledBodyCell>
                             ))}
                         </StyledCellsContainer>
 
