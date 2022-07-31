@@ -10,8 +10,6 @@ const ProvidersWrapper: React.FC<{
 }> = ({ theme: themeProp, children }) => {
     const theme = useThemeSelector(themeProp);
 
-    console.log({ themeProp, theme });
-
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle theme={theme} isScrollDisabled={false} />

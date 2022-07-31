@@ -8,7 +8,7 @@
         "lint": "nx run-many --target=lint --all",
         "test": "nx run-many --target=test --all",
         "code:check": "yarn lint && yarn test && yarn build",
-        "storybook:watch": "nx storybook ui",
+        "storybook:start": "nx storybook ui",
         "storybook:build": "nx build-storybook ui",
         "release": "standard-version && git push && git push --tags",
         "docs": "nx run-many --target=docs --all"

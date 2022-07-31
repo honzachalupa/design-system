@@ -24,7 +24,7 @@ Thank you.
 
 #### Run Storybook
 
-`yarn storybook:watch`
+`yarn storybook:start`
 
 ### Resources
 
