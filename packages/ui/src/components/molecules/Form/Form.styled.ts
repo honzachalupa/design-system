@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Icon } from "../../atoms/Icon";
 import { ButtonsGroup } from "../ButtonsGroup";
 
 export const StyledContainer = styled.form`
@@ -49,13 +50,15 @@ export const StyledInputContainer = styled.div<{
     }
 
     select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
         ${({ isReadOnly }) =>
             isReadOnly &&
             `
             pointer-events: none;
             cursor: not-allowed;
-            -webkit-appearance: none;
-            -moz-appearance: none;
         `}
     }
 
@@ -64,6 +67,18 @@ export const StyledInputContainer = styled.div<{
         resize: none;
         padding: 15px;
     }
+`;
+
+export const StyledSelectContainer = styled.div`
+    position: relative;
+`;
+
+export const StyledSelectIcon = styled(Icon)`
+    width: 30px;
+    pointer-events: none;
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
 `;
 
 export const StyledDatePickerInputContainer = styled.div`
