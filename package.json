@@ -1,6 +1,6 @@
 {
     "name": "common",
-    "version": "1.29.0",
+    "version": "1.30.0",
     "license": "MIT",
     "scripts": {
         "start": "nx run-many --target=build --all --watch",

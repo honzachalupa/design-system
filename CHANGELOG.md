@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.30.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.29.0...v1.30.0) (2022-08-02)
+
+
+### Features
+
+* Hook useAsnyc replaced with useQuery (@tanstack/react-query). ([e18061d](https://github.com/mokkapps/changelog-generator-demo/commits/e18061de1b6369ca513a48442da591f0b3230c9b))
+
 ## [1.29.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.28.0...v1.29.0) (2022-08-02)
 
 
