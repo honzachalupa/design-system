@@ -1,4 +1,8 @@
-export { default as useAsync } from "./useAsync";
+export {
+    QueryClient,
+    QueryClientProvider,
+    useQuery,
+} from "@tanstack/react-query";
 export { default as useEventListener } from "./useEventListener";
 export { default as useIsFirstRender } from "./useIsFirstRender";
 export { default as useIsMounted } from "./useIsMounted";
