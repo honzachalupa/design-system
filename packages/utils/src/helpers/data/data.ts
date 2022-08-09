@@ -1,5 +1,29 @@
 import { IAbstractObject } from "../../types";
 
+export const sortAlphabetically = (a: string, b: string) => a.localeCompare(b);
+
+export const removeDuplicatesFromArray = (
+    array: Array<string | number | boolean>,
+) => Array.from(new Set(array));
+
+export const removeDuplicatesFromObject = (
+    originalArray: any[],
+    propertyKey: string,
+) => {
+    const newArray: any[] = [];
+    const lookupObject: any = {};
+
+    originalArray.forEach((item) => {
+        lookupObject[item[propertyKey]] = item;
+    });
+
+    Object.keys(lookupObject).forEach((key) => {
+        newArray.push(lookupObject[key]);
+    });
+
+    return newArray;
+};
+
 export const cleanObject = (object: IAbstractObject): IAbstractObject =>
     JSON.parse(
         JSON.stringify(

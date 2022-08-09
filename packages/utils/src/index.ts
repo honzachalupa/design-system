@@ -4,4 +4,5 @@ export * from "./helpers/data";
 export * from "./helpers/formatting";
 export * from "./helpers/logging";
 export * from "./hooks";
+export * from "./patterns";
 export * from "./types";
