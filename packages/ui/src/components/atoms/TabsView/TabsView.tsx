@@ -1,5 +1,5 @@
 import { getTestId } from "@honzachalupa/utils";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import { IComponentProps } from "../../../interfaces/component";
 import {
     StyledContainer,
@@ -26,7 +26,11 @@ const TabsView: React.FC<IProps & { PERSISTENCY_KEY: string }> = ({
     onChange,
     PERSISTENCY_KEY,
 }) => {
-    const [index, setIndex] = useState<number>(defaultIndex);
+    const tabs = useMemo(() => children.filter(Boolean), [children]);
+
+    const [index, setIndex] = useState<number>(
+        Math.min(defaultIndex, tabs.length - 1),
+    );
 
     useEffect(() => {
         onChange?.(index);
@@ -54,9 +58,9 @@ const TabsView: React.FC<IProps & { PERSISTENCY_KEY: string }> = ({
             </header>
 
             <StyledContentContainer>
-                {children.map((children, i) => (
+                {tabs.map((tab, i) => (
                     <StyledContent key={i} isVisible={index === i}>
-                        {children}
+                        {tab}
                     </StyledContent>
                 ))}
             </StyledContentContainer>
