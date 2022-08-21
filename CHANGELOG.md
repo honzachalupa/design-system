@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.32.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.31.0...v1.32.0) (2022-08-21)
+
+
+### Features
+
+* **Loader:** Added small size variant. ([dd5551d](https://github.com/mokkapps/changelog-generator-demo/commits/dd5551d29f8db45ada2ee0bdb59ca41f39113db4))
+
 ## [1.31.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.30.0...v1.31.0) (2022-08-09)
 
 
