@@ -7,24 +7,31 @@ import {
     StyledIconContainer,
     StyledLabel,
     StyledOverlay,
+    TLoaderSizes,
 } from "./Loader.styled";
 
 export interface IProps extends IComponentProps {
     message?: string;
     color?: string;
+    size?: TLoaderSizes;
     isFullscreen?: boolean;
 }
 
 const LoadingIndicator: React.FC<IProps> = ({
     message,
     color,
+    size,
     className,
     testId,
 }) => {
     const theme = useTheme();
 
     return (
-        <StyledContainer className={className} {...getTestId("Loader", testId)}>
+        <StyledContainer
+            size={size}
+            className={className}
+            {...getTestId("Loader", testId)}
+        >
             <StyledIconContainer>
                 <StyledIcon
                     name="loading"
@@ -62,5 +69,5 @@ export const Loader: React.FC<IProps> = ({
             />
         </StyledOverlay>
     ) : (
-        <LoadingIndicator />
+        <LoadingIndicator color={color} className={className} testId={testId} />
     );

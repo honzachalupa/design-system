@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Icon } from "../Icon";
 
+export type TLoaderSizes = "small";
+
 export const StyledOverlay = styled.div`
     width: 100vw;
     height: 100vh;
@@ -15,16 +17,16 @@ export const StyledOverlay = styled.div`
     z-index: 999;
 `;
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.div<{ size?: TLoaderSizes }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: ${({ size }) => (size === "small" ? 20 : 50)}px;
 `;
 
-export const StyledIconContainer = styled.div`
-    width: 60px;
-    height: 60px;
+export const StyledIconContainer = styled.div<{ size?: TLoaderSizes }>`
+    width: ${({ size }) => (size === "small" ? 40 : 60)}px;
+    height: ${({ size }) => (size === "small" ? 40 : 60)}px;
     position: relative;
 `;
 
