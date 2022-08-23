@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.33.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.32.0...v1.33.0) (2022-08-23)
+
+
+### Features
+
+* **FirebaseConnector:** Added delete method. ([361a4e2](https://github.com/mokkapps/changelog-generator-demo/commits/361a4e2855893e47de7d089c87c5efe7635dccb0))
+
 ## [1.32.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.31.0...v1.32.0) (2022-08-21)
 
 
