@@ -67,6 +67,9 @@ export class FirebaseConnector {
                 [timestampKey || "createdDate"]: moment().toString(),
             }),
 
+        delete: (collection: CollectionReference, id: string | number) =>
+            Firestore.deleteDoc(Firestore.doc(collection, id.toString())),
+
         update: (
             collection: CollectionReference,
             id: string | number,
