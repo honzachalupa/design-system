@@ -5,7 +5,7 @@ export const convertDocToItem = (doc: DocumentSnapshot): any => ({
     ...doc.data(),
 });
 
-export const convertDocsToItems = (docs: QuerySnapshot<any[]>) => {
+export const convertDocsToItems = (docs: QuerySnapshot<unknown>) => {
     const items: any[] = [];
 
     docs.forEach((doc) => {
