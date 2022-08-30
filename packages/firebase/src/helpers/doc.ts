@@ -1,7 +1,6 @@
-import { IAbstractObject } from "@honzachalupa/utils";
 import { DocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 
-export const convertDocToItem = (doc: DocumentSnapshot): IAbstractObject => ({
+export const convertDocToItem = (doc: DocumentSnapshot): unknown => ({
     id: doc.id,
     ...doc.data(),
 });
