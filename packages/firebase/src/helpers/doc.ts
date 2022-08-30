@@ -1,11 +1,11 @@
 import { DocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 
-export const convertDocToItem = (doc: DocumentSnapshot): unknown => ({
+export const convertDocToItem = (doc: DocumentSnapshot): any => ({
     id: doc.id,
     ...doc.data(),
 });
 
-export const convertDocsToItems = (docs: QuerySnapshot<unknown>) => {
+export const convertDocsToItems = (docs: QuerySnapshot<any[]>) => {
     const items: any[] = [];
 
     docs.forEach((doc) => {
