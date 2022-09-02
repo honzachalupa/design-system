@@ -32,6 +32,7 @@ export {
     Form,
     IFormInput,
     IFormProps,
+    IFormRefProps,
     ISelectOption,
     StyledErrorMessage,
     StyledInputContainer,
