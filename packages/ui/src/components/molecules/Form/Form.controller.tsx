@@ -47,6 +47,7 @@ export interface IFormData {
 
 export interface IFormRefProps {
     validate: () => void;
+    reset: () => void;
 }
 
 export interface IProps extends IComponentProps {
@@ -80,6 +81,7 @@ export const Form = forwardRef(
         const {
             control,
             trigger: validate,
+            reset,
             setValue,
             setError,
             handleSubmit,
@@ -178,6 +180,7 @@ export const Form = forwardRef(
             ref,
             (): IFormRefProps => ({
                 validate,
+                reset,
             }),
         );
 
