@@ -180,6 +180,7 @@ export const Form = forwardRef(
             ref,
             (): IFormRefProps => ({
                 validate,
+                // TODO: Fix reset
                 reset,
             }),
         );
