@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.36.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.35.1...v1.36.0) (2022-09-02)
+
+
+### Features
+
+* **Form:** Exported "reset" method. ([f3b8664](https://github.com/mokkapps/changelog-generator-demo/commits/f3b8664ecc7f2c30faf1fa9c29ebb5c047816ea1))
+* **Utils:** Added "capitalize" function. ([07027c5](https://github.com/mokkapps/changelog-generator-demo/commits/07027c5041231573544039afb5c7805cd2889af7))
+
 ### [1.35.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.35.0...v1.35.1) (2022-09-02)
 
 
