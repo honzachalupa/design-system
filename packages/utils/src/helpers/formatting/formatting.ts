@@ -108,3 +108,6 @@ export const replaceAccentedCharacters = (value: string) =>
 
 export const getRandomHexColor = (): string =>
     `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+export const capitalize = (value: string): string =>
+    value.charAt(0).toUpperCase() + value.slice(1);
