@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.35.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.35.0...v1.35.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* **Form:** Exported IFormRefProps. ([4735c8f](https://github.com/mokkapps/changelog-generator-demo/commits/4735c8f8416f58a0155d78ddbcaf04897e34552a))
+
 ## [1.35.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.34.5...v1.35.0) (2022-09-02)
 
 
