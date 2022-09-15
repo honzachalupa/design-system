@@ -29,6 +29,7 @@ export class FirebaseConnector {
     private storage: IStorage;
     private analytics: IAnalytics | undefined;
     private log?: TLogger;
+    private maxLimit: number;
 
     constructor(credentials: FirebaseOptions, logger?: TLogger) {
         const apps = getApps();
@@ -37,6 +38,7 @@ export class FirebaseConnector {
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);
         this.storage = Storage.getStorage(app);
+        this.maxLimit = 9999;
 
         if (typeof window !== "undefined") {
             this.analytics = Analytics.getAnalytics(app);
@@ -47,13 +49,15 @@ export class FirebaseConnector {
 
     private getQuery = (
         collection: CollectionReference,
-        { where, orderBy, limit }: TQuery = {},
+        { where, orderBy, limit, startAt, endAt }: TQuery = {},
     ) =>
         Firestore.query(
             collection,
             ...(where?.map((x) => Firestore.where(...x)) || []),
             ...(orderBy?.map((x) => Firestore.orderBy(...x)) || []),
-            Firestore.limit(limit || 10000),
+            Firestore.startAt(startAt || 0),
+            Firestore.endAt(endAt || this.maxLimit),
+            Firestore.limit(limit || this.maxLimit),
         );
 
     public Database = {

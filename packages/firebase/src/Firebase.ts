@@ -20,6 +20,7 @@ import {
     deleteDoc,
     doc,
     DocumentSnapshot,
+    endAt,
     getDoc,
     getDocs,
     getFirestore,
@@ -29,6 +30,7 @@ import {
     query,
     QuerySnapshot,
     setDoc,
+    startAt,
     updateDoc,
     where,
 } from "firebase/firestore";
@@ -58,6 +60,8 @@ export const Firestore = {
     orderBy,
     QuerySnapshot,
     where,
+    startAt,
+    endAt,
 };
 
 export const Auth = {
