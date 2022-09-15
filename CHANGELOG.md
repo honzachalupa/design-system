@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.37.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.36.0...v1.37.0) (2022-09-15)
+
+
+### Features
+
+* **FirebaseConnector:** Added oprions for startAt and endAt to query object. ([fc80416](https://github.com/mokkapps/changelog-generator-demo/commits/fc80416a67239b6691e1a28b5a04ee5209bd353c))
+
 ## [1.36.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.35.1...v1.36.0) (2022-09-02)
 
 
