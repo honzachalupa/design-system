@@ -4,18 +4,16 @@ import {
     AiOutlineExperiment,
     AiOutlineGoogle,
     AiOutlineLoading,
-    BiExitFullscreen,
-    BiFullscreen,
-    CgLock,
-    CgLockUnlock,
-    FcGoogle,
-    GiCutDiamond,
-    GiMaterialsScience,
-    GiSpeedometer,
-    HiUsers,
-    IoDocumentTextOutline,
-    IoHelp,
-    IoPersonOutline,
+} from "react-icons/ai";
+
+import {
+    RiComputerLine,
+    RiHome2Fill,
+    RiHome2Line,
+    RiShareForwardFill,
+} from "react-icons/ri";
+
+import {
     MdAdd,
     MdCancelPresentation,
     MdCardGiftcard,
@@ -37,11 +35,27 @@ import {
     MdOutlineShield,
     MdRemove,
     MdTimerOff,
-    RiComputerLine,
-    RiHome2Fill,
-    RiHome2Line,
-    RiShareForwardFill,
-} from "react-icons/all";
+} from "react-icons/md";
+
+import {
+    IoDocumentTextOutline,
+    IoHelp,
+    IoPersonOutline,
+} from "react-icons/io5";
+
+import { BiExitFullscreen, BiFullscreen } from "react-icons/bi";
+
+import {
+    GiCutDiamond,
+    GiMaterialsScience,
+    GiSpeedometer,
+} from "react-icons/gi";
+
+import { HiUsers } from "react-icons/hi";
+
+import { FcGoogle } from "react-icons/fc";
+
+import { CgLock, CgLockUnlock } from "react-icons/cg";
 
 export const icons = {
     home: RiHome2Line,
