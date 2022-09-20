@@ -1,19 +1,24 @@
 import { IAbstractObject } from "../../types";
 
+export const isArray = (value: any) =>
+    typeof value === "object" && Array.isArray(value);
+
+export const isObject = (value: any) =>
+    typeof value === "object" && !Array.isArray(value);
+
 export const sortAlphabetically = (a: string, b: string) => a.localeCompare(b);
 
-export const removeDuplicatesFromArray = (
-    array: Array<string | number | boolean>,
-) => Array.from(new Set(array));
+export const removeDuplicatesFromArray = (array: any[]) =>
+    Array.from(new Set(array));
 
 export const removeDuplicatesFromObject = (
-    originalArray: any[],
+    array: any[],
     propertyKey: string,
 ) => {
     const newArray: any[] = [];
     const lookupObject: any = {};
 
-    originalArray.forEach((item) => {
+    array.forEach((item) => {
         lookupObject[item[propertyKey]] = item;
     });
 
@@ -62,4 +67,46 @@ export const fillStringVariables = (
     });
 
     return string;
+};
+
+export const convertJsonToCsv = (
+    array: any[],
+    processors: {
+        [columnHeaderKey: string]: (
+            cellValue: any | any[],
+        ) => any | any[] | null;
+    },
+) => {
+    const separator = ";";
+    const headers = removeDuplicatesFromArray(
+        array.map((item) => Object.keys(item)).flat(),
+    );
+
+    let csv = headers.join(separator);
+
+    array.forEach((item) => {
+        csv += "\n";
+
+        csv += headers
+            .map((header) => {
+                let value = item[header];
+
+                if (processors[header]) {
+                    value = processors[header](value) || "";
+                }
+
+                if (typeof value === "object") {
+                    if (value.length > 0 || Object.keys(value).length > 0) {
+                        value = JSON.stringify(value);
+                    } else {
+                        value = "";
+                    }
+                }
+
+                return value;
+            })
+            .join(separator);
+    });
+
+    return csv;
 };
