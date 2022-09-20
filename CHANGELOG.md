@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.38.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.37.1...v1.38.0) (2022-09-20)
+
+
+### Features
+
+* **Utils:** Added CSV formatter. ([806d0eb](https://github.com/mokkapps/changelog-generator-demo/commits/806d0ebae35d92f99d700aab533992c24b7e401e))
+
 ### [1.37.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.37.0...v1.37.1) (2022-09-18)
 
 ## [1.37.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.36.0...v1.37.0) (2022-09-15)
