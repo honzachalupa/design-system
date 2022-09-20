@@ -6,6 +6,7 @@ import {
     CollectionReference,
     DocumentSnapshot,
     Firestore as IFirestore,
+    QueryConstraint,
     QuerySnapshot,
 } from "firebase/firestore";
 import { FirebaseStorage as IStorage } from "firebase/storage";
@@ -29,7 +30,6 @@ export class FirebaseConnector {
     private storage: IStorage;
     private analytics: IAnalytics | undefined;
     private log?: TLogger;
-    private maxLimit: number;
 
     constructor(credentials: FirebaseOptions, logger?: TLogger) {
         const apps = getApps();
@@ -38,7 +38,6 @@ export class FirebaseConnector {
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);
         this.storage = Storage.getStorage(app);
-        this.maxLimit = 9999;
 
         if (typeof window !== "undefined") {
             this.analytics = Analytics.getAnalytics(app);
@@ -54,10 +53,10 @@ export class FirebaseConnector {
         const queryConstraints = [
             ...(where?.map((x) => Firestore.where(...x)) || []),
             ...(orderBy?.map((x) => Firestore.orderBy(...x)) || []),
-            Firestore.startAt(startAt || 0),
-            Firestore.endAt(endAt || this.maxLimit),
-            Firestore.limit(limit || this.maxLimit),
-        ].filter(Boolean);
+            startAt ? Firestore.startAt(startAt) : undefined,
+            endAt ? Firestore.endAt(endAt) : undefined,
+            limit ? Firestore.limit(limit) : undefined,
+        ].filter(Boolean) as QueryConstraint[];
 
         console.log(
             "FirebaseConnector - getQuery",
