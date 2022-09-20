@@ -71,28 +71,31 @@ export const fillStringVariables = (
 
 export const convertJsonToCsv = (
     array: any[],
-    processors: {
-        [columnHeaderKey: string]: (
-            cellValue: any | any[],
-        ) => any | any[] | null;
+    options?: {
+        headerLabels?: { [headerKey: string]: string | number };
+        processor?: {
+            [headerKey: string]: (cellValue: any | any[]) => any | any[] | null;
+        };
     },
 ) => {
     const separator = ";";
-    const headers = removeDuplicatesFromArray(
+    const headerKeys = removeDuplicatesFromArray(
         array.map((item) => Object.keys(item)).flat(),
     );
 
-    let csv = headers.join(separator);
+    let csv = headerKeys
+        .map((headerKey) => options?.headerLabels?.[headerKey] || headerKey)
+        .join(separator);
 
     array.forEach((item) => {
         csv += "\n";
 
-        csv += headers
+        csv += headerKeys
             .map((header) => {
                 let value = item[header];
 
-                if (processors[header]) {
-                    value = processors[header](value) || "";
+                if (options?.processor?.[header]) {
+                    value = options.processor[header](value) || "";
                 }
 
                 if (typeof value === "object") {
