@@ -58,19 +58,6 @@ export class FirebaseConnector {
             limit ? Firestore.limit(limit) : undefined,
         ].filter(Boolean) as QueryConstraint[];
 
-        console.log(
-            "FirebaseConnector - getQuery",
-            {
-                collection,
-                where,
-                orderBy,
-                startAt,
-                endAt,
-                limit,
-            },
-            { queryConstraints },
-        );
-
         return Firestore.query(collection, ...queryConstraints);
     };
 
