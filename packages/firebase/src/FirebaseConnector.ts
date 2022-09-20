@@ -50,8 +50,17 @@ export class FirebaseConnector {
     private getQuery = (
         collection: CollectionReference,
         { where, orderBy, limit, startAt, endAt }: TQuery = {},
-    ) =>
-        Firestore.query(
+    ) => {
+        console.log("FirebaseConnector - getQuery", {
+            collection,
+            where,
+            orderBy,
+            startAt,
+            endAt,
+            limit,
+        });
+
+        return Firestore.query(
             collection,
             ...(where?.map((x) => Firestore.where(...x)) || []),
             ...(orderBy?.map((x) => Firestore.orderBy(...x)) || []),
@@ -59,6 +68,7 @@ export class FirebaseConnector {
             Firestore.endAt(endAt || this.maxLimit),
             Firestore.limit(limit || this.maxLimit),
         );
+    };
 
     public Database = {
         create: (
