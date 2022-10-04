@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.41.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.40.0...v1.41.0) (2022-10-04)
+
+
+### Features
+
+* **Authentication:** Exported updatePassword method. ([28a3c81](https://github.com/mokkapps/changelog-generator-demo/commits/28a3c8165cc04514aabb936ab94520c0378d7efc))
+
 ## [1.40.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.39.1...v1.40.0) (2022-10-04)
 
 
