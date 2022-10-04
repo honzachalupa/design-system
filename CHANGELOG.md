@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.40.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.39.1...v1.40.0) (2022-10-04)
+
+
+### Features
+
+* **Analytics:** Exported setUserProperties method. ([ffc01e9](https://github.com/mokkapps/changelog-generator-demo/commits/ffc01e97e665fe7c4c660877fc39604ee10284e0))
+
 ### [1.39.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.39.0...v1.39.1) (2022-09-20)
 
 ## [1.39.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.38.3...v1.39.0) (2022-09-20)
