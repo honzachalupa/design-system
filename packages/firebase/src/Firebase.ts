@@ -1,4 +1,9 @@
-import { getAnalytics, setCurrentScreen, setUserId } from "firebase/analytics";
+import {
+    getAnalytics,
+    setCurrentScreen,
+    setUserId,
+    setUserProperties,
+} from "firebase/analytics";
 import {
     createUserWithEmailAndPassword,
     FacebookAuthProvider,
@@ -91,4 +96,5 @@ export const Analytics = {
     getAnalytics,
     setCurrentScreen,
     setUserId,
+    setUserProperties,
 };

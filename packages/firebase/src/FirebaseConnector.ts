@@ -191,26 +191,28 @@ export class FirebaseConnector {
     };
 
     public Analytics = {
-        setUserId: (id: string) => () =>
-            this.analytics
-                ? Analytics.setUserId(this.analytics, id)
-                : new Promise((_, reject) => {
-                      reject(
-                          new Error(
-                              "Analytics are available on client-side only.",
-                          ),
-                      );
-                  }),
+        setUserId: (id: string) => {
+            if (!this.analytics) {
+                throw new Error("Analytics are available on client-side only.");
+            }
 
-        setCurrentScreen: (routeId: string) =>
-            this.analytics
-                ? Analytics.setCurrentScreen(this.analytics, routeId)
-                : new Promise((_, reject) => {
-                      reject(
-                          new Error(
-                              "Analytics are available on client-side only.",
-                          ),
-                      );
-                  }),
+            return Analytics.setUserId(this.analytics, id);
+        },
+
+        setUserProperties: (values: IAbstractObject) => {
+            if (!this.analytics) {
+                throw new Error("Analytics are available on client-side only.");
+            }
+
+            return Analytics.setUserProperties(this.analytics, values);
+        },
+
+        setCurrentScreen: (routeId: string) => {
+            if (!this.analytics) {
+                throw new Error("Analytics are available on client-side only.");
+            }
+
+            return Analytics.setCurrentScreen(this.analytics, routeId);
+        },
     };
 }
