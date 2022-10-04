@@ -17,6 +17,7 @@ import {
     signInWithPopup,
     signInWithRedirect,
     signOut,
+    updatePassword,
 } from "firebase/auth";
 import {
     addDoc,
@@ -82,6 +83,7 @@ export const Auth = {
     OAuthProvider,
     GoogleAuthProvider,
     FacebookAuthProvider,
+    updatePassword,
 };
 
 export const Storage = {

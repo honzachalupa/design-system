@@ -163,6 +163,9 @@ export class FirebaseConnector {
         sendPasswordResetEmail: (emailAddress: string) =>
             Auth.sendPasswordResetEmail(this.auth, emailAddress),
 
+        updatePassword: (user: User, password: string) =>
+            Auth.updatePassword(user, password),
+
         signOut: () => Auth.signOut(this.auth),
     };
 
