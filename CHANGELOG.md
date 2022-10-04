@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.41.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.41.0...v1.41.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* Updated to React 18. ([2b61808](https://github.com/mokkapps/changelog-generator-demo/commits/2b618080dcae43d2b80a523750948fb73b428fd8))
+
 ## [1.41.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.40.0...v1.41.0) (2022-10-04)
 
 
