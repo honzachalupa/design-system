@@ -162,49 +162,24 @@ export class FirebaseConnector {
         sendPasswordResetEmail: (emailAddress: string) =>
             Auth.sendPasswordResetEmail(this.auth, emailAddress),
 
-        updatePassword: (password: string) => {
+        updatePassword: (currentPassword: string, newPassword: string) => {
             const { currentUser } = this.auth;
 
             console.log("updatePassword", currentUser);
 
-            if (!currentUser) {
-                this.log?.({
-                    code: "EXCEPTION",
-                    scope: this.constructor.name,
-                    error: new Error("currentUser is null."),
-                    data: {
-                        currentUser,
-                    },
-                });
-
-                return;
-            }
-
-            return Auth.updatePassword(currentUser, password);
-        },
-
-        reauthenticateWithCredential: (password: string) => {
-            const { currentUser } = this.auth;
-
-            console.log("reauthenticateWithCredential", currentUser);
-
             if (!currentUser || !currentUser.email) {
-                this.log?.({
-                    code: "EXCEPTION",
-                    scope: this.constructor.name,
-                    error: new Error("currentUser is null."),
-                    data: {
-                        currentUser,
-                    },
-                });
-
-                return;
+                throw new Error("currentUser is null.");
             }
 
             return Auth.reauthenticateWithCredential(
                 currentUser,
-                EmailAuthProvider.credential(currentUser.email, password),
-            );
+                EmailAuthProvider.credential(
+                    currentUser.email,
+                    currentPassword,
+                ),
+            ).then(() => {
+                Auth.updatePassword(currentUser, newPassword);
+            });
         },
 
         signOut: () => Auth.signOut(this.auth),
