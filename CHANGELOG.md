@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.42.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.41.1...v1.42.0) (2022-10-13)
+
+
+### Features
+
+* **Authentication:** Exported reauthenticateWithCredential method. ([38b4749](https://github.com/mokkapps/changelog-generator-demo/commits/38b4749a4d5a7f4bbe637dab9027c57218d6cf02))
+
 ### [1.41.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.41.0...v1.41.1) (2022-10-04)
 
 
