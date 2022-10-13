@@ -1,7 +1,7 @@
 import { cleanObject, IAbstractObject } from "@honzachalupa/utils";
 import { Analytics as IAnalytics } from "firebase/analytics";
 import { FirebaseOptions, getApps, initializeApp } from "firebase/app";
-import { Auth as IAuth, AuthCredential, User } from "firebase/auth";
+import { Auth as IAuth, EmailAuthProvider, User } from "firebase/auth";
 import {
     CollectionReference,
     DocumentSnapshot,
@@ -166,8 +166,11 @@ export class FirebaseConnector {
         updatePassword: (user: User, password: string) =>
             Auth.updatePassword(user, password),
 
-        reauthenticateWithCredential: (user: User, auth: AuthCredential) =>
-            Auth.reauthenticateWithCredential(user, auth),
+        reauthenticateWithCredential: (user: User, password: string) =>
+            Auth.reauthenticateWithCredential(
+                user,
+                EmailAuthProvider.credential(user.email!, password),
+            ),
 
         signOut: () => Auth.signOut(this.auth),
     };
