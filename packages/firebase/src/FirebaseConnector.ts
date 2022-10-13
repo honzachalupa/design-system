@@ -162,7 +162,10 @@ export class FirebaseConnector {
         sendPasswordResetEmail: (emailAddress: string) =>
             Auth.sendPasswordResetEmail(this.auth, emailAddress),
 
-        updatePassword: (currentPassword: string, newPassword: string) => {
+        updatePassword: async (
+            currentPassword: string,
+            newPassword: string,
+        ) => {
             const { currentUser } = this.auth;
 
             console.log("updatePassword", currentUser);
@@ -171,15 +174,25 @@ export class FirebaseConnector {
                 throw new Error("currentUser is null.");
             }
 
-            return Auth.reauthenticateWithCredential(
+            const reauthenticateResponse =
+                await Auth.reauthenticateWithCredential(
+                    currentUser,
+                    EmailAuthProvider.credential(
+                        currentUser.email,
+                        currentPassword,
+                    ),
+                );
+
+            console.log({ reauthenticateResponse });
+
+            const updateResponse = await Auth.updatePassword(
                 currentUser,
-                EmailAuthProvider.credential(
-                    currentUser.email,
-                    currentPassword,
-                ),
-            ).then(() => {
-                Auth.updatePassword(currentUser, newPassword);
-            });
+                newPassword,
+            );
+
+            console.log({ updateResponse });
+
+            return updateResponse;
         },
 
         signOut: () => Auth.signOut(this.auth),
