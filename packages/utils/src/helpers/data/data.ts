@@ -1,5 +1,8 @@
 import { IAbstractObject } from "../../types";
 
+export const getRandomInRange = (min: number, max: number) =>
+    Math.round(Math.random() * (max - min) + min);
+
 export const isArray = (value: any) =>
     typeof value === "object" && Array.isArray(value);
 

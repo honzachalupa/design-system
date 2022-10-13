@@ -12,6 +12,7 @@ import {
     GoogleAuthProvider,
     OAuthProvider,
     onAuthStateChanged,
+    reauthenticateWithCredential,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
     signInWithPopup,
@@ -84,6 +85,7 @@ export const Auth = {
     GoogleAuthProvider,
     FacebookAuthProvider,
     updatePassword,
+    reauthenticateWithCredential,
 };
 
 export const Storage = {
