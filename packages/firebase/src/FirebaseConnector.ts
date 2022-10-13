@@ -30,6 +30,7 @@ export class FirebaseConnector {
     private storage: IStorage;
     private analytics: IAnalytics | undefined;
     private log?: TLogger;
+    private currentUser: User | null;
 
     constructor(credentials: FirebaseOptions, logger?: TLogger) {
         const apps = getApps();
@@ -38,12 +39,12 @@ export class FirebaseConnector {
         this.firestore = Firestore.getFirestore(app);
         this.auth = Auth.getAuth(app);
         this.storage = Storage.getStorage(app);
+        this.log = logger;
+        this.currentUser = Auth.getAuth().currentUser;
 
         if (typeof window !== "undefined") {
             this.analytics = Analytics.getAnalytics(app);
         }
-
-        this.log = logger;
     }
 
     private getQuery = (
@@ -163,13 +164,16 @@ export class FirebaseConnector {
         sendPasswordResetEmail: (emailAddress: string) =>
             Auth.sendPasswordResetEmail(this.auth, emailAddress),
 
-        updatePassword: (user: User, password: string) =>
-            Auth.updatePassword(user, password),
+        updatePassword: (password: string) =>
+            Auth.updatePassword(this.currentUser!, password),
 
-        reauthenticateWithCredential: (user: User, password: string) =>
+        reauthenticateWithCredential: (password: string) =>
             Auth.reauthenticateWithCredential(
-                user,
-                EmailAuthProvider.credential(user.email!, password),
+                this.currentUser!,
+                EmailAuthProvider.credential(
+                    this.currentUser!.email!,
+                    password,
+                ),
             ),
 
         signOut: () => Auth.signOut(this.auth),
