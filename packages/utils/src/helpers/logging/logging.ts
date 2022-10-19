@@ -50,18 +50,19 @@ export const initializeLogger = ({
             }
         });
 
-        const payload = {
+        const payload: IAbstractObject = {
             code,
             scope,
             stack: error?.stack,
             message: message || error?.message || `${scope} - ${code}` || "",
             level,
+            environment: window?.location.href,
             version: appVersion,
             data: data && cleanObject(data),
         };
 
         if (logger) {
-            logger[level](payload.message, payload as any);
+            logger[level](payload.message, payload);
         }
 
         if (!isSilent) {
