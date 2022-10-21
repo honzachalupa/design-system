@@ -12,20 +12,17 @@ import {
 
 export interface IProps extends IComponentProps {
     message?: string;
-    color?: string;
     size?: TLoaderSizes;
     isFullscreen?: boolean;
 }
 
-const LoadingIndicator: React.FC<IProps> = ({
+const Children: React.FC<IProps & { color: string }> = ({
     message,
-    color,
     size,
+    color,
     className,
     testId,
 }) => {
-    const theme = useTheme();
-
     return (
         <StyledContainer
             size={size}
@@ -35,13 +32,13 @@ const LoadingIndicator: React.FC<IProps> = ({
             <StyledIconContainer>
                 <StyledIcon
                     name="loading"
-                    color={color || theme.colors.accentSecondary}
+                    color={color}
                     animationDurationSeconds={1}
                 />
 
                 <StyledIcon
                     name="loading"
-                    color={color || theme.colors.accentSecondary}
+                    color={color}
                     animationDurationSeconds={1.5}
                 />
             </StyledIconContainer>
@@ -53,14 +50,17 @@ const LoadingIndicator: React.FC<IProps> = ({
 
 export const Loader: React.FC<IProps> = ({
     message,
-    color,
     className,
     testId,
     isFullscreen,
-}) =>
-    isFullscreen ? (
+}) => {
+    const theme = useTheme();
+
+    const color = theme.loader?.color || theme.colors.accentSecondary;
+
+    return isFullscreen ? (
         <StyledOverlay>
-            <LoadingIndicator
+            <Children
                 message={message}
                 color={color}
                 className={className}
@@ -69,5 +69,6 @@ export const Loader: React.FC<IProps> = ({
             />
         </StyledOverlay>
     ) : (
-        <LoadingIndicator color={color} className={className} testId={testId} />
+        <Children color={color} className={className} testId={testId} />
     );
+};

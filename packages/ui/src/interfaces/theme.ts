@@ -104,6 +104,9 @@ export interface ITheme {
             };
         };
     };
+    loader?: {
+        color: string;
+    };
 }
 
 declare module "styled-components" {

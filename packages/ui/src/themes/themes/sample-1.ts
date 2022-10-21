@@ -82,4 +82,7 @@ export const themeSample1: ITheme = {
             },
         },
     },
+    loader: {
+        color: "black",
+    },
 };
