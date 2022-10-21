@@ -1,8 +1,11 @@
+import i18n from "i18next";
 import React, { ReactNode } from "react";
+import { initReactI18next } from "react-i18next";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src";
 import { TThemes } from "../src/interfaces/theme";
 import { useThemeSelector } from "../src/themes/useThemeSelector";
+import { translations } from "../src/translations";
 
 const ProvidersWrapper: React.FC<{
     theme: TThemes;
@@ -19,11 +22,22 @@ const ProvidersWrapper: React.FC<{
     );
 };
 
-const withProviders = (Story: React.FC, context: any) => (
-    <ProvidersWrapper theme={context.globals.theme}>
-        <Story {...context} />
-    </ProvidersWrapper>
-);
+const withProviders = (Story: React.FC, context: any) => {
+    i18n.use(initReactI18next).init({
+        resources: translations,
+        lng: "en",
+        fallbackLng: "en",
+        interpolation: {
+            escapeValue: false,
+        },
+    });
+
+    return (
+        <ProvidersWrapper theme={context.globals.theme}>
+            <Story {...context} />
+        </ProvidersWrapper>
+    );
+};
 
 export const decorators = [withProviders];
 

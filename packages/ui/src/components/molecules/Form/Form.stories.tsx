@@ -45,12 +45,6 @@ Default.args = {
             },
         },
     ],
-    validationTexts: {
-        isRequired: "Validation failed (isRequired)",
-        minLength: "Validation failed (minLength)",
-        maxLength: "Validation failed (maxLength)",
-        pattern: "Validation failed (pattern)",
-    },
     buttonsRenderer: (submit) => [
         {
             label: "Submit",
@@ -94,12 +88,6 @@ MultipleColumns.args = {
             },
         },
     ],
-    validationTexts: {
-        isRequired: "Validation failed (isRequired)",
-        minLength: "Validation failed (minLength)",
-        maxLength: "Validation failed (maxLength)",
-        pattern: "Validation failed (pattern)",
-    },
     buttonsRenderer: (submit) => [
         {
             label: "Submit",

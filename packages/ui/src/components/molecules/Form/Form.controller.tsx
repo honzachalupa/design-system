@@ -8,6 +8,7 @@ import {
     useState,
 } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { IComponentProps } from "../../../interfaces/component";
 import { IButtonProps } from "../../atoms/Button";
 import { View } from "./Form.view";
@@ -53,12 +54,6 @@ export interface IFormRefProps {
 export interface IProps extends IComponentProps {
     columns?: number;
     inputs: (IFormInput | null)[];
-    validationTexts: {
-        isRequired: string;
-        maxLength: string;
-        minLength: string;
-        pattern: string;
-    };
     buttonsRenderer?: (onSubmit: any) => IButtonProps[];
     onChange?: (formData: any) => void;
     onSubmit?: (formData: any) => void;
@@ -69,7 +64,6 @@ export const Form = forwardRef(
         {
             columns = 1,
             inputs: inputsProp,
-            validationTexts,
             className,
             testId,
             buttonsRenderer,
@@ -78,6 +72,8 @@ export const Form = forwardRef(
         }: IProps,
         ref,
     ) => {
+        const { t } = useTranslation();
+
         const {
             control,
             trigger: validate,
@@ -98,12 +94,12 @@ export const Form = forwardRef(
             [key: string]: (value: string) => any;
         }>(
             () => ({
-                required: () => validationTexts.isRequired,
+                required: () => t("form.validationMessages.isRequired"),
                 minLength: (value: string) =>
-                    validationTexts.maxLength.replace("{value}", value),
+                    t("form.validationMessages.minLength", { value }),
                 maxLength: (value: string) =>
-                    validationTexts.minLength.replace("{value}", value),
-                pattern: () => validationTexts.pattern,
+                    t("form.validationMessages.maxLength", { value }),
+                pattern: () => t("form.validationMessages.pattern"),
             }),
             [],
         );
