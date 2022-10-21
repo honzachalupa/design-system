@@ -56,7 +56,10 @@ export const initializeLogger = ({
             stack: error?.stack,
             message: message || error?.message || `${scope} - ${code}` || "",
             level,
-            url: window?.location.href,
+            url:
+                typeof window !== "undefined"
+                    ? window?.location.href
+                    : undefined,
             version: appVersion,
             data: data && cleanObject(data),
         };
