@@ -47,4 +47,5 @@ export { PdfRenderer } from "./components/molecules/PdfRenderer";
 export { GlobalStyle } from "./Global.styled";
 export { IComponentProps } from "./interfaces/component";
 export { ITheme } from "./interfaces/theme";
+export { ITranslations } from "./interfaces/translations";
 export { Layout, LayoutMargin } from "./layouts/Main";

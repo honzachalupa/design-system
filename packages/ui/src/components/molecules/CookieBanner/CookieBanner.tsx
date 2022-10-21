@@ -1,5 +1,6 @@
 import { getTestId, useLocalStorage } from "@honzachalupa/utils";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IComponentProps } from "../../../interfaces/component";
 import { Button } from "../../atoms/Button";
 import { Text } from "../../atoms/typography/Text";
@@ -26,10 +27,16 @@ export const CookieBanner: React.FC<IProps> = ({
     testId,
     onSubmit,
 }) => {
+    const { t } = useTranslation();
+
     const [isCookiesAllowed, setCookiesAllowed] = useLocalStorage(
         "isCookiesAllowed",
         null as unknown as boolean,
     );
+
+    useEffect(() => {
+        console.log("CookieBanner >", t("cookieBanner.headline"));
+    }, []);
 
     useEffect(() => {
         if (onSubmit) {
