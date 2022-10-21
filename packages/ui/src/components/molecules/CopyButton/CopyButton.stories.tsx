@@ -13,6 +13,4 @@ const Template: ComponentStory<typeof Component> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
     value: "Value",
-    copyText: "Copy by clicking",
-    copiedText: "Copied!",
 };

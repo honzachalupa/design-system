@@ -23,9 +23,4 @@ const Template: ComponentStory<typeof Component> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-    headline: "Headline",
-    content: "Content",
-    agreeButtonText: "Agree",
-    disagreeButtonText: "Disagree",
-};
+Default.args = {};

@@ -3,6 +3,13 @@ export interface ITranslations {
         translation: {
             cookieBanner?: {
                 headline: string;
+                content: string;
+                agreeButtonText: string;
+                disagreeButtonText: string;
+            };
+            copyButton?: {
+                copy: string;
+                copied: string;
             };
         };
     };

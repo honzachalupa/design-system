@@ -1,22 +1,17 @@
 import { getTestId } from "@honzachalupa/utils";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { IComponentProps } from "../../../interfaces/component";
 import { StyledButton } from "./CopyButton.styled";
 
 export interface IProps extends IComponentProps {
     value: string | number;
     className?: string;
-    copyText: string;
-    copiedText: string;
 }
 
-export const CopyButton: React.FC<IProps> = ({
-    value,
-    copyText,
-    copiedText,
-    className,
-    testId,
-}) => {
+export const CopyButton: React.FC<IProps> = ({ value, className, testId }) => {
+    const { t } = useTranslation();
+
     const [isSuccess, setIsSuccess] = useState<boolean>();
 
     const handleCopy = () => {
@@ -35,7 +30,7 @@ export const CopyButton: React.FC<IProps> = ({
 
     return isSuccess ? (
         <StyledButton
-            label={copiedText}
+            label={t("copyButton.copied")}
             icon={{
                 name: "check",
                 color: "white",
@@ -46,7 +41,7 @@ export const CopyButton: React.FC<IProps> = ({
         />
     ) : (
         <StyledButton
-            label={copyText}
+            label={t("copyButton.copy")}
             icon={{
                 name: "copy",
                 color: "grayDark",
