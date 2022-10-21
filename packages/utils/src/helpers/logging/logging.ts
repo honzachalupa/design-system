@@ -56,7 +56,7 @@ export const initializeLogger = ({
             stack: error?.stack,
             message: message || error?.message || `${scope} - ${code}` || "",
             level,
-            environment: window?.location.href,
+            url: window?.location.href,
             version: appVersion,
             data: data && cleanObject(data),
         };

@@ -14,7 +14,10 @@ const Template: ComponentStory<typeof Component> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
     document: (
+        // @ts-ignore
         <PdfRenderer.Document>
+            {/*
+            // @ts-ignore */}
             <PdfRenderer.Page size="A4" orientation="landscape">
                 <PdfRenderer.View>
                     <PdfRenderer.Image
