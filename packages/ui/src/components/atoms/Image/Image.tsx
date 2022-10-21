@@ -60,7 +60,7 @@ export const Image: React.FC<IProps> = ({
 
     return isLoading ? (
         <StyledContainer {...props}>
-            <Loader color={theme.colors.grayLight} />
+            <Loader />
         </StyledContainer>
     ) : isFailed ? (
         <StyledContainer {...props}>

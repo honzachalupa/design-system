@@ -1,6 +1,5 @@
 import { getTestId } from "@honzachalupa/utils";
 import { ReactElement, useEffect, useState } from "react";
-import { useTheme } from "styled-components";
 import { IComponentProps } from "../../../interfaces/component";
 import {
     StyledDocumentViewer,
@@ -17,8 +16,6 @@ export const PdfDocumentPreview: React.FC<IProps> = ({
     className,
     testId,
 }) => {
-    const theme = useTheme();
-
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
     useEffect(() => {
@@ -32,7 +29,7 @@ export const PdfDocumentPreview: React.FC<IProps> = ({
             className={className}
             {...getTestId("PdfDocumentPreview", testId)}
         >
-            {!isLoaded && <StyledLoader color={theme.colors.grayLight} />}
+            {!isLoaded && <StyledLoader />}
 
             <StyledDocumentViewer loaded={isLoaded} showToolbar={false}>
                 {document}
