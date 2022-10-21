@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.44.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.43.3...v1.44.0) (2022-10-21)
+
+
+### Features
+
+* **Loader:** Added theme support. ([561f36b](https://github.com/mokkapps/changelog-generator-demo/commits/561f36be3b41a3506907b695a2ef4426f4b0b349))
+* **Translations:** Added translations. ([d55dc05](https://github.com/mokkapps/changelog-generator-demo/commits/d55dc055a342a81516c818bccc608c05213557cb))
+
 ### [1.43.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.43.2...v1.43.3) (2022-10-21)
 
 ### [1.43.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.43.1...v1.43.2) (2022-10-21)
