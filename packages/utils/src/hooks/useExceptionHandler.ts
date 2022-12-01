@@ -1,10 +1,8 @@
 import useEventListener from "./useEventListener";
 
-interface IProps {
-    onException: (exception: { message: string; stack: string }) => void;
-}
-
-export const useExceptionHandler = ({ onException }: IProps) => {
+export const useExceptionHandler = (
+    onException: (exception: { message: string; stack: string }) => void,
+) => {
     useEventListener("error", ({ error }: ErrorEvent) => {
         onException({
             message: error.message,
