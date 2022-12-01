@@ -1,13 +1,10 @@
 import useEventListener from "./useEventListener";
 
 export const useExceptionHandler = (
-    onException: (exception: { message: string; stack: string }) => void,
+    onException: (exception: ErrorEvent["error"]) => void,
 ) => {
     useEventListener("error", ({ error }: ErrorEvent) => {
-        onException({
-            message: error.message,
-            stack: error.stack,
-        });
+        onException(error);
     });
 
     return null;
