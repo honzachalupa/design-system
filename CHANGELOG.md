@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.45.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.44.1...v1.45.0) (2022-12-01)
+
+
+### Features
+
+* **Utils:** Added useExceptionHandler hook. ([50f61bc](https://github.com/mokkapps/changelog-generator-demo/commits/50f61bcf6ff712f2f1a93e0b6cc3be2d37193489))
+
 ### [1.44.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.44.0...v1.44.1) (2022-12-01)
 
 ## [1.44.0](https://github.com/mokkapps/changelog-generator-demo/compare/v1.43.3...v1.44.0) (2022-10-21)
