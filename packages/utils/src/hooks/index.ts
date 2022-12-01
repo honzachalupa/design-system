@@ -4,6 +4,7 @@ export {
     useQuery,
 } from "@tanstack/react-query";
 export { default as useEventListener } from "./useEventListener";
+export { useExceptionHandler } from "./useExceptionHandler";
 export { default as useIsFirstRender } from "./useIsFirstRender";
 export { default as useIsMounted } from "./useIsMounted";
 export { default as useLocalStorage } from "./useLocalStorage";
