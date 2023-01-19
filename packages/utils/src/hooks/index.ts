@@ -1,8 +1,4 @@
-export {
-    QueryClient,
-    QueryClientProvider,
-    useQuery,
-} from "@tanstack/react-query";
+export { QueryClient, QueryClientProvider, useQuery } from "react-query";
 export { default as useEventListener } from "./useEventListener";
 export { useExceptionHandler } from "./useExceptionHandler";
 export { default as useIsFirstRender } from "./useIsFirstRender";

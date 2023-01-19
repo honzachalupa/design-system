@@ -5,8 +5,7 @@
             {
                 "runtime": "automatic",
                 "useBuiltIns": "usage"
-            },
-            "next/babel"
+            }
         ]
     ],
     "plugins": [["styled-components", { "ssr": true }]]

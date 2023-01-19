@@ -33,6 +33,7 @@ export const Button: React.FC<IProps> = ({
         size={size}
         className={className}
         isDisabled={isDisabled}
+        disabled={isDisabled}
         onClick={onClick}
         {...getTestId("Button", testId)}
     >
