@@ -1,6 +1,5 @@
 import { getTestId } from "@honzachalupa/utils";
 import { useEffect, useState } from "react";
-import { useTheme } from "styled-components";
 import { IComponentProps } from "../../../interfaces/component";
 import { Loader } from "../Loader";
 import {
@@ -28,8 +27,6 @@ export const Image: React.FC<IProps> = ({
     onClick,
     onFetchFailed,
 }) => {
-    const theme = useTheme();
-
     const [url, setUrl] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isFailed, setIsFailed] = useState<boolean>(false);
