@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.45.3](https://github.com/mokkapps/changelog-generator-demo/compare/v1.45.2...v1.45.3) (2023-01-19)
+
+
+### Bug Fixes
+
+* **UI:** Debugging Next.js hydration error. ([303d12d](https://github.com/mokkapps/changelog-generator-demo/commits/303d12d686dc39a515ebd25726d4c25cc8cec8ca))
+
 ### [1.45.2](https://github.com/mokkapps/changelog-generator-demo/compare/v1.45.1...v1.45.2) (2022-12-01)
 
 ### [1.45.1](https://github.com/mokkapps/changelog-generator-demo/compare/v1.45.0...v1.45.1) (2022-12-01)
