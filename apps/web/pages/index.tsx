@@ -4,11 +4,11 @@ import {
     ButtonsGroup,
     Layout_Primary,
     SwitchButton,
-} from "ui";
+} from "@honzachalupa/design-system";
 
 export default function Web() {
     return (
-        <Layout_Primary>
+        <Layout_Primary className="dark">
             <h1>Headline 1</h1>
             <h2>Headline 2</h2>
             <h3>Headline 3</h3>

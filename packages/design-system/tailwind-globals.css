@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .theme-background {
+        @apply bg-white dark:bg-black;
+    }
+
+    .theme-background-faded {
+        @apply theme-background opacity-50;
+    }
+
+    .theme-foreground {
+        @apply text-black dark:text-white;
+    }
+
+    .theme-foreground-faded {
+        @apply theme-foreground opacity-50;
+    }
+
+    .theme-page-background {
+        @apply bg-zinc-300 dark:bg-zinc-900;
+    }
+
+    .theme-page-foreground {
+        @apply bg-zinc-300 dark:bg-zinc-900;
+    }
+
+    .theme-border {
+        @apply border border-white dark:border-black rounded-sm;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+
+        @apply theme-foreground;
+    }
+
+    body {
+        @apply theme-page-background;
+    }
+
+    h1 {
+        @apply text-4xl mb-2;
+    }
+
+    h2 {
+        @apply text-3xl mb-2;
+    }
+
+    h3 {
+        @apply text-2xl mb-2;
+    }
+
+    h4 {
+        @apply text-xl mb-2;
+    }
+
+    a {
+        @apply underline;
+    }
+}

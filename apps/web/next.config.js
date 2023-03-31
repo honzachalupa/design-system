@@ -1,5 +1,5 @@
 module.exports = {
     reactStrictMode: true,
-    transpilePackages: ["ui", "@honzachalupa/utils"],
-    distDir: "../../build/web",
+    transpilePackages: ["@honzachalupa/design-system"],
+    distDir: "build",
 };

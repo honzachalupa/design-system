@@ -1,28 +1,31 @@
+import { Button } from "@honzachalupa/design-system";
 import React from "react";
-
-import { Button } from "ui";
 
 export default {
     title: "Atoms/Button",
     component: Button,
 };
 
-export const Primary = () => (
-    <Button label="Buttons" onClick={() => console.info("clicked")} />
-);
+export const Variants = () => (
+    <>
+        <Button label="Default" onClick={() => console.info("clicked")} />
 
-export const Small = () => (
-    <Button
-        label="Buttons"
-        size="small"
-        onClick={() => console.info("clicked")}
-    />
-);
+        <br />
+        <br />
 
-export const Disabled = () => (
-    <Button
-        label="Buttons"
-        isDisabled
-        onClick={() => console.info("clicked")}
-    />
+        <Button
+            label="Small"
+            size="small"
+            onClick={() => console.info("clicked")}
+        />
+
+        <br />
+        <br />
+
+        <Button
+            label="Disabled"
+            isDisabled
+            onClick={() => console.info("clicked")}
+        />
+    </>
 );

@@ -1,6 +1,6 @@
 {
-    "name": "@honzachalupa/common",
-    "version": "2.0.0",
+    "name": "common",
+    "version": "0.0.0",
     "private": true,
     "workspaces": [
         "apps/*",
@@ -10,19 +10,16 @@
         "build": "turbo run build",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "changeset": "changeset",
-        "version-packages": "changeset version",
-        "release": "turbo run build --filter=docs^... && changeset publish"
+        "publish": "turbo run publish",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },
+    "dependencies": {},
     "devDependencies": {
-        "@changesets/cli": "^2.26.0",
         "prettier": "latest",
         "turbo": "latest"
     },
     "engines": {
         "node": ">=14.0.0"
     },
-    "dependencies": {},
     "packageManager": "yarn@1.22.19"
 }

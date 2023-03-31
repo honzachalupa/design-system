@@ -1,5 +1,5 @@
+import "@honzachalupa/design-system/tailwind-globals.css";
 import React from "react";
-import "ui/tailwind-globals.css";
 
 const withProviders = (Story: React.FC, context: any) => {
     return <Story {...context} />;
@@ -8,6 +8,9 @@ const withProviders = (Story: React.FC, context: any) => {
 export const decorators = [withProviders];
 
 export const parameters = {
+    darkMode: {
+        stylePreview: true,
+    },
     actions: { argTypesRegex: "^on.*" },
     options: {
         storySort: {
