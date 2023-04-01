@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+    push:
+        tags:
+            - "v*"
+
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  cache: "yarn"
+                  node-version-file: ".nvmrc"
+
+            - name: Install NPM dependencies
+              run: yarn install
+
+            - name: Lint
+              run: yarn lint
+
+            - name: Build
+              run: yarn build
+
+            - name: Publish
+              run: cd packages/design-system && yarn publishx
+
+            - name: Publish storybook
+              run: cd apps/docs && yarn publishx
