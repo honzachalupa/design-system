@@ -6,6 +6,10 @@ export default {
     component: Input,
 };
 
+export const Primary = () => (
+    <Input onChange={(value) => console.info("changed", { value })} />
+);
+
 export const Variants = () => (
     <>
         <Input onChange={(value) => console.info("changed", { value })} />

@@ -6,6 +6,10 @@ export default {
     component: Button,
 };
 
+export const Primary = () => (
+    <Button label="Default" onClick={() => console.info("clicked")} />
+);
+
 export const Variants = () => (
     <>
         <Button label="Default" onClick={() => console.info("clicked")} />

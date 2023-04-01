@@ -6,6 +6,12 @@ export default {
     component: ButtonsGroup,
 };
 
+export const Primary = () => (
+    <ButtonsGroup>
+        <Button label="Button" onClick={() => console.info("clicked")} />
+    </ButtonsGroup>
+);
+
 export const Variants = () => (
     <ButtonsGroup>
         <Button label="Button" onClick={() => console.info("clicked")} />

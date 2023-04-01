@@ -6,6 +6,26 @@ export default {
     component: SwitchButton,
 };
 
+export const Primary = () => (
+    <SwitchButton
+        options={[
+            {
+                value: "option-1",
+                label: "Option 1",
+            },
+            {
+                value: "option-2",
+                label: "Option 2",
+            },
+            {
+                value: "option-3",
+                label: "Option 3",
+            },
+        ]}
+        onChange={(e) => console.info("changed", { e })}
+    />
+);
+
 export const Variants = () => (
     <>
         <SwitchButton

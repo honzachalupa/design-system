@@ -6,6 +6,8 @@ export default {
     component: ButtonLink,
 };
 
+export const Primary = () => <ButtonLink label="Default" href="#" />;
+
 export const Variants = () => (
     <>
         <ButtonLink label="Default" href="#" />

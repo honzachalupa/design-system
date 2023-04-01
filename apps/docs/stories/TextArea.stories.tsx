@@ -6,6 +6,10 @@ export default {
     component: TextArea,
 };
 
+export const Primary = () => (
+    <TextArea onChange={(value) => console.info("changed", { value })} />
+);
+
 export const Variants = () => (
     <>
         <TextArea onChange={(value) => console.info("changed", { value })} />

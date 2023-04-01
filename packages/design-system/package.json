@@ -1,12 +1,12 @@
 {
     "name": "@honzachalupa/design-system",
-    "version": "2.0.0-alpha.1",
+    "version": "1.0.0-alpha.10",
     "main": "./build/index.js",
     "types": "./build/index.d.js",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/honzachalupa/common.git"
+        "url": "https://github.com/honzachalupa/design-system.git"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
@@ -16,7 +16,7 @@
         "dev": "yarn build",
         "build": "tsc && cp ./tailwind-globals.css build",
         "lint": "eslint \"**/*.ts*\"",
-        "publish": "yarn build && npm publish"
+        "publishx": "npm publish"
     },
     "dependencies": {
         "classnames": "^2.3.2",
