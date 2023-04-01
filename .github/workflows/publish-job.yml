@@ -9,9 +9,6 @@ jobs:
         name: Publish
         runs-on: ubuntu-latest
         steps:
-            - name: Dump secret
-              run: echo -n "${{ secrets.NPM_TOKEN }}" | xxd -ps
-
             - name: Checkout
               uses: actions/checkout@v2
               with:
@@ -33,7 +30,7 @@ jobs:
               run: yarn build
 
             - name: Publish
-              run: cd packages/design-system && npm whoami && yarn publishx
+              run: cd packages/design-system && npm ci && yarn publishx
               env:
                   NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
