@@ -30,6 +30,8 @@ jobs:
 
             - name: Publish
               run: cd packages/design-system && yarn publishx
+              env:
+                  NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish storybook
               run: cd apps/docs && yarn publishx
