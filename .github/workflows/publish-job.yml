@@ -30,7 +30,7 @@ jobs:
               run: yarn build
 
             - name: Publish
-              run: cd packages/design-system && yarn publishx
+              run: cd packages/design-system && npm whoami && yarn publishx
               env:
                   NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
