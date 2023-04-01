@@ -18,6 +18,8 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   cache: "yarn"
+                  registry-url: https://registry.npmjs.org
+                  always-auth: true
 
             - name: Install NPM dependencies
               run: yarn install
