@@ -1,6 +1,6 @@
 {
     "name": "@honzachalupa/design-system",
-    "version": "1.0.0-alpha.21",
+    "version": "1.0.0-alpha.22",
     "main": "./build/index.js",
     "types": "./build/index.d.js",
     "license": "MIT",
