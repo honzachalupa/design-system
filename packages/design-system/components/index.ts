@@ -1,4 +1,3 @@
-export * from "./ThemeProvider";
 export { Button } from "./atoms/Button";
 export { ButtonLink } from "./atoms/ButtonLink";
 export { ButtonsGroup } from "./atoms/ButtonsGroup";
