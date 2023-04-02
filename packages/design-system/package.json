@@ -16,7 +16,8 @@
         "dev": "yarn build",
         "build": "tsc && cp ./tailwind-globals.css build",
         "lint": "eslint \"**/*.ts*\"",
-        "publishx": "standard-version --prerelease alpha && npm publish"
+        "release": "standard-version --prerelease alpha",
+        "publishx": "npm publish"
     },
     "dependencies": {
         "classnames": "^2.3.2",
