@@ -1,6 +1,6 @@
 {
     "name": "@honzachalupa/design-system",
-    "version": "1.0.0-alpha.19",
+    "version": "1.0.0-alpha.20",
     "main": "./build/index.js",
     "types": "./build/index.d.js",
     "license": "MIT",
@@ -16,8 +16,8 @@
         "dev": "tsc --watch && cp ./tailwind-globals.css build",
         "build": "tsc && cp ./tailwind-globals.css build",
         "lint": "eslint \"**/*.ts*\"",
-        "release": "standard-version --prerelease alpha && git push --follow-tags",
-        "publishx": "npm publish"
+        "releasex": "standard-version --prerelease alpha && git push --follow-tags",
+        "release-ci": "npm publish"
     },
     "dependencies": {
         "classnames": "^2.3.2",
