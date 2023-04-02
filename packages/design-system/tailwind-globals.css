@@ -2,13 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+    .accent-background {
+        @apply bg-rose-600;
+    }
+
     .theme-background {
         @apply bg-white dark:bg-black;
     }
 
     .theme-background-faded {
         @apply theme-background opacity-50;
+    }
+
+    .accent-foreground {
+        @apply text-rose-600;
     }
 
     .theme-foreground {
@@ -28,7 +36,7 @@
     }
 
     .theme-border {
-        @apply border border-white dark:border-black rounded-sm;
+        @apply border-2 border-white dark:border-black rounded-sm;
     }
 
     * {

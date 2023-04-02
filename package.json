@@ -10,7 +10,8 @@
         "build": "turbo run build",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
-        "publishx": "turbo run publishx",
+        "release": "turbo run release",
+        "release-ci": "turbo run release-ci",
         "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },
     "dependencies": {},

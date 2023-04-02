@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const ButtonsGroup: React.FC<Props> = ({ children, className }) => (
-    <div className={cx("[&>*:not(:last-child)]:mr-2", className)}>
+    <div className={cx("[&>*:not(:last-child)]:mr-4", className)}>
         {children}
     </div>
 );

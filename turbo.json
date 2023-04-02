@@ -10,9 +10,13 @@
             "outputs": []
         },
         "dev": {
-            "cache": false
+            "cache": false,
+            "persistent": true
         },
-        "publishx": {
+        "release": {
+            "dependsOn": ["^build"]
+        },
+        "release-ci": {
             "dependsOn": ["^build"]
         }
     }

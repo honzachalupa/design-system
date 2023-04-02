@@ -16,7 +16,7 @@
         "dev": "tsc --watch && cp ./tailwind-globals.css build",
         "build": "tsc && cp ./tailwind-globals.css build",
         "lint": "eslint \"**/*.ts*\"",
-        "releasex": "standard-version --prerelease alpha && git push --follow-tags",
+        "release": "standard-version --prerelease alpha && git push --follow-tags",
         "release-ci": "npm publish"
     },
     "dependencies": {

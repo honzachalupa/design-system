@@ -21,5 +21,10 @@ export const Variants = () => (
         <br />
 
         <ButtonLink label="Disabled" isDisabled href="#" />
+
+        <br />
+        <br />
+
+        <ButtonLink label="External" href="#" target="_blank" />
     </>
 );

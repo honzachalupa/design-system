@@ -26,7 +26,7 @@ export const TextArea: React.FC<Props> = ({
 }) => (
     <TextareaAutosize
         className={cx(
-            "w-full my-1 px-3.5 inline-block bg-transparent theme-foreground theme-border focus:outline-none resize-none",
+            "w-full my-1 px-3.5 inline-block theme-background-faded theme-foreground focus:outline-none resize-none",
             {
                 "py-1.5 text-sm": size === "small",
                 "py-2 text-md": size === "medium",

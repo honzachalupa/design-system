@@ -2,9 +2,9 @@
     "name": "docs",
     "version": "0.0.0",
     "scripts": {
-        "dev": "start-storybook -p 6006 --no-open",
+        "dev": "start-storybook -p 6001 --no-open",
         "build": "build-storybook --output-dir build",
-        "publishx": "npx chromatic --auto-accept-changes"
+        "release-ci": "npx chromatic --auto-accept-changes"
     },
     "dependencies": {
         "design-system": "*",

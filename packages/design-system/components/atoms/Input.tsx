@@ -32,7 +32,7 @@ export const Input = <T,>({
     return (
         <input
             className={cx(
-                "w-full rounded-sm my-1 px-3.5 inline-block theme-background theme-foreground focus:outline-none",
+                "w-full rounded-sm my-1 px-3.5 inline-block theme-background-faded theme-foreground focus:outline-none",
                 {
                     "py-1.5 text-sm": size === "small",
                     "py-2 text-md": size === "medium",

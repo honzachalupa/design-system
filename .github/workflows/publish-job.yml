@@ -31,11 +31,11 @@ jobs:
               run: yarn build
 
             - name: Publish
-              run: cd packages/design-system && yarn publishx
+              run: cd packages/design-system && yarn release-ci
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish storybook
-              run: cd apps/docs && yarn publishx
+              run: cd apps/docs && yarn release-ci
               env:
                   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
