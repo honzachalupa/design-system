@@ -20,6 +20,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                         href: "https://www.npmjs.com/package/@honzachalupa/design-system",
                     },
                 ]}
+                hasPadding
             />
 
             <HeroSection

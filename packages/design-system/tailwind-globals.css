@@ -16,7 +16,7 @@
     }
 
     .accent-foreground {
-        @apply text-rose-600;
+        @apply text-rose-600 fill-rose-600;
     }
 
     .theme-foreground {

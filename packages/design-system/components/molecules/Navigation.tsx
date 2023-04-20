@@ -1,4 +1,5 @@
 import cx from "classnames";
+import { useCallback } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useToggle } from "../../utils";
 
@@ -15,6 +16,7 @@ interface Props {
     };
     primaryItems: Item[];
     secondaryItems?: Item[];
+    hasPadding?: boolean;
 }
 
 const Brand: React.FC<{ brand: Props["brand"] }> = ({ brand }) =>
@@ -38,30 +40,32 @@ const Brand: React.FC<{ brand: Props["brand"] }> = ({ brand }) =>
     ) : null;
 
 const Item: React.FC<{
-    href?: string;
-    onClick?: () => void;
+    item: any;
     className?: string;
-    children: string;
-}> = ({ href, className, onClick, children }) => {
-    const isActive = (href: string) => {
+}> = ({ item: { label, href, onClick }, className }) => {
+    const isActive = useCallback((href: string) => {
         try {
             return window.location.pathname === href;
         } catch (error) {
             return false;
         }
-    };
+    }, []);
 
-    const classNamex = cx(className, "inline no-underline cursor-pointer", {
-        "accent-foreground font-bold": href && isActive(href),
-    });
+    const classNameShared = cx(
+        className,
+        "inline text-lg font-light no-underline cursor-pointer",
+        {
+            "accent-foreground !font-bold": href && isActive(href),
+        }
+    );
 
     return onClick ? (
-        <p className={classNamex} onClick={onClick}>
-            {children}
+        <p className={classNameShared} onClick={onClick}>
+            {label}
         </p>
     ) : (
-        <a className={classNamex} href={href}>
-            {children}
+        <a className={classNameShared} href={href}>
+            {label}
         </a>
     );
 };
@@ -70,43 +74,47 @@ export const Navigation: React.FC<Props> = ({
     brand,
     primaryItems,
     secondaryItems,
+    hasPadding,
 }) => {
     const [isOpened, toggleIsOpened] = useToggle();
 
     return (
         <>
-            <div className="items-center justify-between px-[5vw] py-[3vh] hidden lg:flex">
+            {/* Desktop view */}
+            <div
+                className={cx(
+                    "items-center justify-between py-[3vh] hidden lg:flex",
+                    {
+                        "px-[5vw]": hasPadding,
+                    }
+                )}
+            >
                 <Brand brand={brand} />
 
                 <div>
-                    {primaryItems.map(({ label, href, onClick }) => (
+                    {primaryItems.map((item) => (
                         <Item
-                            key={label}
-                            href={href}
-                            onClick={onClick}
+                            key={item.label}
+                            item={item}
                             className="mr-10 last:mr-0"
-                        >
-                            {label}
-                        </Item>
+                        />
                     ))}
                 </div>
 
                 {secondaryItems && (
                     <div>
-                        {secondaryItems.map(({ label, href, onClick }) => (
+                        {secondaryItems.map((item) => (
                             <Item
-                                key={label}
-                                href={href}
-                                onClick={onClick}
+                                key={item.label}
+                                item={item}
                                 className="mr-10 last:mr-0"
-                            >
-                                {label}
-                            </Item>
+                            />
                         ))}
                     </div>
                 )}
             </div>
 
+            {/* Mobile view */}
             <div className="flex items-center justify-between px-[5vw] py-[3vh] lg:hidden">
                 <Brand brand={brand} />
 
@@ -124,34 +132,24 @@ export const Navigation: React.FC<Props> = ({
 
                         <div className="w-1/2 max-w-[500px] h-screen theme-background flex flex-col pt-[80px] pr-[15px] absolute top-0 right-0 z-40">
                             <div className="flex flex-col">
-                                {primaryItems.map(
-                                    ({ label, href, onClick }) => (
-                                        <Item
-                                            key={label}
-                                            href={href}
-                                            onClick={onClick}
-                                            className="w-full mr-10 last:mr-0 p-3 text-right font-light"
-                                        >
-                                            {label}
-                                        </Item>
-                                    )
-                                )}
+                                {primaryItems.map((item) => (
+                                    <Item
+                                        key={item.label}
+                                        item={item}
+                                        className="w-full mr-10 last:mr-0 p-3 text-right font-light"
+                                    />
+                                ))}
                             </div>
 
                             {secondaryItems && (
                                 <div className="flex flex-col mt-10">
-                                    {secondaryItems.map(
-                                        ({ label, href, onClick }) => (
-                                            <Item
-                                                key={label}
-                                                href={href}
-                                                onClick={onClick}
-                                                className="w-full mr-10 last:mr-0 p-3 text-right font-light"
-                                            >
-                                                {label}
-                                            </Item>
-                                        )
-                                    )}
+                                    {secondaryItems.map((item) => (
+                                        <Item
+                                            key={item.label}
+                                            item={item}
+                                            className="w-full mr-10 last:mr-0 p-3 text-right font-light"
+                                        />
+                                    ))}
                                 </div>
                             )}
                         </div>
