@@ -30,10 +30,20 @@ jobs:
             - name: Build
               run: yarn build
 
+            - name: Archive artifact 1
+              uses: actions/upload-artifact@v3
+              with:
+                  name: artifact-1
+
             - name: Publish
               run: cd packages/design-system && yarn release-ci
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Archive artifact 2
+              uses: actions/upload-artifact@v3
+              with:
+                  name: artifact-2
 
             - name: Publish storybook
               run: cd apps/docs && yarn release-ci
