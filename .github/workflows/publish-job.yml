@@ -34,6 +34,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                   name: artifact-1
+                  path: ${{ github.workspace }}
 
             - name: Publish
               run: cd packages/design-system && yarn release-ci
@@ -44,6 +45,7 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                   name: artifact-2
+                  path: ${{ github.workspace }}
 
             - name: Publish storybook
               run: cd apps/docs && yarn release-ci
