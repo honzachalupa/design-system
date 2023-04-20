@@ -31,7 +31,7 @@ jobs:
               run: yarn build
 
             - name: Output
-              run: ls -a
+              run: cd packages/design-system && ls -a && cd ../../
 
             - name: Publish
               run: cd packages/design-system && yarn release-ci
@@ -39,7 +39,7 @@ jobs:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Output
-              run: ls -a
+              run: cd packages/design-system && ls -a && cd ../../
 
             - name: Publish storybook
               run: cd apps/docs && yarn release-ci
