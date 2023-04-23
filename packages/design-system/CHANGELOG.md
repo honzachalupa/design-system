@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.39](https://github.com/honzachalupa/design-system/compare/v1.0.0-alpha.38...v1.0.0-alpha.39) (2023-04-23)
+
 ## [1.0.0-alpha.38](https://github.com/honzachalupa/design-system/compare/v1.0.0-alpha.37...v1.0.0-alpha.38) (2023-04-23)
 
 ## [1.0.0-alpha.37](https://github.com/honzachalupa/design-system/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2023-04-23)
