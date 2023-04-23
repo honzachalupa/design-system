@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactSelect from "react-select";
 import { usePrefersDarkMode } from "../../utils";
 
 interface Props {
     label: string;
     defaultValue?: string;
+    value?: string;
     placeholder?: string;
     options: { label: string; value: string }[];
     noOptionsMessage?: string;
@@ -17,6 +18,7 @@ interface Props {
 export const Select: React.FC<Props> = ({
     label,
     defaultValue,
+    value: valueProp,
     placeholder,
     options,
     noOptionsMessage,
@@ -25,10 +27,21 @@ export const Select: React.FC<Props> = ({
 }) => {
     const darkMode = usePrefersDarkMode();
 
+    const [value, setValue] = useState<string>();
+
     const defaultOption = useMemo(
         () => options.find((option) => option.value === defaultValue),
         [defaultValue]
     );
+
+    const selectedOption = useMemo(
+        () => options.find((option) => option.value === value),
+        [value]
+    );
+
+    useEffect(() => {
+        setValue(valueProp);
+    }, [valueProp]);
 
     return (
         <div className="my-3">
@@ -36,6 +49,7 @@ export const Select: React.FC<Props> = ({
 
             <ReactSelect
                 defaultValue={defaultOption}
+                value={selectedOption}
                 options={options}
                 placeholder={placeholder || "Select an option"}
                 noOptionsMessage={() => noOptionsMessage || "No options"}
@@ -44,14 +58,18 @@ export const Select: React.FC<Props> = ({
                 styles={{
                     control: (styles) => ({
                         ...styles,
-                        background: darkMode ? "black" : "white",
+                        background: darkMode
+                            ? "rgba(0 0 0 / 0.5)"
+                            : "rgba(255 255 255 / 0.5)",
                         border: "none",
                         borderRadius: 0,
                         boxShadow: "none",
                     }),
                     singleValue: (styles) => ({
                         ...styles,
-                        color: darkMode ? "white" : "black",
+                        color: darkMode
+                            ? "rgba(255 255 255 / 0.5)"
+                            : "rgba(0 0 0 / 0.5)",
                     }),
                     indicatorSeparator: (styles) => ({
                         ...styles,

@@ -32,7 +32,7 @@ export const TextArea: React.FC<Props> = ({
     isDisabled,
     onChange,
 }) => (
-    <div>
+    <div className="my-2">
         {label && (
             <label htmlFor={id}>
                 {label} {isRequired && "(required)"}

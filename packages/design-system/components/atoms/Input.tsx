@@ -38,7 +38,7 @@ export const Input = <T,>({
     };
 
     return (
-        <div>
+        <div className="my-2">
             {label && (
                 <label htmlFor={id}>
                     {label} {isRequired && "*"}
