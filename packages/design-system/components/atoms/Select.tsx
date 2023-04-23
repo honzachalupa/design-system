@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 import ReactSelect from "react-select";
 import { usePrefersDarkMode } from "../../utils";
