@@ -1,3 +1,5 @@
+"use client";
+
 import { useMedia } from "./useMedia";
 
 export const usePrefersDarkMode = () =>

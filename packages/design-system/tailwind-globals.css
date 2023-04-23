@@ -11,6 +11,10 @@
         @apply bg-white dark:bg-black;
     }
 
+    .theme-background-inverted {
+        @apply bg-black dark:bg-white;
+    }
+
     .theme-background-faded {
         @apply theme-background opacity-50;
     }
