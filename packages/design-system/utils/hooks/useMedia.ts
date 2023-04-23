@@ -7,7 +7,11 @@ export const useMedia = <T>(
     values: T[],
     defaultValue: T
 ) => {
-    const mediaQueryLists = queries.map((q) => window.matchMedia(q));
+    const mediaQueryLists = queries
+        .map((q) =>
+            typeof window !== "undefined" ? window.matchMedia(q) : null
+        )
+        .filter(Boolean) as MediaQueryList[];
 
     const getValue = () => {
         const index = mediaQueryLists.findIndex((mql) => mql.matches);
@@ -25,5 +29,6 @@ export const useMedia = <T>(
         return () =>
             mediaQueryLists.forEach((mql) => mql.removeListener(handler));
     }, []);
+
     return value;
 };
