@@ -1,6 +1,6 @@
 {
     "name": "@honzachalupa/design-system",
-    "version": "1.0.0-alpha.42",
+    "version": "1.0.0",
     "main": "./build/index.js",
     "types": "./build/index.d.js",
     "files": [
@@ -19,7 +19,7 @@
         "dev": "tsc --watch && cp ./tailwind-globals.css build",
         "build": "tsc && cp ./tailwind-globals.css build",
         "lint": "eslint \"**/*.ts*\"",
-        "release": "standard-version --prerelease alpha && git push --follow-tags",
+        "release": "standard-version && git push --follow-tags",
         "release-ci": "npm publish"
     },
     "dependencies": {
