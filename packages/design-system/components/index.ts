@@ -2,6 +2,7 @@ export { Button } from "./atoms/Button";
 export { ButtonLink } from "./atoms/ButtonLink";
 export { ButtonsGroup } from "./atoms/ButtonsGroup";
 export { Input } from "./atoms/Input";
+export { LoadingIndicator } from "./atoms/LoadingIndicator";
 export { Select } from "./atoms/Select";
 export { SwitchButton } from "./atoms/SwitchButton";
 export { TextArea } from "./atoms/TextArea";
