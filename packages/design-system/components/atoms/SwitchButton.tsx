@@ -99,13 +99,13 @@ export function SwitchButton<T>({
     return (
         <div
             className={cx(
-                "theme-background bg-opacity-50 relative rounded-sm",
+                "theme-background bg-opacity-50 rounded-sm relative",
                 className
             )}
         >
             {backgroundStyle && (
                 <div
-                    className="h-full theme-background theme-foreground rounded-sm absolute transition-all duration-500"
+                    className="h-full theme-background theme-foreground rounded-sm absolute -z-10 transition-all duration-500"
                     style={{
                         width: backgroundStyle.width,
                         left: backgroundStyle.left,
@@ -113,13 +113,13 @@ export function SwitchButton<T>({
                 />
             )}
 
-            <div ref={containerRef} className="w-ful flex">
+            <div ref={containerRef} className="w-full flex">
                 {options.map(({ value, label, isDisabled }) => (
                     <Button
                         key={value as string}
                         label={label}
                         size={size}
-                        className="basis-full z-10 bg-transparent disabled:bg-transparent"
+                        className="basis-full relative bg-transparent disabled:bg-transparent"
                         isDisabled={isDisabled}
                         onClick={(e) => handleButtonClick(e, value, isDisabled)}
                     />

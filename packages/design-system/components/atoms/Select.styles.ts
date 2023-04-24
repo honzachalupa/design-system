@@ -7,7 +7,7 @@ export const styles = (isDarkModeEnabled: boolean): StylesConfig => ({
             ? "rgba(0 0 0 / 0.5)"
             : "rgba(255 255 255 / 0.5)",
         border: "none",
-        borderRadius: 0,
+        borderRadius: "0.125rem",
         boxShadow: "none",
     }),
     singleValue: (styles) => ({
