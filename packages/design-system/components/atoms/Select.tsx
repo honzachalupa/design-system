@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ReactSelect from "react-select";
 import { usePrefersDarkMode } from "../../utils";
+import { styles } from "./Select.styles";
 
 interface Props {
     label: string;
@@ -12,6 +13,7 @@ interface Props {
     options: { label: string; value: string }[];
     noOptionsMessage?: string;
     loadingMessage?: string;
+    isDisabled?: boolean;
     onChange: (value: string) => void;
 }
 
@@ -23,9 +25,10 @@ export const Select: React.FC<Props> = ({
     options,
     noOptionsMessage,
     loadingMessage,
+    isDisabled,
     onChange,
 }) => {
-    const darkMode = usePrefersDarkMode();
+    const isDarkModeEnabled = usePrefersDarkMode();
 
     const [value, setValue] = useState<string>();
 
@@ -55,61 +58,10 @@ export const Select: React.FC<Props> = ({
                 noOptionsMessage={() => noOptionsMessage || "No options"}
                 loadingMessage={() => loadingMessage || "Loading..."}
                 className="w-full"
-                styles={{
-                    control: (styles) => ({
-                        ...styles,
-                        background: darkMode
-                            ? "rgba(0 0 0 / 0.5)"
-                            : "rgba(255 255 255 / 0.5)",
-                        border: "none",
-                        borderRadius: 0,
-                        boxShadow: "none",
-                    }),
-                    singleValue: (styles) => ({
-                        ...styles,
-                        color: darkMode
-                            ? "rgba(255 255 255 / 0.5)"
-                            : "rgba(0 0 0 / 0.5)",
-                    }),
-                    indicatorSeparator: (styles) => ({
-                        ...styles,
-                        display: "none",
-                    }),
-                    dropdownIndicator: (styles) => ({
-                        ...styles,
-                        "*": {
-                            fill: "#e11d48",
-                        },
-                    }),
-                    menu: (styles) => ({
-                        ...styles,
-                        background: "rgba(0, 0, 0, 0.2)",
-                        backdropFilter: "blur(10px)",
-                        borderRadius: 0,
-                        borderBottomLeftRadius: "0.375rem",
-                        borderBottomRightRadius: "0.375rem",
-                        boxShadow: "none",
-                        marginTop: 1,
-                    }),
-                    menuList: (styles) => ({
-                        ...styles,
-                        background: "transparent",
-                        padding: 0,
-                    }),
-                    option: (styles, { isSelected }) => ({
-                        ...styles,
-                        background: "transparent",
-                        borderTopWidth: 1,
-                        borderTopColor: "rgb(107 114 128 / 0.2)",
-                        fontSize: "0.875rem",
-                        color: isSelected
-                            ? "#e11d48"
-                            : darkMode
-                            ? "white"
-                            : "black",
-                    }),
-                }}
+                styles={styles(isDarkModeEnabled)}
                 isSearchable={false}
+                isDisabled={isDisabled}
+                // @ts-ignore
                 onChange={(option) => option && onChange(option.value)}
             />
         </div>
