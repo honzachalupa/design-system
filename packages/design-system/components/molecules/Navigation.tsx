@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { useCallback } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useToggle } from "../../utils";
+import { useToggle } from "../../hooks";
 
 interface Item {
     label: string;
@@ -76,7 +76,7 @@ export const Navigation: React.FC<Props> = ({
     secondaryItems,
     hasPadding,
 }) => {
-    const [isOpened, toggleIsOpened] = useToggle();
+    const { bool: isOpened, toggle: toggleIsOpened } = useToggle();
 
     return (
         <>

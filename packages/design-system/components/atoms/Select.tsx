@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import ReactSelect from "react-select";
-import { usePrefersDarkMode } from "../../utils";
+import { usePreferredColorScheme } from "../../hooks";
 import { styles } from "./Select.styles";
 
 interface Props {
@@ -28,7 +28,7 @@ export const Select: React.FC<Props> = ({
     isDisabled,
     onChange,
 }) => {
-    const isDarkModeEnabled = usePrefersDarkMode();
+    const colorScheme = usePreferredColorScheme();
 
     const [value, setValue] = useState<string>();
 
@@ -58,7 +58,7 @@ export const Select: React.FC<Props> = ({
                 noOptionsMessage={() => noOptionsMessage || "No options"}
                 loadingMessage={() => loadingMessage || "Loading..."}
                 className="w-full"
-                styles={styles(isDarkModeEnabled)}
+                styles={styles(colorScheme === "dark")}
                 isSearchable={false}
                 isDisabled={isDisabled}
                 // @ts-ignore
