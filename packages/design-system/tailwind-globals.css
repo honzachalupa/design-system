@@ -49,6 +49,10 @@
         @apply theme-foreground;
     }
 
+    html {
+        @apply h-full;
+    }
+
     body {
         @apply theme-page-background;
     }
