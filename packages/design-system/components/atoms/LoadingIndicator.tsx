@@ -58,7 +58,9 @@ export const LoadingIndicator: React.FC<Props> = ({
             </div>
 
             {message && isFullscreen && (
-                <p className="text-xs accent-foreground mt-2">{message}</p>
+                <p className="text-xs md:text-md lg:text-lg accent-foreground mt-2">
+                    {message}
+                </p>
             )}
         </div>
     );

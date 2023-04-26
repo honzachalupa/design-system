@@ -13,6 +13,7 @@ interface Props {
     options: { label: string; value: string }[];
     noOptionsMessage?: string;
     loadingMessage?: string;
+    isRequired?: boolean;
     isDisabled?: boolean;
     onChange: (value: string) => void;
 }
@@ -25,6 +26,7 @@ export const Select: React.FC<Props> = ({
     options,
     noOptionsMessage,
     loadingMessage,
+    isRequired,
     isDisabled,
     onChange,
 }) => {
@@ -48,7 +50,11 @@ export const Select: React.FC<Props> = ({
 
     return (
         <div className="my-3">
-            <label>{label}</label>
+            {label && (
+                <label>
+                    {label} {isRequired && "*"}
+                </label>
+            )}
 
             <ReactSelect
                 defaultValue={defaultOption}
