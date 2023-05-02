@@ -14,7 +14,7 @@ interface Props<T> {
     className?: string;
     isRequired?: boolean;
     isDisabled?: boolean;
-    onChange: (value: T) => void;
+    onChange?: (value: T) => void;
 }
 
 export const Input = <T,>({
@@ -34,7 +34,7 @@ export const Input = <T,>({
         const resolvedValue =
             type === "number" ? Number(e.target.value) : e.target.value;
 
-        rest.onChange(resolvedValue as T);
+        rest.onChange?.(resolvedValue as T);
     };
 
     return (
