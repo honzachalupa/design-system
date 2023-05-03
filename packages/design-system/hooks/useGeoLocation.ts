@@ -6,23 +6,14 @@ export const useGeoLocation = () => {
         longitude: number;
         latitude: number;
     }>("currentLocation", {
-        longitude: 14.41854,
-        latitude: 50.073658,
+        longitude: 0,
+        latitude: 0,
     });
-
     const onCurrentPositionChanged = ({ coords }: GeolocationPosition) => {
-        if (
-            JSON.stringify(coordinates) !==
-            JSON.stringify({
-                longitude: coords.longitude,
-                latitude: coords.latitude,
-            })
-        ) {
-            setCoordinates({
-                longitude: coords.longitude,
-                latitude: coords.latitude,
-            });
-        }
+        setCoordinates({
+            longitude: coords.longitude,
+            latitude: coords.latitude,
+        });
     };
 
     useEffect(() => {
@@ -33,7 +24,7 @@ export const useGeoLocation = () => {
                 onCurrentPositionChanged
             );
         } else {
-            // TODO
+            alert("Geolocation service is not supported by your device.");
         }
 
         return () => {
