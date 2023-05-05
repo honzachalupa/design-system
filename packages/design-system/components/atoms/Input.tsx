@@ -9,9 +9,11 @@ interface Props<T> {
     value?: T;
     defaultValue?: T;
     placeholder?: string;
+    description?: string;
     size?: InputSize;
     type?: HTMLInputTypeAttribute;
     className?: string;
+    containerClassName?: string;
     isRequired?: boolean;
     isDisabled?: boolean;
     onChange?: (value: T) => void;
@@ -23,9 +25,11 @@ export const Input = <T,>({
     value,
     defaultValue,
     placeholder,
+    description,
     size = "medium",
     type = "text",
     className,
+    containerClassName,
     isRequired,
     isDisabled,
     ...rest
@@ -38,11 +42,15 @@ export const Input = <T,>({
     };
 
     return (
-        <div className="my-2">
+        <div className={cx("my-2", containerClassName)}>
             {label && (
                 <label htmlFor={id}>
                     {label} {isRequired && "*"}
                 </label>
+            )}
+
+            {description && (
+                <p className="text-xs text-opacity-50 my-1">{description}</p>
             )}
 
             <input

@@ -10,3 +10,4 @@ export { Toggle } from "./atoms/Toggle";
 export { HeroSection } from "./molecules/HeroSection";
 export { Navigation } from "./molecules/Navigation";
 export { AuthForm } from "./organisms/AuthForm";
+export { PwaInstallationPrompt } from "./organisms/PwaInstallationPrompt";

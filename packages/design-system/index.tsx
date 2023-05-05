@@ -1,3 +1,4 @@
 export * from "./components";
 export * from "./hooks";
-export * from "./layouts/Primary";
+export * from "./layouts";
+export * from "./types";

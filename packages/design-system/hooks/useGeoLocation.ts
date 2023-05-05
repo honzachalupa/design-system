@@ -1,18 +1,31 @@
 import { useEffect } from "react";
 import { useLocalStorage } from ".";
 
+export interface GeolocationCoordinates {
+    longitude: number | undefined;
+    latitude: number | undefined;
+}
+
 export const useGeoLocation = () => {
-    const [coordinates, setCoordinates] = useLocalStorage<{
-        longitude: number;
-        latitude: number;
-    }>("currentLocation", {
-        longitude: 0,
-        latitude: 0,
-    });
+    const [coordinates, setCoordinates] =
+        useLocalStorage<GeolocationCoordinates>("currentLocation", {
+            longitude: undefined,
+            latitude: undefined,
+        });
+
     const onCurrentPositionChanged = ({ coords }: GeolocationPosition) => {
         setCoordinates({
             longitude: coords.longitude,
             latitude: coords.latitude,
+        });
+    };
+
+    const onError = () => {
+        // alert("Geolocation service is not allowed.");
+
+        setCoordinates({
+            longitude: 14.41854,
+            latitude: 50.073658,
         });
     };
 
@@ -21,10 +34,11 @@ export const useGeoLocation = () => {
 
         if (navigator.geolocation) {
             watch = navigator.geolocation.watchPosition(
-                onCurrentPositionChanged
+                onCurrentPositionChanged,
+                onError
             );
         } else {
-            alert("Geolocation service is not supported by your device.");
+            alert("Geolocation service is not supported.");
         }
 
         return () => {

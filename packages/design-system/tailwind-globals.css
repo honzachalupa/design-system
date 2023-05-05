@@ -43,6 +43,10 @@
         @apply border-2 border-white dark:border-black rounded-sm;
     }
 
+    .theme-glass-effect {
+        @apply bg-gray-500 bg-opacity-20 backdrop-blur-md;
+    }
+
     * {
         -webkit-tap-highlight-color: transparent;
 
