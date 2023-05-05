@@ -1,6 +1,6 @@
 import { useLocalStorage, useLocation } from "@react-hooks-library/core";
 import { useEffect } from "react";
-import { useTranslations, useUserAgent } from "../../hooks";
+import { useTranslation, useUserAgent } from "../../hooks";
 import { PlusSquareIcon, ShareIcon } from "../../icons";
 import { Modal } from "../molecules/Modal";
 
@@ -11,7 +11,7 @@ export const PwaInstallationPrompt: React.FC = ({
 }) => {
     const location = useLocation();
     const userAgent = useUserAgent();
-    const t = useTranslations("cs");
+    const t = useTranslation();
 
     const [wasShown, setWasShown] = useLocalStorage("pwaPromptShown", false);
 
@@ -33,22 +33,22 @@ export const PwaInstallationPrompt: React.FC = ({
 
     const steps = [
         {
-            content: t("pwaPromptItem1Content"),
+            content: t("pwaPrompt", "item1.content"),
             icon: <ShareIcon className="w-6 fill-blue-600" />,
         },
         {
-            content: t("pwaPromptItem2Content"),
+            content: t("pwaPrompt", "item2.content"),
             icon: <PlusSquareIcon className="w-6 p-[2px]" />,
         },
     ];
 
     return !wasShown && isEnabledForTheDevice ? (
         <Modal
-            title={t("pwaPromptTitle")}
+            title={t("pwaPrompt", "title")}
             positionY="bottom"
             onClose={handleClose}
         >
-            <p className="text-sm my-5">{t("pwaPromptContent")}</p>
+            <p className="text-sm my-5">{t("pwaPrompt", "content")}</p>
 
             <ul className="text-xs">
                 {steps.map(({ content, icon }, i) => (

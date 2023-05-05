@@ -9,6 +9,7 @@ module.exports = {
     ignorePatterns: ["**/build/*"],
     rules: {
         "react-hooks/exhaustive-deps": "off",
+        "import/no-anonymous-default-export": "off",
         "@next/next/no-html-link-for-pages": "off",
     },
 };

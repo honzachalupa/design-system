@@ -1,6 +1,6 @@
 import cx from "classnames";
 import { ReactNode } from "react";
-import { useTranslations } from "../../hooks";
+import { useTranslation } from "../../hooks";
 
 interface Props {
     title?: string;
@@ -15,7 +15,7 @@ export const Modal: React.FC<Props> = ({
     positionY,
     onClose,
 }) => {
-    const t = useTranslations("cs");
+    const t = useTranslation();
 
     return (
         <div
@@ -28,7 +28,7 @@ export const Modal: React.FC<Props> = ({
                     className="text-blue-600 p-2 absolute top-0 right-0"
                     onClick={onClose}
                 >
-                    {t("modalClose")}
+                    {t("modal", "closeLabel")}
                 </div>
 
                 {title && <p>{title}</p>}

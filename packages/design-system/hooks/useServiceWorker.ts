@@ -31,8 +31,6 @@ export const useServiceWorker = () => {
     const [status, setStatus] =
         useState<"registering" | "registered" | "failed">("registering");
 
-    console.log("useServiceWorker()", { status });
-
     const onSuccess = ({ scope }: ServiceWorkerRegistration) => {
         setStatus("registered");
 

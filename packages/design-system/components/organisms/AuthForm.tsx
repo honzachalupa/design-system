@@ -5,7 +5,6 @@ import { SwitchButton } from "../atoms/SwitchButton";
 
 interface IProps {
     mode: "sign-in" | "sign-up";
-    // locale?: "cs" | "en";
     signUp: (payload: {
         firstName: string;
         lastName: string;
@@ -20,7 +19,6 @@ interface IProps {
 }
 
 export const AuthForm: React.FC<IProps> = ({
-    // locale = "en",
     signUp,
     signIn,
     onSuccess,
@@ -58,8 +56,6 @@ export const AuthForm: React.FC<IProps> = ({
                     onSuccess();
                 })
                 .catch((error) => {
-                    console.log("Došlo k neznámé chybě.");
-
                     console.error(error);
                 });
         } else {
@@ -77,8 +73,6 @@ export const AuthForm: React.FC<IProps> = ({
                     onSuccess();
                 })
                 .catch((error) => {
-                    console.log("Došlo k neznámé chybě.");
-
                     console.error(error);
                 });
         } else {
