@@ -1,5 +1,5 @@
 import React from "react";
-import { TextArea } from "../../../packages/design-system/build";
+import { TextArea } from "../../../packages/lib/build";
 
 export default {
     title: "Atoms/TextArea",

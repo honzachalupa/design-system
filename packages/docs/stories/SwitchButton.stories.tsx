@@ -1,5 +1,5 @@
 import React from "react";
-import { SwitchButton } from "../../../packages/design-system/build";
+import { SwitchButton } from "../../../packages/lib/build";
 
 export default {
     title: "Atoms/SwitchButton",
