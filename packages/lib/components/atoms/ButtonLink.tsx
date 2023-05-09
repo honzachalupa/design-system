@@ -1,13 +1,15 @@
+"use client";
+
 import cx from "classnames";
 import Link from "next/link";
-import { ButtonPropsCore, getSharedButtonStyle } from "./Button";
+import { IButtonPropsCore, getSharedButtonStyle } from "./Button";
 
-export interface ButtonLinkProps extends ButtonPropsCore {
+export interface IButtonLinkProps extends IButtonPropsCore {
     href: string;
     target?: "_blank";
 }
 
-export const ButtonLink: React.FC<ButtonLinkProps> = ({
+export const ButtonLink: React.FC<IButtonLinkProps> = ({
     label,
     href,
     size = "medium",

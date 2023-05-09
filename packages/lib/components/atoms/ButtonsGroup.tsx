@@ -1,13 +1,15 @@
+"use client";
+
 import cx from "classnames";
 import { ReactNode } from "react";
 
-interface Props {
+interface IProps {
     children: ReactNode;
     alignment?: "left" | "center" | "right";
     className?: string;
 }
 
-export const ButtonsGroup: React.FC<Props> = ({
+export const ButtonsGroup: React.FC<IProps> = ({
     children,
     alignment,
     className,

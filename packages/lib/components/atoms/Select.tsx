@@ -5,7 +5,7 @@ import ReactSelect from "react-select";
 import { usePreferredColorScheme } from "../../hooks";
 import { styles } from "./Select.styles";
 
-interface Props {
+interface IProps {
     label: string;
     defaultValue?: string;
     value?: string;
@@ -18,7 +18,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-export const Select: React.FC<Props> = ({
+export const Select: React.FC<IProps> = ({
     label,
     defaultValue,
     value: valueProp,

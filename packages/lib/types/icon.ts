@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export interface IconProps {
+export interface IIconProps {
     className?: string;
     style?: CSSProperties;
 }

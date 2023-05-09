@@ -1,13 +1,15 @@
+"use client";
+
 import cx from "classnames";
 import { useEffect } from "react";
 import { HashLoader } from "react-spinners";
 
-interface Props {
+interface IProps {
     message?: string;
     isFullscreen?: boolean;
 }
 
-export const LoadingIndicator: React.FC<Props> = ({
+export const LoadingIndicator: React.FC<IProps> = ({
     message,
     isFullscreen,
 }) => {
@@ -41,7 +43,7 @@ export const LoadingIndicator: React.FC<Props> = ({
 
 /* import cx from "classnames";
 
-interface Props {
+interface IProps {
     message?: string;
     progress?: {
         value: number;
@@ -51,7 +53,7 @@ interface Props {
     isFullscreen?: boolean;
 }
 
-export const LoadingIndicator: React.FC<Props> = ({
+export const LoadingIndicator: React.FC<IProps> = ({
     message,
     progress,
     isPercentage,

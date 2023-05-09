@@ -9,6 +9,4 @@ export { TextArea } from "./atoms/TextArea";
 export { Toggle } from "./atoms/Toggle";
 export { HeroSection } from "./molecules/HeroSection";
 export { Navigation } from "./molecules/Navigation";
-export { AccountForm } from "./organisms/AccountForm";
-export { AuthForm } from "./organisms/AuthForm";
 export { PwaInstallationPrompt } from "./organisms/PwaInstallationPrompt";

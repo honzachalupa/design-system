@@ -9,7 +9,7 @@ interface Item {
     onClick?: () => void;
 }
 
-interface Props {
+interface IProps {
     brand?: {
         name?: string;
         logoUrl?: string;
@@ -19,7 +19,7 @@ interface Props {
     hasPadding?: boolean;
 }
 
-const Brand: React.FC<{ brand: Props["brand"] }> = ({ brand }) =>
+const Brand: React.FC<{ brand: IProps["brand"] }> = ({ brand }) =>
     brand ? (
         <div>
             {brand?.logoUrl && (
@@ -70,7 +70,7 @@ const Item: React.FC<{
     );
 };
 
-export const Navigation: React.FC<Props> = ({
+export const Navigation: React.FC<IProps> = ({
     brand,
     primaryItems,
     secondaryItems,

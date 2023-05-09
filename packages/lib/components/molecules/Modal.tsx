@@ -2,14 +2,14 @@ import cx from "classnames";
 import { ReactNode } from "react";
 import { useTranslation } from "../../hooks";
 
-interface Props {
+interface IProps {
     title?: string;
     children: ReactNode;
     positionY?: "bottom";
     onClose: () => void;
 }
 
-export const Modal: React.FC<Props> = ({
+export const Modal: React.FC<IProps> = ({
     title,
     children,
     positionY,

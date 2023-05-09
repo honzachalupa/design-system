@@ -1,9 +1,11 @@
+"use client";
+
 import cx from "classnames";
 import { ChangeEvent, HTMLInputTypeAttribute } from "react";
 
 export type InputSize = "small" | "medium";
 
-interface Props<T> {
+interface IProps<T> {
     id?: string;
     label?: string;
     value?: T;
@@ -33,7 +35,7 @@ export const Input = <T,>({
     isRequired,
     isDisabled,
     ...rest
-}: Props<T>) => {
+}: IProps<T>) => {
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         const resolvedValue =
             type === "number" ? Number(e.target.value) : e.target.value;

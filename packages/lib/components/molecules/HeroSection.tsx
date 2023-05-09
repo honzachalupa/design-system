@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
-interface Props {
+interface IProps {
     headline: ReactNode | string;
     subheadline?: ReactNode | string;
     actions?: ReactNode;
 }
 
-export const HeroSection: React.FC<Props> = ({
+export const HeroSection: React.FC<IProps> = ({
     headline,
     subheadline,
     actions,

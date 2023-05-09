@@ -1,11 +1,11 @@
 import cx from "classnames";
 import { ReactNode } from "react";
 
-interface Props {
+interface IProps {
     children: ReactNode;
     className?: string;
 }
 
-export const Layout_Primary: React.FC<Props> = ({ children, className }) => (
+export const Layout_Primary: React.FC<IProps> = ({ children, className }) => (
     <div className={cx("p-3", className)}>{children}</div>
 );

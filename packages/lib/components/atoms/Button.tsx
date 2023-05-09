@@ -1,9 +1,11 @@
+"use client";
+
 import cx from "classnames";
 import { ButtonHTMLAttributes, MouseEventHandler } from "react";
 
 export type ButtonSize = "small" | "medium";
 
-export interface ButtonPropsCore {
+export interface IButtonPropsCore {
     label: string;
     size?: ButtonSize;
     type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
@@ -12,7 +14,7 @@ export interface ButtonPropsCore {
     isDisabled?: boolean;
 }
 
-export interface ButtonProps extends ButtonPropsCore {
+export interface IButtonProps extends IButtonPropsCore {
     isExternal?: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
 }
@@ -23,7 +25,7 @@ export const getSharedButtonStyle = ({
     isDisabled,
     isExternal,
     className,
-}: Partial<ButtonPropsCore & { isExternal?: boolean }>) =>
+}: Partial<IButtonPropsCore & { isExternal?: boolean }>) =>
     cx(
         "theme-foreground rounded-sm inline-block",
         {
@@ -39,7 +41,7 @@ export const getSharedButtonStyle = ({
         className
     );
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<IButtonProps> = ({
     label,
     size = "medium",
     // type = "button",

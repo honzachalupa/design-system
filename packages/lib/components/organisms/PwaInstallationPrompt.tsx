@@ -1,3 +1,5 @@
+"use client";
+
 import { useLocalStorage, useLocation } from "@react-hooks-library/core";
 import { useEffect } from "react";
 import { useTranslation, useUserAgent } from "../../hooks";

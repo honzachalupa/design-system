@@ -1,13 +1,15 @@
+"use client";
+
 import cx from "classnames";
 import { useEffect, useState } from "react";
 
-interface Props {
+interface IProps {
     label: string;
     defaultValue?: boolean;
     onChange: (value: boolean) => void;
 }
 
-export const Toggle: React.FC<Props> = ({ label, defaultValue, onChange }) => {
+export const Toggle: React.FC<IProps> = ({ label, defaultValue, onChange }) => {
     const [value, setValue] = useState<boolean>(false);
 
     const handleToggle = () => {

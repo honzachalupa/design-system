@@ -30,16 +30,10 @@ jobs:
             - name: Build
               run: yarn build
 
-            - name: Output
-              run: cd packages/lib && ls -a && cd ../../
-
             - name: Publish
               run: cd packages/lib && yarn release-ci
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Output
-              run: cd packages/lib && ls -a && cd ../../
 
             - name: Publish storybook
               run: cd packages/docs && yarn release-ci

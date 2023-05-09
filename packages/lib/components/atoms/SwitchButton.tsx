@@ -1,8 +1,10 @@
+"use client";
+
 import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { Button, ButtonSize } from "./Button";
 
-interface Props<T> {
+interface IProps<T> {
     defaultValue?: T;
     value?: T;
     options: {
@@ -22,7 +24,7 @@ export function SwitchButton<T>({
     size,
     className,
     onChange,
-}: Props<T>) {
+}: IProps<T>) {
     const containerRef = useRef<any>(null); // TODO: Add type.
 
     const [selectedValue, setSelectedValue] = useState<T | undefined>();

@@ -1,9 +1,11 @@
+"use client";
+
 import cx from "classnames";
 import TextareaAutosize from "react-textarea-autosize";
 
 export type TextAreaSize = "small" | "medium";
 
-interface Props {
+interface IProps {
     id?: string;
     label?: string;
     value?: string;
@@ -18,7 +20,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-export const TextArea: React.FC<Props> = ({
+export const TextArea: React.FC<IProps> = ({
     id,
     label,
     value,
