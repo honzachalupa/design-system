@@ -31,17 +31,17 @@ jobs:
               run: yarn build
 
             - name: Output
-              run: cd packages/design-system && ls -a && cd ../../
+              run: cd packages/lib && ls -a && cd ../../
 
             - name: Publish
-              run: cd packages/design-system && yarn release-ci
+              run: cd packages/lib && yarn release-ci
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Output
-              run: cd packages/design-system && ls -a && cd ../../
+              run: cd packages/lib && ls -a && cd ../../
 
             - name: Publish storybook
-              run: cd apps/docs && yarn release-ci
+              run: cd packages/docs && yarn release-ci
               env:
                   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

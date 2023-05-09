@@ -22,7 +22,7 @@ export const LoadingIndicator: React.FC<Props> = ({
     return (
         <div
             className={cx({
-                "w-screen h-screen theme-glass-effect flex flex-col items-center justify-center absolute top-0 left-0 z-20":
+                "w-screen h-screen theme-glass-effect flex flex-col items-center justify-center fixed top-0 left-0 z-20":
                     isFullscreen,
             })}
         >
