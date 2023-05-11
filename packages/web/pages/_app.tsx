@@ -1,4 +1,4 @@
-import "@honzachalupa/design-system/tailwind-globals.css";
+import "@honzachalupa/design-system/build/tailwind-globals.css";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -28,7 +28,7 @@ jobs:
               run: yarn lint
 
             - name: Build
-              run: yarn build
+              run: yarn build-ci
 
             - name: Publish
               run: cd packages/lib && yarn release-ci
