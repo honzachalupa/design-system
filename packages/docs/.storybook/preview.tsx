@@ -1,4 +1,4 @@
-import "@honzachalupa/design-system/build/tailwind-globals.css";
+import "@honzachalupa/design-system/tailwind-globals.css";
 import React from "react";
 
 const withProviders = (Story: React.FC, context: any) => {
