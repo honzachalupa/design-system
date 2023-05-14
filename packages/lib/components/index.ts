@@ -10,4 +10,5 @@ export { Toggle } from "./atoms/Toggle";
 export { HeroSection } from "./molecules/HeroSection";
 export { Navigation } from "./molecules/Navigation";
 export { Map } from "./organisms/Map";
+export type { IMapRefProps } from "./organisms/Map";
 export { PwaInstallationPrompt } from "./organisms/PwaInstallationPrompt";

@@ -23,16 +23,7 @@ import MapGL, {
     ViewStateChangeEvent,
 } from "react-map-gl";
 import { useGeoLocation } from "../../hooks";
-import { ICoordinates } from "../../types/map";
-
-export interface IMarker {
-    id: string | number;
-    name: string;
-    coordinates: ICoordinates;
-    data: {
-        [key: string]: any;
-    };
-}
+import { ICoordinates, IMarker } from "../../types/map";
 
 interface IProps {
     markers: IMarker[];
