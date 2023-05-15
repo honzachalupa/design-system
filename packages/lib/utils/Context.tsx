@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, createContext, useState } from "react";
+import "../tailwind-globals.css";
 import { TLocale } from "../types";
 
 const initialContext = {
