@@ -3,9 +3,6 @@
     "version": "1.0.18",
     "main": "./build/index.js",
     "types": "./build/index.d.js",
-    "files": [
-        "build"
-    ],
     "license": "MIT",
     "repository": {
         "type": "git",

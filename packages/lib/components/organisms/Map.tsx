@@ -8,7 +8,6 @@ import cx from "classnames";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
-    Fragment,
     ReactNode,
     forwardRef,
     useEffect,
@@ -86,9 +85,8 @@ export const Map: React.FC<IProps> = forwardRef(
 
         const defaultZoom = 15;
 
-        const [prevSelectedMarkerId, setPrevSelectedMarkerId] = useState<
-            IMarker["id"] | null
-        >();
+        const [prevSelectedMarkerId, setPrevSelectedMarkerId] =
+            useState<IMarker["id"] | null>();
         const [zoom, setZoom] = useState<number>(
             initialViewZoom || defaultZoom
         );
@@ -102,6 +100,8 @@ export const Map: React.FC<IProps> = forwardRef(
             });
 
         const focusCurrentLocation = (animate = true) => {
+            console.log("focusCurrentLocation()");
+
             mapboxRef.current?.flyTo({
                 center: [
                     currentLocation.longitude || 0,
@@ -122,6 +122,8 @@ export const Map: React.FC<IProps> = forwardRef(
 
         const zoomToAllMarkers = () => {
             if (markers.length > 0) {
+                console.log("zoomToAllMarkers()", 2);
+
                 const bounds = new mapboxgl.LngLatBounds();
 
                 markers.forEach(({ coordinates }) => {
@@ -135,6 +137,8 @@ export const Map: React.FC<IProps> = forwardRef(
                     padding: 30,
                     animate: false,
                 });
+            } else {
+                focusCurrentLocation(false);
             }
         };
 
@@ -173,11 +177,7 @@ export const Map: React.FC<IProps> = forwardRef(
 
         useEffect(() => {
             if (initialFitBounds) {
-                if (markers.length > 0) {
-                    focusCurrentLocation(false);
-                } else {
-                    zoomToAllMarkers();
-                }
+                zoomToAllMarkers();
             }
         }, [initialFitBounds]);
 
@@ -236,7 +236,11 @@ export const Map: React.FC<IProps> = forwardRef(
                         </Marker>
 
                         {markers.map((marker) => (
-                            <Fragment key={marker.id}>
+                            <Marker
+                                key={marker.id}
+                                longitude={marker.coordinates.longitude}
+                                latitude={marker.coordinates.latitude}
+                            >
                                 {renderMarkerComponent({
                                     data: marker,
                                     currentZoom: zoom,
@@ -245,7 +249,7 @@ export const Map: React.FC<IProps> = forwardRef(
                                         !!selectedMarkerId &&
                                         selectedMarkerId !== marker.id,
                                 })}
-                            </Fragment>
+                            </Marker>
                         ))}
                     </MapGL>
                 ) : (
