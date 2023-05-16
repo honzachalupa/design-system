@@ -107,7 +107,11 @@ export const Map: React.FC<IProps> = forwardRef(
 
         const flyTo = (options: FlyToOptions) => {
             setTimeout(() => {
-                mapboxRef.current?.flyTo(options);
+                mapboxRef.current?.flyTo({
+                    zoom: defaultZoom,
+                    duration: 1000,
+                    ...options,
+                });
             }, 1);
         };
 
@@ -207,6 +211,7 @@ export const Map: React.FC<IProps> = forwardRef(
                         selectedPlace.coordinates.longitude,
                         selectedPlace.coordinates.latitude,
                     ],
+                    zoom: 12,
                     offset: [0, -140],
                 });
 
