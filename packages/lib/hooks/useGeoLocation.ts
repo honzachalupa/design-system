@@ -3,17 +3,19 @@
 import { useEffect } from "react";
 import { useLocalStorage } from ".";
 
-export interface GeolocationCoordinates {
+export interface ICoordinates {
     longitude: number | undefined;
     latitude: number | undefined;
 }
 
 export const useGeoLocation = () => {
-    const [coordinates, setCoordinates] =
-        useLocalStorage<GeolocationCoordinates>("currentLocation", {
+    const [coordinates, setCoordinates] = useLocalStorage<ICoordinates>(
+        "currentLocation",
+        {
             longitude: undefined,
             latitude: undefined,
-        });
+        }
+    );
 
     const onCurrentPositionChanged = ({ coords }: GeolocationPosition) => {
         setCoordinates({

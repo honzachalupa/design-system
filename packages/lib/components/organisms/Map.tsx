@@ -105,14 +105,14 @@ export const Map: React.FC<IProps> = forwardRef(
                 latitude: lngLat.lat,
             });
 
-        const flyTo = (options: FlyToOptions) => {
+        const flyTo = (coordinates: ICoordinates, options?: FlyToOptions) => {
             setTimeout(() => {
                 mapboxRef.current?.flyTo({
-                    zoom: defaultZoom,
+                    center: [coordinates.longitude, coordinates.latitude],
                     duration: 1000,
                     ...options,
                 });
-            }, 1);
+            }, 100);
         };
 
         const fitBounds = (
@@ -121,19 +121,16 @@ export const Map: React.FC<IProps> = forwardRef(
         ) => {
             setTimeout(() => {
                 mapboxRef.current?.fitBounds(bounds, options);
-            }, 1);
+            }, 100);
         };
 
         const focusCurrentLocation = (animate = true) => {
             if (currentLocation.longitude && currentLocation.latitude) {
-                flyTo({
-                    center: [
-                        currentLocation.longitude,
-                        currentLocation.latitude,
-                    ],
-                    zoom: 7,
-                    animate,
-                });
+                setTimeout(() => {
+                    flyTo(currentLocation as ICoordinates, {
+                        animate,
+                    });
+                }, 100);
             }
         };
 
@@ -141,11 +138,7 @@ export const Map: React.FC<IProps> = forwardRef(
             if (markers.length === 1) {
                 const marker = markers[0];
 
-                flyTo({
-                    center: [
-                        marker.coordinates.longitude,
-                        marker.coordinates.latitude,
-                    ],
+                flyTo(marker.coordinates, {
                     animate,
                 });
             } else if (markers.length > 1) {
@@ -190,47 +183,48 @@ export const Map: React.FC<IProps> = forwardRef(
 
         const onInitialViewCoordinates = () => {
             if (!isInitialFocused) {
-                flyTo({
-                    center: [
-                        initialViewCoordinates?.longitude!,
-                        initialViewCoordinates?.latitude!,
-                    ],
-                    animate: false,
-                });
+                flyTo(
+                    {
+                        longitude: initialViewCoordinates?.longitude || 0,
+                        latitude: initialViewCoordinates?.latitude || 0,
+                    },
+                    {
+                        animate: false,
+                    }
+                );
 
                 setIsInitialFocused(true);
             }
         };
 
+        const onMarkerSelected = (id: IMarker["id"]) => {
+            const selectedPlace = markers.find((place) => place.id === id)!;
+
+            flyTo(selectedPlace.coordinates, {
+                zoom: 12,
+                offset: [0, -140],
+            });
+
+            setPrevSelectedMarkerId(id);
+        };
+
+        const onMarkerUnselected = () => {
+            const prevSelectedPlace = markers.find(
+                (place) => place.id === prevSelectedMarkerId
+            );
+
+            if (prevSelectedPlace) {
+                flyTo(prevSelectedPlace.coordinates);
+            }
+
+            setPrevSelectedMarkerId(null);
+        };
+
         const onMarkerSelectionChanged = (id: IMarker["id"] | undefined) => {
             if (id) {
-                const selectedPlace = markers.find((place) => place.id === id)!;
-
-                flyTo({
-                    center: [
-                        selectedPlace.coordinates.longitude,
-                        selectedPlace.coordinates.latitude,
-                    ],
-                    zoom: 12,
-                    offset: [0, -140],
-                });
-
-                setPrevSelectedMarkerId(id);
+                onMarkerSelected(id);
             } else {
-                const prevSelectedPlace = markers.find(
-                    (place) => place.id === prevSelectedMarkerId
-                );
-
-                if (prevSelectedPlace) {
-                    flyTo({
-                        center: [
-                            prevSelectedPlace.coordinates.longitude,
-                            prevSelectedPlace.coordinates.latitude,
-                        ],
-                    });
-                }
-
-                setPrevSelectedMarkerId(null);
+                onMarkerUnselected();
             }
         };
 
@@ -241,20 +235,18 @@ export const Map: React.FC<IProps> = forwardRef(
         useEffect(() => {
             if (initialFocusCurrentLocation) {
                 onInitialFocusCurrentLocation();
-            }
-        }, [initialFocusCurrentLocation, currentLocation, isInitialFocused]);
-
-        useEffect(() => {
-            if (initialFocusMarkers) {
+            } else if (initialFocusMarkers) {
                 onInitialFocusMarkers();
-            }
-        }, [initialFocusMarkers, isInitialFocused]);
-
-        useEffect(() => {
-            if (initialViewCoordinates) {
+            } else if (initialViewCoordinates) {
                 onInitialViewCoordinates();
             }
-        }, [initialViewCoordinates, isInitialFocused]);
+        }, [
+            initialFocusCurrentLocation,
+            initialFocusMarkers,
+            initialViewCoordinates,
+            currentLocation,
+            isInitialFocused,
+        ]);
 
         useImperativeHandle(
             ref,
