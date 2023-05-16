@@ -5,7 +5,11 @@ import {
     usePreferredColorScheme,
 } from "@honzachalupa/design-system";
 import cx from "classnames";
-import mapboxgl from "mapbox-gl";
+import mapboxgl, {
+    FitBoundsOptions,
+    FlyToOptions,
+    LngLatBoundsLike,
+} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
     ReactNode,
@@ -32,7 +36,8 @@ interface IProps {
         latitude?: ICoordinates["latitude"];
     };
     initialViewZoom?: number;
-    initialFitBounds?: boolean;
+    initialFocusCurrentLocation?: boolean;
+    initialFocusMarkers?: boolean;
     mapboxAccessToken: string;
     className?: string;
     isReadonly?: boolean;
@@ -48,7 +53,7 @@ interface IProps {
 
 export interface IMapRefProps {
     focusCurrentLocation: (animate?: boolean) => void;
-    zoomToAllMarkers: () => void;
+    focusMarkers: () => void;
     rotateToNorth: () => void;
 }
 
@@ -69,7 +74,8 @@ export const Map: React.FC<IProps> = forwardRef(
             selectedMarkerId,
             initialViewCoordinates,
             initialViewZoom,
-            initialFitBounds,
+            initialFocusCurrentLocation,
+            initialFocusMarkers,
             mapboxAccessToken,
             className,
             isReadonly,
@@ -99,9 +105,24 @@ export const Map: React.FC<IProps> = forwardRef(
                 latitude: lngLat.lat,
             });
 
+        const flyTo = (options: FlyToOptions) => {
+            setTimeout(() => {
+                mapboxRef.current?.flyTo(options);
+            }, 1);
+        };
+
+        const fitBounds = (
+            bounds: LngLatBoundsLike,
+            options: FitBoundsOptions
+        ) => {
+            setTimeout(() => {
+                mapboxRef.current?.fitBounds(bounds, options);
+            }, 1);
+        };
+
         const focusCurrentLocation = (animate = true) => {
             if (currentLocation.longitude && currentLocation.latitude) {
-                mapboxRef.current?.flyTo({
+                flyTo({
                     center: [
                         currentLocation.longitude,
                         currentLocation.latitude,
@@ -109,39 +130,79 @@ export const Map: React.FC<IProps> = forwardRef(
                     zoom: 7,
                     animate,
                 });
+            }
+        };
+
+        const focusMarkers = (animate = true) => {
+            if (markers.length === 1) {
+                const marker = markers[0];
+
+                flyTo({
+                    center: [
+                        marker.coordinates.longitude,
+                        marker.coordinates.latitude,
+                    ],
+                    animate,
+                });
+            } else if (markers.length > 1) {
+                const bounds = new mapboxgl.LngLatBounds();
+
+                markers.forEach(({ coordinates }) => {
+                    bounds.extend([
+                        coordinates.longitude,
+                        coordinates.latitude,
+                    ]);
+                });
+
+                fitBounds(bounds, {
+                    padding: 30,
+                    animate,
+                });
+            }
+        };
+
+        const rotateToNorth = () => mapboxRef.current?.rotateTo(0);
+
+        const handleZoom = ({ viewState }: ViewStateChangeEvent) =>
+            setZoom(viewState.zoom);
+
+        const onInitialFocusCurrentLocation = () => {
+            if (
+                currentLocation.longitude &&
+                currentLocation.latitude &&
+                !isInitialFocused
+            ) {
+                focusCurrentLocation(false);
+                setIsInitialFocused(true);
+            }
+        };
+
+        const onInitialFocusMarkers = () => {
+            if (!isInitialFocused) {
+                focusMarkers(false);
+                setIsInitialFocused(true);
+            }
+        };
+
+        const onInitialViewCoordinates = () => {
+            if (!isInitialFocused) {
+                flyTo({
+                    center: [
+                        initialViewCoordinates?.longitude!,
+                        initialViewCoordinates?.latitude!,
+                    ],
+                    animate: false,
+                });
 
                 setIsInitialFocused(true);
             }
         };
 
-        const rotateToNorth = () => {
-            mapboxRef.current?.rotateTo(0);
-        };
+        const onMarkerSelectionChanged = (id: IMarker["id"] | undefined) => {
+            if (id) {
+                const selectedPlace = markers.find((place) => place.id === id)!;
 
-        const handleZoom = ({ viewState }: ViewStateChangeEvent) => {
-            setZoom(viewState.zoom);
-        };
-
-        const zoomToAllMarkers = () => {
-            const bounds = new mapboxgl.LngLatBounds();
-
-            markers.forEach(({ coordinates }) => {
-                bounds.extend([coordinates.longitude, coordinates.latitude]);
-            });
-
-            mapboxRef.current?.fitBounds(bounds, {
-                padding: 30,
-                animate: true,
-            });
-        };
-
-        useEffect(() => {
-            if (selectedMarkerId) {
-                const selectedPlace = markers.find(
-                    ({ id }) => id === selectedMarkerId
-                )!;
-
-                mapboxRef.current?.flyTo({
+                flyTo({
                     center: [
                         selectedPlace.coordinates.longitude,
                         selectedPlace.coordinates.latitude,
@@ -149,14 +210,14 @@ export const Map: React.FC<IProps> = forwardRef(
                     offset: [0, -140],
                 });
 
-                setPrevSelectedMarkerId(selectedMarkerId);
+                setPrevSelectedMarkerId(id);
             } else {
                 const prevSelectedPlace = markers.find(
-                    ({ id }) => id === prevSelectedMarkerId
+                    (place) => place.id === prevSelectedMarkerId
                 );
 
                 if (prevSelectedPlace) {
-                    mapboxRef.current?.flyTo({
+                    flyTo({
                         center: [
                             prevSelectedPlace.coordinates.longitude,
                             prevSelectedPlace.coordinates.latitude,
@@ -166,19 +227,35 @@ export const Map: React.FC<IProps> = forwardRef(
 
                 setPrevSelectedMarkerId(null);
             }
+        };
+
+        useEffect(() => {
+            onMarkerSelectionChanged(selectedMarkerId);
         }, [selectedMarkerId]);
 
         useEffect(() => {
-            if (initialFitBounds && !isInitialFocused) {
-                focusCurrentLocation(false);
+            if (initialFocusCurrentLocation) {
+                onInitialFocusCurrentLocation();
             }
-        }, [initialFitBounds, currentLocation, isInitialFocused]);
+        }, [initialFocusCurrentLocation, currentLocation, isInitialFocused]);
+
+        useEffect(() => {
+            if (initialFocusMarkers) {
+                onInitialFocusMarkers();
+            }
+        }, [initialFocusMarkers, isInitialFocused]);
+
+        useEffect(() => {
+            if (initialViewCoordinates) {
+                onInitialViewCoordinates();
+            }
+        }, [initialViewCoordinates, isInitialFocused]);
 
         useImperativeHandle(
             ref,
             (): IMapRefProps => ({
                 focusCurrentLocation,
-                zoomToAllMarkers,
+                focusMarkers,
                 rotateToNorth,
             })
         );
