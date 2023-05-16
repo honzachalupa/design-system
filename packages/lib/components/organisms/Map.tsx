@@ -80,7 +80,6 @@ export const Map: React.FC<IProps> = forwardRef(
         ref
     ) => {
         const colorScheme = usePreferredColorScheme();
-
         const currentLocation = useGeoLocation();
 
         const defaultZoom = 15;
@@ -90,6 +89,7 @@ export const Map: React.FC<IProps> = forwardRef(
         const [zoom, setZoom] = useState<number>(
             initialViewZoom || defaultZoom
         );
+        const [isInitialFocused, setIsInitialFocused] = useState<boolean>();
 
         const mapboxRef = useRef<MapRef>(null);
 
@@ -100,16 +100,18 @@ export const Map: React.FC<IProps> = forwardRef(
             });
 
         const focusCurrentLocation = (animate = true) => {
-            console.log("focusCurrentLocation()");
+            if (currentLocation.longitude && currentLocation.latitude) {
+                mapboxRef.current?.flyTo({
+                    center: [
+                        currentLocation.longitude,
+                        currentLocation.latitude,
+                    ],
+                    zoom: 7,
+                    animate,
+                });
 
-            mapboxRef.current?.flyTo({
-                center: [
-                    currentLocation.longitude || 0,
-                    currentLocation.latitude || 0,
-                ],
-                zoom: 7,
-                animate,
-            });
+                setIsInitialFocused(true);
+            }
         };
 
         const rotateToNorth = () => {
@@ -121,25 +123,16 @@ export const Map: React.FC<IProps> = forwardRef(
         };
 
         const zoomToAllMarkers = () => {
-            if (markers.length > 0) {
-                console.log("zoomToAllMarkers()", 2);
+            const bounds = new mapboxgl.LngLatBounds();
 
-                const bounds = new mapboxgl.LngLatBounds();
+            markers.forEach(({ coordinates }) => {
+                bounds.extend([coordinates.longitude, coordinates.latitude]);
+            });
 
-                markers.forEach(({ coordinates }) => {
-                    bounds.extend([
-                        coordinates.longitude,
-                        coordinates.latitude,
-                    ]);
-                });
-
-                mapboxRef.current?.fitBounds(bounds, {
-                    padding: 30,
-                    animate: false,
-                });
-            } else {
-                focusCurrentLocation(false);
-            }
+            mapboxRef.current?.fitBounds(bounds, {
+                padding: 30,
+                animate: true,
+            });
         };
 
         useEffect(() => {
@@ -176,10 +169,10 @@ export const Map: React.FC<IProps> = forwardRef(
         }, [selectedMarkerId]);
 
         useEffect(() => {
-            if (initialFitBounds) {
-                zoomToAllMarkers();
+            if (initialFitBounds && !isInitialFocused) {
+                focusCurrentLocation(false);
             }
-        }, [initialFitBounds]);
+        }, [initialFitBounds, currentLocation, isInitialFocused]);
 
         useImperativeHandle(
             ref,
@@ -225,15 +218,17 @@ export const Map: React.FC<IProps> = forwardRef(
                         onZoom={handleZoom}
                         onClick={handleMapClick}
                     >
-                        <Marker
-                            longitude={currentLocation.longitude || 0}
-                            latitude={currentLocation.latitude || 0}
-                        >
-                            <div className="w-5 aspect-square relative">
-                                <PointIcon className="w-full h-full fill-blue-600 absolute" />
-                                <PointIcon className="w-full h-full fill-blue-600 animate-ping absolute" />
-                            </div>
-                        </Marker>
+                        {currentLocation.longitude && currentLocation.latitude && (
+                            <Marker
+                                longitude={currentLocation.longitude}
+                                latitude={currentLocation.latitude}
+                            >
+                                <div className="w-5 aspect-square relative">
+                                    <PointIcon className="w-full h-full fill-blue-600 absolute" />
+                                    <PointIcon className="w-full h-full fill-blue-600 animate-ping absolute" />
+                                </div>
+                            </Marker>
+                        )}
 
                         {markers.map((marker) => (
                             <Marker
