@@ -2,20 +2,19 @@
 
 import { useEffect } from "react";
 import { useLocalStorage } from ".";
-
-export interface ICoordinates {
-    longitude: number | undefined;
-    latitude: number | undefined;
-}
+import { ICoordinates } from "../types";
 
 export const useGeoLocation = () => {
-    const [coordinates, setCoordinates] = useLocalStorage<ICoordinates>(
-        "currentLocation",
-        {
-            longitude: undefined,
-            latitude: undefined,
-        }
-    );
+    const [coordinates, setCoordinates] = useLocalStorage<
+        | ICoordinates
+        | {
+              longitude: undefined;
+              latitude: undefined;
+          }
+    >("currentLocation", {
+        longitude: undefined,
+        latitude: undefined,
+    });
 
     const onCurrentPositionChanged = ({ coords }: GeolocationPosition) => {
         setCoordinates({
