@@ -90,8 +90,9 @@ export const Map: React.FC<IProps> = forwardRef(
 
         const defaultZoom = 15;
 
-        const [prevSelectedMarkerId, setPrevSelectedMarkerId] =
-            useState<IMarker["id"] | null>();
+        const [prevSelectedMarkerId, setPrevSelectedMarkerId] = useState<
+            IMarker["id"] | null
+        >();
         const [zoom, setZoom] = useState<number>(
             initialViewZoom || defaultZoom
         );
@@ -201,7 +202,7 @@ export const Map: React.FC<IProps> = forwardRef(
             const selectedPlace = markers.find((place) => place.id === id)!;
 
             flyTo(selectedPlace.coordinates, {
-                zoom: 12,
+                zoom: Math.max(12, zoom),
                 offset: [0, -140],
             });
 
@@ -292,17 +293,18 @@ export const Map: React.FC<IProps> = forwardRef(
                         onZoom={handleZoom}
                         onClick={handleMapClick}
                     >
-                        {currentLocation.longitude && currentLocation.latitude && (
-                            <Marker
-                                longitude={currentLocation.longitude}
-                                latitude={currentLocation.latitude}
-                            >
-                                <div className="w-5 aspect-square relative">
-                                    <PointIcon className="w-full h-full fill-blue-600 absolute" />
-                                    <PointIcon className="w-full h-full fill-blue-600 animate-ping absolute" />
-                                </div>
-                            </Marker>
-                        )}
+                        {currentLocation.longitude &&
+                            currentLocation.latitude && (
+                                <Marker
+                                    longitude={currentLocation.longitude}
+                                    latitude={currentLocation.latitude}
+                                >
+                                    <div className="w-5 aspect-square relative">
+                                        <PointIcon className="w-full h-full fill-blue-600 absolute" />
+                                        <PointIcon className="w-full h-full fill-blue-600 animate-ping absolute" />
+                                    </div>
+                                </Marker>
+                            )}
 
                         {markers.map((marker) => (
                             <Marker
