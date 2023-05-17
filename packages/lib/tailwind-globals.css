@@ -80,4 +80,8 @@
     a {
         @apply underline;
     }
+
+    dialog::backdrop {
+        @apply theme-glass-effect;
+    }
 }
