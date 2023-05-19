@@ -1,10 +1,47 @@
 "use client";
 
 import { useLocalStorage, useLocation } from "@react-hooks-library/core";
-import { useEffect } from "react";
+import cx from "classnames";
+import { ReactNode, useEffect } from "react";
 import { useTranslation, useUserAgent } from "../../hooks";
 import { PlusSquareIcon, ShareIcon } from "../../icons";
-import { Modal } from "../molecules/Modal";
+
+interface IModalProps {
+    title?: string;
+    children: ReactNode;
+    positionY?: "bottom";
+    onClose: () => void;
+}
+
+export const Modal_deprecated: React.FC<IModalProps> = ({
+    title,
+    children,
+    positionY,
+    onClose,
+}) => {
+    const t = useTranslation();
+
+    return (
+        <div
+            className={cx("w-screen p-3 absolute left-0 z-[999999]", {
+                "bottom-0": positionY === "bottom",
+            })}
+        >
+            <div className="theme-glass-effect rounded-lg p-3 pt-2 relative">
+                <div
+                    className="text-blue-600 p-2 absolute top-0 right-0"
+                    onClick={onClose}
+                >
+                    {t("modal", "closeLabel")}
+                </div>
+
+                {title && <p>{title}</p>}
+
+                <div>{children}</div>
+            </div>
+        </div>
+    );
+};
 
 export const PwaInstallationPrompt: React.FC = ({
     isDebug,
@@ -45,7 +82,7 @@ export const PwaInstallationPrompt: React.FC = ({
     ];
 
     return !wasShown && isEnabledForTheDevice ? (
-        <Modal
+        <Modal_deprecated
             title={t("pwaPrompt", "title")}
             positionY="bottom"
             onClose={handleClose}
@@ -66,6 +103,6 @@ export const PwaInstallationPrompt: React.FC = ({
                     </li>
                 ))}
             </ul>
-        </Modal>
+        </Modal_deprecated>
     ) : null;
 };

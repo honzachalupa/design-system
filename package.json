@@ -12,7 +12,8 @@
         "lint": "turbo run lint",
         "release": "turbo run release",
         "release-ci": "turbo run release-ci",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\""
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "prepare": "husky install"
     },
     "dependencies": {},
     "devDependencies": {
