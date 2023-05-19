@@ -32,6 +32,8 @@ export const Modal: React.FC<IProps> = forwardRef(
                 ref.current?.close();
 
                 document.body.classList.remove("modal-open");
+
+                onClose?.();
             }
         }, [isOpened]);
 
