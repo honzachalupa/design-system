@@ -7,5 +7,5 @@ interface IProps {
 }
 
 export const Layout_Primary: React.FC<IProps> = ({ children, className }) => (
-    <div className={cx("p-3", className)}>{children}</div>
+    <div className={cx("h-full p-3", className)}>{children}</div>
 );
