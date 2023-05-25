@@ -24,7 +24,7 @@
     }
 
     .theme-foreground {
-        @apply text-black dark:text-white;
+        @apply text-zinc-900 dark:text-zinc-200;
     }
 
     .theme-foreground-faded {
@@ -32,11 +32,7 @@
     }
 
     .theme-page-background {
-        @apply bg-zinc-300 dark:bg-zinc-900;
-    }
-
-    .theme-page-foreground {
-        @apply bg-zinc-300 dark:bg-zinc-900;
+        @apply bg-zinc-200 dark:bg-zinc-900;
     }
 
     .theme-border {
@@ -44,7 +40,7 @@
     }
 
     .theme-glass-effect {
-        @apply bg-black bg-opacity-20 backdrop-blur-md;
+        @apply bg-white dark:bg-black bg-opacity-40 backdrop-blur-md;
     }
 
     * {
