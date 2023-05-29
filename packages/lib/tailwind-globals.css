@@ -23,6 +23,10 @@
         @apply text-rose-600 fill-rose-600;
     }
 
+    .accent-stroke {
+        @apply stroke-rose-600;
+    }
+
     .theme-foreground {
         @apply text-zinc-900 dark:text-zinc-200;
     }

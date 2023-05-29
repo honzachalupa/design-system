@@ -1,3 +1,5 @@
+"use client";
+
 import cx from "classnames";
 import { ReactNode, TouchEvent, useRef, useState } from "react";
 import { useClickOutside } from "../../hooks";

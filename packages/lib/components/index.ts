@@ -2,6 +2,7 @@ export { Button } from "./atoms/Button";
 export { ButtonLink } from "./atoms/ButtonLink";
 export { ButtonsGroup } from "./atoms/ButtonsGroup";
 export { ContextMenu } from "./atoms/ContextMenu";
+export type { IContextMenuItem } from "./atoms/ContextMenu";
 export { Input } from "./atoms/Input";
 export { LoadingIndicator } from "./atoms/LoadingIndicator";
 export { Modal } from "./atoms/Modal";

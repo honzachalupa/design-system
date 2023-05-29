@@ -1,3 +1,5 @@
+"use client";
+
 import { Placement } from "@popperjs/core";
 import {
     ReactElement,
@@ -63,7 +65,7 @@ export const Popup: React.FC<IProps> = ({
                 <Portal>
                     <div
                         ref={setPopperElement}
-                        style={styles.popper}
+                        style={{ zIndex: 9, ...styles.popper }}
                         {...attributes.popper}
                     >
                         {children}

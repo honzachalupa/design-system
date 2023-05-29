@@ -12,6 +12,7 @@ interface IProps {
     defaultValue?: string;
     placeholder?: string;
     size?: TextAreaSize;
+    tabIndex?: number;
     minRows?: number;
     maxRows?: number;
     className?: string;
@@ -27,6 +28,7 @@ export const TextArea: React.FC<IProps> = ({
     defaultValue,
     placeholder,
     size = "medium",
+    tabIndex,
     minRows,
     maxRows = 5,
     className,
@@ -55,9 +57,10 @@ export const TextArea: React.FC<IProps> = ({
             value={value}
             defaultValue={defaultValue}
             placeholder={placeholder}
-            disabled={isDisabled}
+            tabIndex={tabIndex}
             minRows={minRows}
             maxRows={maxRows}
+            disabled={isDisabled}
             onChange={(e) => onChange(e.target.value)}
         />
     </div>
