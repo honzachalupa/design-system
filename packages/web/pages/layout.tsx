@@ -2,14 +2,14 @@ import {
     ButtonLink,
     ButtonsGroup,
     HeroSection,
-    Layout_Primary,
+    Layout,
     Navigation,
 } from "@honzachalupa/design-system";
 import { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <Layout_Primary>
+        <Layout.Blank>
             <Navigation
                 brand={{
                     name: "@honzachalupa/design-system",
@@ -57,6 +57,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             />
 
             {children}
-        </Layout_Primary>
+        </Layout.Blank>
     );
 }
