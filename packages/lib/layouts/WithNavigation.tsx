@@ -9,7 +9,7 @@ import { ContextMenu, IContextMenuItem } from "../components";
 export interface IProps {
     title?: string;
     navigation?: {
-        [key in "left" | "right"]: {
+        [key in "left" | "right"]?: {
             title?: string;
             component?: ReactNode;
             items: IContextMenuItem[];
