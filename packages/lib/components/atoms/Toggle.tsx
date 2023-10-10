@@ -5,12 +5,18 @@ import { useEffect, useState } from "react";
 
 interface IProps {
     label: string;
+    value?: boolean;
     defaultValue?: boolean;
     onChange: (value: boolean) => void;
 }
 
-export const Toggle: React.FC<IProps> = ({ label, defaultValue, onChange }) => {
-    const [value, setValue] = useState<boolean>(false);
+export const Toggle: React.FC<IProps> = ({
+    label,
+    value: valueProp,
+    defaultValue,
+    onChange,
+}) => {
+    const [value, setValue] = useState<boolean>(valueProp || false);
 
     const handleToggle = () => {
         setValue((prevState) => !prevState);
@@ -25,6 +31,10 @@ export const Toggle: React.FC<IProps> = ({ label, defaultValue, onChange }) => {
     useEffect(() => {
         onChange(value);
     }, [value]);
+
+    useEffect(() => {
+        setValue(valueProp || false);
+    }, [valueProp]);
 
     return (
         <div className="flex justify-between mt-3 mb-5">
