@@ -1,25 +1,25 @@
 "use client";
 
 import cx from "classnames";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { HashLoader } from "react-spinners";
 
 interface IProps {
-    message?: string;
+    children?: ReactNode;
     isFullscreen?: boolean;
 }
 
 export const LoadingIndicator: React.FC<IProps> = ({
-    message,
+    children,
     isFullscreen,
 }) => {
     useEffect(() => {
-        if (message && !isFullscreen) {
+        if (children && !isFullscreen) {
             throw new Error(
-                "Message is not allowed when isFullscreen is false."
+                "Content is not allowed when isFullscreen is false."
             );
         }
-    }, [message, isFullscreen]);
+    }, [children, isFullscreen]);
 
     return (
         <div
@@ -32,9 +32,9 @@ export const LoadingIndicator: React.FC<IProps> = ({
                 <HashLoader color="#e11d48" />
             </div>
 
-            {message && isFullscreen && (
+            {children && isFullscreen && (
                 <p className="text-md lg:text-lg text-center mt-4 px-[10vw]">
-                    {message}
+                    {children}
                 </p>
             )}
         </div>
