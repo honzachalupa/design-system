@@ -7,7 +7,7 @@ import {
 } from "@honzachalupa/design-system";
 import { ReactNode } from "react";
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function PageLayout({ children }: { children: ReactNode }) {
     return (
         <Layout.Blank>
             <Navigation
