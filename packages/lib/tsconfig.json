@@ -3,7 +3,6 @@
     "include": ["**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules", "build/**/*"],
     "compilerOptions": {
-        "outDir": "build",
-        "target": "es2015"
+        "outDir": "build"
     }
 }
