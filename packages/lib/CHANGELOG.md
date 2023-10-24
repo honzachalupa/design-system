@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://github.com/honzachalupa/design-system/compare/v2.0.2...v2.0.3) (2023-10-24)
+
+
+### Bug Fixes
+
+* Added build target version. ([d2bed3b](https://github.com/honzachalupa/design-system/commit/d2bed3b3d99f6cee30fe432ea3aec43f2be0b1e1))
+
 ### [2.0.2](https://github.com/honzachalupa/design-system/compare/v2.0.1...v2.0.2) (2023-10-24)
 
 
