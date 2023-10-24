@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/honzachalupa/design-system/compare/v1.0.37...v1.2.0) (2023-10-24)
+
+
+### Features
+
+* Added VirtualizedList component. ([c64cbde](https://github.com/honzachalupa/design-system/commit/c64cbdeb6706b47f8eda4f3bcc8c15bed57e8cea))
+
 ## [1.1.0](https://github.com/honzachalupa/design-system/compare/v1.0.37...v1.1.0) (2023-10-24)
 
 
