@@ -12,6 +12,7 @@ export { Select } from "./atoms/Select";
 export { SwitchButton } from "./atoms/SwitchButton";
 export { TextArea } from "./atoms/TextArea";
 export { Toggle } from "./atoms/Toggle";
+export { VirtualizedList } from "./atoms/VirtualizedList";
 export { HeroSection } from "./molecules/HeroSection";
 export { Navigation } from "./molecules/Navigation";
 export { SwipeActionsContainer } from "./molecules/SwipeActionsContainer";
