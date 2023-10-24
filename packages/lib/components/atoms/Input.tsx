@@ -12,6 +12,7 @@ interface IProps<T> {
     defaultValue?: T;
     placeholder?: string;
     description?: string;
+    listId?: string;
     size?: InputSize;
     type?: HTMLInputTypeAttribute;
     className?: string;
@@ -28,6 +29,7 @@ export const Input = <T,>({
     defaultValue,
     placeholder,
     description,
+    listId,
     size = "medium",
     type = "text",
     className,
@@ -70,6 +72,7 @@ export const Input = <T,>({
                 value={value?.toString()}
                 defaultValue={defaultValue?.toString()}
                 placeholder={placeholder}
+                list={listId}
                 type={type}
                 required={isRequired}
                 disabled={isDisabled}
