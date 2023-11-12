@@ -5,20 +5,24 @@ import ReactSelect from "react-select";
 import { usePreferredColorScheme } from "../../hooks";
 import { styles } from "./Select.styles";
 
-interface IProps {
+type Option = { value: string | number; label: string };
+
+interface SelectProps<T> {
     label: string;
-    defaultValue?: string;
-    value?: string;
+    defaultValue?: T;
+    value?: T;
     placeholder?: string;
-    options: { label: string; value: string }[];
+    options: Option[];
     noOptionsMessage?: string;
     loadingMessage?: string;
+    isMulti?: boolean;
+    isSearchable?: boolean;
     isRequired?: boolean;
     isDisabled?: boolean;
-    onChange: (value: string) => void;
+    onChange: (value: T | null) => void;
 }
 
-export const Select: React.FC<IProps> = ({
+export const Select = <T,>({
     label,
     defaultValue,
     value: valueProp,
@@ -26,13 +30,15 @@ export const Select: React.FC<IProps> = ({
     options,
     noOptionsMessage,
     loadingMessage,
+    isMulti,
+    isSearchable,
     isRequired,
     isDisabled,
     onChange,
-}) => {
+}: SelectProps<T>) => {
     const colorScheme = usePreferredColorScheme();
 
-    const [value, setValue] = useState<string>();
+    const [value, setValue] = useState<T>();
 
     const defaultOption = useMemo(
         () => options.find((option) => option.value === defaultValue),
@@ -43,6 +49,14 @@ export const Select: React.FC<IProps> = ({
         () => options.find((option) => option.value === value),
         [value]
     );
+
+    const handleChange = (value: Option | Option[]) => {
+        if (isMulti && Array.isArray(value)) {
+            onChange(value.map(({ value }) => value) as T);
+        } else if (!Array.isArray(value)) {
+            onChange(value?.value as T);
+        }
+    };
 
     useEffect(() => {
         setValue(valueProp);
@@ -65,10 +79,11 @@ export const Select: React.FC<IProps> = ({
                 loadingMessage={() => loadingMessage || "Loading..."}
                 className="w-full"
                 styles={styles(colorScheme === "dark")}
-                isSearchable={false}
+                isMulti={isMulti}
+                isSearchable={isSearchable}
                 isDisabled={isDisabled}
                 // @ts-ignore
-                onChange={(option) => option && onChange(option.value)}
+                onChange={handleChange}
             />
         </div>
     );
