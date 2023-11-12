@@ -1,5 +1,6 @@
 "use client";
 
+import cx from "classnames";
 import { useEffect, useMemo, useState } from "react";
 import ReactSelect from "react-select";
 import { usePreferredColorScheme } from "../../hooks";
@@ -15,6 +16,7 @@ interface SelectProps<T> {
     options: Option[];
     noOptionsMessage?: string;
     loadingMessage?: string;
+    className?: string;
     isMulti?: boolean;
     isSearchable?: boolean;
     isRequired?: boolean;
@@ -30,6 +32,7 @@ export const Select = <T,>({
     options,
     noOptionsMessage,
     loadingMessage,
+    className,
     isMulti,
     isSearchable,
     isRequired,
@@ -63,7 +66,7 @@ export const Select = <T,>({
     }, [valueProp]);
 
     return (
-        <div className="my-3">
+        <div className={cx("my-3", className)}>
             {label && (
                 <label>
                     {label} {isRequired && "*"}
