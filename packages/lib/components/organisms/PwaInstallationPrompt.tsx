@@ -6,14 +6,18 @@ import { ReactNode, useEffect } from "react";
 import { useTranslation, useUserAgent } from "../../hooks";
 import { PlusSquareIcon, ShareIcon } from "../../icons";
 
-interface IModalProps {
+interface Props {
+    isDebug?: boolean;
+}
+
+interface ModalProps {
     title?: string;
     children: ReactNode;
     positionY?: "bottom";
     onClose: () => void;
 }
 
-export const Modal_deprecated: React.FC<IModalProps> = ({
+export const Modal_deprecated: React.FC<ModalProps> = ({
     title,
     children,
     positionY,
@@ -43,11 +47,7 @@ export const Modal_deprecated: React.FC<IModalProps> = ({
     );
 };
 
-export const PwaInstallationPrompt: React.FC = ({
-    isDebug,
-}: {
-    isDebug?: boolean;
-}) => {
+export const PwaInstallationPrompt: React.FC<Props> = ({ isDebug }) => {
     const location = useLocation();
     const userAgent = useUserAgent();
     const t = useTranslation();
