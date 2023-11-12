@@ -1,83 +1,33 @@
 import { Button } from "@honzachalupa/design-system";
-import React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const meta = {
     title: "Atoms/Button",
     component: Button,
+    parameters: {
+        layout: "centered",
+    },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
+    args: {
+        label: "Label",
+    },
 };
 
-export const Primary = () => (
-    <Button label="Default" onClick={() => console.info("clicked")} />
-);
+export const Small: Story = {
+    args: {
+        label: "Label",
+        size: "small",
+    },
+};
 
-export const Variants = () => (
-    <>
-        <Button label="Default solid" onClick={() => console.info("clicked")} />
-
-        <br />
-        <br />
-
-        <Button
-            label="Small solid"
-            size="small"
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="Disabled solid"
-            isDisabled
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="External solid"
-            isExternal
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="Default outline"
-            variant="outline"
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="Small outline"
-            size="small"
-            variant="outline"
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="Disabled outline"
-            variant="outline"
-            isDisabled
-            onClick={() => console.info("clicked")}
-        />
-
-        <br />
-        <br />
-
-        <Button
-            label="External outline"
-            variant="outline"
-            isExternal
-            onClick={() => console.info("clicked")}
-        />
-    </>
-);
+export const Outlined: Story = {
+    args: {
+        label: "Label",
+        variant: "outline",
+    },
+};
